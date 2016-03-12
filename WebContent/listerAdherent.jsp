@@ -28,13 +28,7 @@
 			<th>Modifier</th>
 
 		</TR>
-					<script type="text/javascript">
-						var message = '<c:out value="${mesAdherents}"/>';
-						alert(message);
-					</script>
-		<c:forEach items="${mesAdherents}" var="item">
-			${item }
-			
+		<c:forEach items="${mesAdherents}" var="item">			
 			<tr>
 				<td>${item.idAdherent}</td>
 				<td>${item.nomAdherent}</td>
