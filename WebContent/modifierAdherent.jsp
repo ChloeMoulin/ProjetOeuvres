@@ -8,5 +8,6 @@
 </head>
 <body>
 	<H1> Modification d'un adhérent </H1> 
+	<p>${adherent.nomAdherent}</p>
 </body>
 </html>

@@ -63,6 +63,13 @@ public class Controleur extends HttpServlet {
 		// execute l'action
 		if (MODIFIER_ADHERENT.equals(actionName)) {
 			String id = request.getParameter("id");
+			int numero = new Integer(id);
+			try {
+				Service service = new Service();
+				request.setAttribute("adherent", service.consulterAdherent(numero));
+			} catch (MonException e) {
+				e.printStackTrace();
+			}
 			
 			destinationPage = "/modifierAdherent.jsp";
 		}

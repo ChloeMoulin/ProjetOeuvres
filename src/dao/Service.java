@@ -32,7 +32,7 @@ public class Service {
 	// Fabrique et renvoie un objet adhérent contenant le résultat de la requête
 	// BDD
 	public Adherent consulterAdherent(int numero) throws MonException {
-		String mysql = "select * from adherent where numero_adherent=" + numero;
+		String mysql = "select * from adherent where id_adherent=" + numero;
 		List<Adherent> mesAdh = consulterListeAdherents(mysql);
 		if (mesAdh.isEmpty())
 			return null;
