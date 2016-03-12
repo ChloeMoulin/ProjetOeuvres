@@ -27,17 +27,55 @@ public class Service {
 		}
 	}
 
+	public void insertOeuvreVente(Oeuvrevente uneOeuvre) throws MonException {
+		String mysql;
+
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "insert into oeuvrevente  (titre_oeuvrevente, etat_oeuvrevente, prix_oeuvrevente, id_proprietaire)  values ('"
+					+ uneOeuvre.getTitre()+ "','" + uneOeuvre.getEtatOeuvrevente();
+			mysql += "','" + uneOeuvre.getPrixOeuvrevente() + "','" + uneOeuvre.getProprietaire().getIdProprietaire() + "')";
+
+			unDialogueBd.insertionBD(mysql);
+		} catch (MonException e) {
+			throw e;
+		}
+	}
+
+	public void insertOeuvrePret(Oeuvrepret uneOeuvre) throws MonException {
+		String mysql;
+
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "insert into oeuvrepret  (titre_oeuvrepret,id_proprietaire)  values ('"
+					+ uneOeuvre.getTitre()+ "','" + uneOeuvre.getProprietaire().getIdProprietaire()+ "')";
+
+			unDialogueBd.insertionBD(mysql);
+		} catch (MonException e) {
+			throw e;
+		}
+	}
 	// gestion des adherents
 	// Consultation d'un adhérent par son numéro
 	// Fabrique et renvoie un objet adhérent contenant le résultat de la requête
 	// BDD
 	public Adherent consulterAdherent(int numero) throws MonException {
-		String mysql = "select * from adherent where numero_adherent=" + numero;
+		String mysql = "select * from adherent where id_adherent=" + numero;
 		List<Adherent> mesAdh = consulterListeAdherents(mysql);
 		if (mesAdh.isEmpty())
 			return null;
 		else {
 			return mesAdh.get(0);
+		}
+	}
+	
+	public Proprietaire consulterProprietaire(int numero) throws MonException {
+		String mysql = "select * from proprietaire where id_proprietaire=" + numero;
+		List<Proprietaire> mesProp = consulterListeProprietaires(mysql);
+		if (mesProp.isEmpty())
+			return null;
+		else {
+			return mesProp.get(0);
 		}
 	}
 
@@ -70,6 +108,33 @@ public class Service {
 			}
 
 			return mesAdherents;
+		} catch (Exception exc) {
+			throw new MonException(exc.getMessage(), "systeme");
+		}
+	}
+	
+	public List<Proprietaire> consulterListeProprietaires() throws MonException {
+		String mysql = "select * from proprietaire";
+		return consulterListeProprietaires(mysql);
+	}
+
+	private List<Proprietaire> consulterListeProprietaires(String mysql) throws MonException {
+		List<Object> rs;
+		List<Proprietaire> mesProprietaires = new ArrayList<Proprietaire>();
+		int index = 0;
+		try {
+			DialogueBd unDialogueBd = DialogueBd.getInstance();
+			rs = DialogueBd.lecture(mysql);
+			while (index < rs.size()) {
+				Proprietaire unP = new Proprietaire();
+				unP.setIdProprietaire(Integer.parseInt(rs.get(index + 0).toString()));
+				unP.setNomProprietaire(rs.get(index + 1).toString());
+				unP.setPrenomProprietaire(rs.get(index + 2).toString());
+				index = index + 3;
+				mesProprietaires.add(unP);
+			}
+
+			return mesProprietaires;
 		} catch (Exception exc) {
 			throw new MonException(exc.getMessage(), "systeme");
 		}

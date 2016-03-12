@@ -23,6 +23,8 @@ public class Controleur extends HttpServlet {
 	private static final String ACTION_TYPE = "action";
 	private static final String LISTER_ADHERENT = "listerAdherent";
 	private static final String AJOUTER_ADHERENT = "ajouterAdherent";
+	private static final String INSERER_OEUVRE_VENTE = "insererOeuvreVente";
+	private static final String INSERER_OEUVRE_PRET = "insererOeuvrePret";
 	private static final String INSERER_ADHERENT = "insererAdherent";
 	private static final String MODIFIER_ADHERENT = "modifierAdherent";
 	private static final String AJOUTER_OEUVRE = "ajouterOeuvre";
@@ -64,7 +66,52 @@ public class Controleur extends HttpServlet {
 		// execute l'action
 		
 		if (AJOUTER_OEUVRE.equals(actionName)) {
+			try {
+
+				Service unService = new Service();
+				request.setAttribute("mesProprietaires", unService.consulterListeProprietaires());
+
+			} catch (MonException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			destinationPage = "/ajouterOeuvre.jsp";
+		}
+		
+		if (INSERER_OEUVRE_VENTE.equals(actionName)) {
+			try {
+				
+				Service unService = new Service();
+				Proprietaire p = unService.consulterProprietaire(Integer.parseInt(request.getParameter("proprietaire")));
+				
+				Oeuvrevente uneOeuvre = new Oeuvrevente(request.getParameter("etatOeuvre"),Float.parseFloat(request.getParameter("numberPrix")), request.getParameter("txtTitre"),p);
+
+				
+				unService.insertOeuvreVente(uneOeuvre);
+
+			} catch (MonException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			destinationPage = "/index.jsp";
+		}
+		
+		if (INSERER_OEUVRE_PRET.equals(actionName)) {
+			try {
+				
+				Service unService = new Service();
+				Proprietaire p = unService.consulterProprietaire(Integer.parseInt(request.getParameter("proprietaire")));
+				
+				Oeuvrepret uneOeuvre = new Oeuvrepret(request.getParameter("txtTitre"),p);
+
+				
+				unService.insertOeuvrePret(uneOeuvre);
+
+			} catch (MonException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			destinationPage = "/index.jsp";
 		}
 		if (MODIFIER_ADHERENT.equals(actionName)) {
 			String id = request.getParameter("id");
