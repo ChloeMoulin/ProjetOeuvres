@@ -36,6 +36,7 @@
 				face="Arial">Lister les adhérents</font></a><font face="Arial"> </font></li>
 		<li><a href="javascript:fermer()"><font face="Arial">Quitter</font></a><font
 			face="Arial"> </font></li>
+		<li><a href = "Controleur?action=ajouterOeuvre">Ajouter Oeuvre</a></li>
 	</ul>
 </body>
 </html>
