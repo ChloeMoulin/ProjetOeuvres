@@ -1,6 +1,8 @@
 package controle;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,11 +10,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import metier.*;
 import dao.Service;
-import meserreurs.*;
+import meserreurs.MonException;
+import metier.Adherent;
+import metier.Oeuvrepret;
+import metier.Oeuvrevente;
+import metier.Proprietaire;
+import metier.Reservation;
 
 /**
  * Servlet implementation class Controleur
@@ -31,9 +36,11 @@ public class Controleur extends HttpServlet {
 	private static final String MODIFIER_ADHERENT = "modifierAdherent";
 	private static final String MODIFIER_OEUVRE_VENTE = "modifierOeuvreVente";
 	private static final String MODIFIER_OEUVRE_PRET = "modifierOeuvrePret";
+	private static final String RESERVER_OEUVRE_VENTE = "reserverOeuvreVente";
 	private static final String VALIDER_MODIF_OEUVRE_VENTE = "validerModifOeuvreVente";
 	private static final String VALIDER_MODIF_OEUVRE_PRET = "validerModifOeuvrePret";
 	private static final String VALIDER_MODIF_ADHERENT = "validerModifAdherent";
+	private static final String VALIDER_RESERVER_OEUVRE_VENTE = "validerReserverOeuvreVente";
 	private static final String AJOUTER_OEUVRE = "ajouterOeuvre";
 	private static final String ERROR_KEY = "messageErreur";
 	private static final String ERROR_PAGE = "/erreur.jsp";
@@ -242,7 +249,6 @@ public class Controleur extends HttpServlet {
 		}
 		if (LISTER_OEUVRES_PRET.equals(actionName)) {
 			try {
-
 				Service unService = new Service();
 				request.setAttribute("mesOeuvres", unService.consulterListeOeuvresPret());
 
@@ -253,6 +259,38 @@ public class Controleur extends HttpServlet {
 
 			destinationPage = "/listerOeuvresPret.jsp";
 		}
+		
+		if (RESERVER_OEUVRE_VENTE.equals(actionName)) {
+			try {
+				Service unService = new Service();
+				String id = request.getParameter("id");
+				int numero = new Integer(id);
+				request.setAttribute("adherents", unService.consulterListeAdherents());
+				request.setAttribute("oeuvre", unService.consulterOeuvreVente(numero));
+				
+			} catch (MonException e) {
+				e.printStackTrace();
+			}
+			
+			destinationPage = "/reserverOeuvreVente.jsp";
+		} else if (VALIDER_RESERVER_OEUVRE_VENTE.equals(actionName)) {
+			try {
+				Service unService = new Service();
+				String id = request.getParameter("id");
+				int numero = new Integer(id);
+				Adherent adherent = unService.consulterAdherent(Integer.parseInt(request.getParameter("adherent")));
+				Oeuvrevente oeuvre = unService.consulterOeuvreVente(numero);
+				String date_replace = request.getParameter("dateReservation").toString().replaceAll("-", "/");
+				Date date = new SimpleDateFormat("yyyy/MM/dd").parse(date_replace);
+				java.sql.Date vraieDate = new java.sql.Date(date.getTime());
+				Reservation reservation = new Reservation(oeuvre, adherent, vraieDate, "reservee");
+				unService.reserverOeuvreVente(reservation);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			destinationPage = "/index.jsp";
+		}
+		
 		if (AJOUTER_ADHERENT.equals(actionName)) {
 
 			destinationPage = "/ajouterAdherent.jsp";

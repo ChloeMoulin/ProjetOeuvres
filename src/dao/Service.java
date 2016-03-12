@@ -98,6 +98,20 @@ public class Service {
 			throw e;
 		}
 	}
+	
+	public void reserverOeuvreVente(Reservation reservation) throws MonException {
+		String mysql;
+		
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "insert into reservation (id_oeuvrevente, id_adherent, date_reservation, statut) values ('" +
+					reservation.getOeuvrevente().getId() + "','" + reservation.getAdherent().getIdAdherent() + "','"
+					+ reservation.getDate() + "','reservee')";
+			unDialogueBd.insertionBD(mysql);
+		} catch (MonException e) {
+			throw e;
+		}
+	}
 	// gestion des adherents
 	// Consultation d'un adhérent par son numéro
 	// Fabrique et renvoie un objet adhérent contenant le résultat de la requête
