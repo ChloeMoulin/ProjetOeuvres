@@ -25,6 +25,7 @@
 			<TH>Nom</TH>
 			<TH>Prénom</TH>
 			<TH>Ville</TH>
+			<th>Modifier</th>
 
 		</TR>
 
@@ -34,6 +35,7 @@
 				<td>${item.nomAdherent}</td>
 				<td>${item.prenomAdherent}</td>
                 <td>${item.villeAdherent}</td>
+                <td><input type = "button" value = "Modifier" onclick="location.href='Controleur?action=modifierAdherent&id=${item.idAdherent}'"/></td>
 			</tr>
 		</c:forEach>
 	</TABLE>
