@@ -1,6 +1,8 @@
 package dao;
 
 import meserreurs.MonException;
+
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import metier.*;
@@ -162,6 +164,36 @@ public class Service {
 			}
 
 			return mesOeuvres;
+		} catch (Exception exc) {
+			throw new MonException(exc.getMessage(), "systeme");
+		}
+	}
+	
+	public List<Reservation> consulterListeReservations() throws MonException {
+		String mysql = "select * from reservation";
+		return consulterListeReservations(mysql);
+	}
+
+	private List<Reservation> consulterListeReservations(String mysql) throws MonException {
+		List<Object> rs;
+		List<Reservation> mesReservations = new ArrayList<Reservation>();
+		int index = 0;
+		try {
+			DialogueBd unDialogueBd = DialogueBd.getInstance();
+			rs = DialogueBd.lecture(mysql);
+			while (index < rs.size()) {
+				// On crée un stage
+				Service unService = new Service();
+				String date_replace = rs.get(index+2).toString().replaceAll("-", "/");
+				
+				Date date = new SimpleDateFormat("yyyy/MM/dd").parse(date_replace);
+				Reservation unR = new Reservation(unService.consulterOeuvreVente(Integer.parseInt(rs.get(index + 0).toString())),unService.consulterAdherent(Integer.parseInt(rs.get(index+1).toString())),date,rs.get(index+3).toString());
+				// On incrémente tous les 3 champs
+				index = index + 4;
+				mesReservations.add(unR);
+			}
+
+			return mesReservations;
 		} catch (Exception exc) {
 			throw new MonException(exc.getMessage(), "systeme");
 		}

@@ -37,6 +37,7 @@ public class Controleur extends HttpServlet {
 	private static final String AJOUTER_OEUVRE = "ajouterOeuvre";
 	private static final String ERROR_KEY = "messageErreur";
 	private static final String ERROR_PAGE = "/erreur.jsp";
+	private static final String LISTER_RESERVATIONS = "listerReservations";
 	
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -71,7 +72,7 @@ public class Controleur extends HttpServlet {
 		String actionName = request.getParameter(ACTION_TYPE);
 		String destinationPage = ERROR_PAGE;
 		// execute l'action
-		
+	
 		if (AJOUTER_OEUVRE.equals(actionName)) {
 			try {
 
@@ -107,6 +108,7 @@ public class Controleur extends HttpServlet {
 			try {
 				
 				Service unService = new Service();
+				
 				Proprietaire p = unService.consulterProprietaire(Integer.parseInt(request.getParameter("proprietaire")));
 				
 				Oeuvrepret uneOeuvre = new Oeuvrepret(request.getParameter("txtTitre"),p);
@@ -202,7 +204,16 @@ public class Controleur extends HttpServlet {
 			}
 			destinationPage = "/index.jsp";
 		}
-		
+		if (LISTER_RESERVATIONS.equals(actionName)) {
+			try {
+				Service unService = new Service();
+				request.setAttribute("mesReservations", unService.consulterListeReservations());
+			} catch (MonException e) {
+				e.printStackTrace();
+			}
+			
+			destinationPage = "/listerReservations.jsp";
+		}
 		if (LISTER_ADHERENT.equals(actionName)) {
 			try {
 
