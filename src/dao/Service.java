@@ -109,6 +109,7 @@ public class Service {
 				// On crée un stage
 				Oeuvrevente unO = new Oeuvrevente(rs.get(index + 2).toString(),Float.parseFloat(rs.get(index + 3).toString()),rs.get(index + 1).toString(),this.consulterProprietaire(Integer.parseInt(rs.get(index +4).toString())));
 				// On incrémente tous les 3 champs
+				unO.setId(Integer.parseInt(rs.get(index+0).toString()));
 				index = index + 5;
 				mesOeuvres.add(unO);
 			}
@@ -135,6 +136,7 @@ public class Service {
 				// On crée un stage
 				Oeuvrepret unO = new Oeuvrepret(rs.get(index + 1).toString(),this.consulterProprietaire(Integer.parseInt(rs.get(index +2).toString())));
 				// On incrémente tous les 3 champs
+				unO.setId(Integer.parseInt(rs.get(index+0).toString()));
 				index = index + 3;
 				mesOeuvres.add(unO);
 			}
