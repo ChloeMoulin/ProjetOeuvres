@@ -23,12 +23,14 @@
 		<TR>
 			<TH>Titre</TH>
 			<th>Propriétaire</th>
+			<th>Modifier</th>
 
 		</TR>
 		<c:forEach items="${mesOeuvres}" var="item">			
 			<tr>
 				<td>${item.titre}</td>
                 <td>${item.proprietaire.getPrenomProprietaire()} ${item.proprietaire.getNomProprietaire()}</td>
+                <td><input type = "button" value = "Modifier" onclick="location.href='Controleur?action=modifierOeuvrePret&id=${item.id}'"/></td>
 			</tr>
 		</c:forEach>
 	</TABLE>

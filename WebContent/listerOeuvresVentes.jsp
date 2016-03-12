@@ -25,6 +25,7 @@
 			<TH>Etat</TH>
 			<TH>Prix</TH>
 			<th>Propriétaire</th>
+			<th>Modifier</th>
 
 		</TR>
 		<c:forEach items="${mesOeuvres}" var="item">			
@@ -33,6 +34,7 @@
 				<td>${item.etatOeuvrevente}</td>
 				<td>${item.prixOeuvrevente}</td>
                 <td>${item.proprietaire.getPrenomProprietaire()} ${item.proprietaire.getNomProprietaire()}</td>
+                <td><input type = "button" value = "Modifier" onclick="location.href='Controleur?action=modifierOeuvreVente&id=${item.id}'"/></td>
 			</tr>
 		</c:forEach>
 	</TABLE>

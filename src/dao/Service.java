@@ -69,6 +69,33 @@ public class Service {
 			throw e;
 		}
 	}
+	
+	public void updateOeuvreVente(Oeuvrevente uneOeuvre, Proprietaire p) throws MonException {
+		String mysql;
+		
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "update oeuvrevente set titre_oeuvrevente='" + uneOeuvre.getTitre() + "', etat_oeuvrevente='" +
+					uneOeuvre.getEtatOeuvrevente() + "', prix_oeuvrevente='" + uneOeuvre.getPrixOeuvrevente()
+					+ "', id_proprietaire='" + p.getIdProprietaire() +"' where id_oeuvrevente='" + uneOeuvre.getId() + "'";
+			unDialogueBd.execute(mysql);
+		} catch (MonException e) {
+			throw e;
+		}
+	}
+	
+	public void updateOeuvrePret(Oeuvrepret uneOeuvre, Proprietaire p) throws MonException {
+		String mysql;
+		
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "update oeuvrepret set titre_oeuvrepret='" + uneOeuvre.getTitre() + "', id_proprietaire='" + p.getIdProprietaire()
+			+ "' where id_oeuvrepret='" + uneOeuvre.getId() + "'";
+			unDialogueBd.execute(mysql);
+		} catch (MonException e) {
+			throw e;
+		}
+	}
 	// gestion des adherents
 	// Consultation d'un adhérent par son numéro
 	// Fabrique et renvoie un objet adhérent contenant le résultat de la requête
@@ -90,6 +117,26 @@ public class Service {
 			return null;
 		else {
 			return mesProp.get(0);
+		}
+	}
+	
+	public Oeuvrevente consulterOeuvreVente(int numero) throws MonException {
+		String mysql = "select * from oeuvrevente where id_oeuvrevente=" + numero;
+		List<Oeuvrevente> mesOeuvres = consulterListeOeuvresVente(mysql);
+		if (mesOeuvres.isEmpty())
+			return null;
+		else {
+			return mesOeuvres.get(0);
+		}
+	}
+	
+	public Oeuvrepret consulterOeuvrePret(int numero) throws MonException {
+		String mysql = "select * from oeuvrepret where id_oeuvrepret=" + numero;
+		List<Oeuvrepret> mesOeuvres = consulterListeOeuvresPret(mysql);
+		if (mesOeuvres.isEmpty())
+			return null;
+		else {
+			return mesOeuvres.get(0);
 		}
 	}
 	
