@@ -25,8 +25,9 @@ public class Controleur extends HttpServlet {
 	private static final String AJOUTER_ADHERENT = "ajouterAdherent";
 	private static final String INSERER_ADHERENT = "insererAdherent";
 	private static final String MODIFIER_ADHERENT = "modifierAdherent";
+	private static final String AJOUTER_OEUVRE = "ajouterOeuvre";
 	private static final String ERROR_KEY = "messageErreur";
-	private static final String ERROR_PAGE = "/test.jsp";
+	private static final String ERROR_PAGE = "/erreur.jsp";
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -61,6 +62,10 @@ public class Controleur extends HttpServlet {
 		String actionName = request.getParameter(ACTION_TYPE);
 		String destinationPage = ERROR_PAGE;
 		// execute l'action
+		
+		if (AJOUTER_OEUVRE.equals(actionName)) {
+			destinationPage = "/ajouterOeuvre.jsp";
+		}
 		if (MODIFIER_ADHERENT.equals(actionName)) {
 			String id = request.getParameter("id");
 			
