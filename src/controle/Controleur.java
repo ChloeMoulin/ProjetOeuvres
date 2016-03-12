@@ -23,6 +23,7 @@ public class Controleur extends HttpServlet {
 	private static final String ACTION_TYPE = "action";
 	private static final String LISTER_ADHERENT = "listerAdherent";
 	private static final String LISTER_OEUVRES_VENTE = "listerOeuvresVente";
+	private static final String LISTER_OEUVRES_PRET = "listerOeuvresPret";
 	private static final String AJOUTER_ADHERENT = "ajouterAdherent";
 	private static final String INSERER_OEUVRE_VENTE = "insererOeuvreVente";
 	private static final String INSERER_OEUVRE_PRET = "insererOeuvrePret";
@@ -168,6 +169,19 @@ public class Controleur extends HttpServlet {
 			}
 
 			destinationPage = "/listerOeuvresVentes.jsp";
+		}
+		if (LISTER_OEUVRES_PRET.equals(actionName)) {
+			try {
+
+				Service unService = new Service();
+				request.setAttribute("mesOeuvres", unService.consulterListeOeuvresPret());
+
+			} catch (MonException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			destinationPage = "/listerOeuvresPret.jsp";
 		}
 		if (AJOUTER_ADHERENT.equals(actionName)) {
 
