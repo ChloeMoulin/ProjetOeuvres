@@ -26,6 +26,7 @@ public class Service {
 			throw e;
 		}
 	}
+<<<<<<< HEAD
 
 	public void insertOeuvreVente(Oeuvrevente uneOeuvre) throws MonException {
 		String mysql;
@@ -51,6 +52,18 @@ public class Service {
 					+ uneOeuvre.getTitre()+ "','" + uneOeuvre.getProprietaire().getIdProprietaire()+ "')";
 
 			unDialogueBd.insertionBD(mysql);
+=======
+	
+	public void updateAdherent(Adherent unAdherent) throws MonException {
+		String mysql;
+		
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "update adherent set nom_adherent='" + unAdherent.getNomAdherent() + "', prenom_adherent='" +
+					unAdherent.getPrenomAdherent() + "', ville_adherent='" + unAdherent.getVilleAdherent()
+					+ "' where id_adherent='" + unAdherent.getIdAdherent() + "'";
+			unDialogueBd.execute(mysql);
+>>>>>>> 204eed5bf26a4a63759386db33c8b5b2b1c3478c
 		} catch (MonException e) {
 			throw e;
 		}
