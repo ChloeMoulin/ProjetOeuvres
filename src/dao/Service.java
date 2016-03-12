@@ -92,7 +92,32 @@ public class Service {
 			return mesProp.get(0);
 		}
 	}
+	
+	public List<Oeuvrevente> consulterListeOeuvresVente() throws MonException {
+		String mysql = "select * from oeuvrevente";
+		return consulterListeOeuvresVente(mysql);
+	}
 
+	private List<Oeuvrevente> consulterListeOeuvresVente(String mysql) throws MonException {
+		List<Object> rs;
+		List<Oeuvrevente> mesOeuvres = new ArrayList<Oeuvrevente>();
+		int index = 0;
+		try {
+			DialogueBd unDialogueBd = DialogueBd.getInstance();
+			rs = DialogueBd.lecture(mysql);
+			while (index < rs.size()) {
+				// On crée un stage
+				Oeuvrevente unO = new Oeuvrevente(rs.get(index + 2).toString(),Float.parseFloat(rs.get(index + 3).toString()),rs.get(index + 1).toString(),this.consulterProprietaire(Integer.parseInt(rs.get(index +4).toString())));
+				// On incrémente tous les 3 champs
+				index = index + 5;
+				mesOeuvres.add(unO);
+			}
+
+			return mesOeuvres;
+		} catch (Exception exc) {
+			throw new MonException(exc.getMessage(), "systeme");
+		}
+	}
 	// Consultation des adhérents
 	// Fabrique et renvoie une liste d'objets adhérent contenant le résultat de
 	// la requête BDD

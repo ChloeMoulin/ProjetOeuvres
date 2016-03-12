@@ -37,6 +37,7 @@
 		<li><a href="javascript:fermer()"><font face="Arial">Quitter</font></a><font
 			face="Arial"> </font></li>
 		<li><a href = "Controleur?action=ajouterOeuvre">Ajouter Oeuvre</a></li>
+		<li><a href = "Controleur?action=listerOeuvresVente">Listing des Oeuvres à vendre</a></li>
 	</ul>
 </body>
 </html>
