@@ -99,6 +99,18 @@ public class Service {
 		}
 	}
 	
+	public void updateReservation(Reservation r) throws MonException {
+		String mysql;
+		
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "update reservation set statut='" + r.getStatut() + "' where id_oeuvrevente='" + r.getOeuvrevente().getId() + "'";
+			unDialogueBd.execute(mysql);
+		} catch (MonException e) {
+			throw e;
+		}
+	}
+	
 	public void reserverOeuvreVente(Reservation reservation) throws MonException {
 		String mysql;
 		
@@ -133,6 +145,15 @@ public class Service {
 			return null;
 		else {
 			return mesProp.get(0);
+		}
+	}
+	public Reservation consulterReservation(int numero) throws MonException {
+		String mysql = "select * from reservation where id_oeuvrevente=" + numero;
+		List<Reservation> mesRes = consulterListeReservations(mysql);
+		if (mesRes.isEmpty())
+			return null;
+		else {
+			return mesRes.get(0);
 		}
 	}
 	

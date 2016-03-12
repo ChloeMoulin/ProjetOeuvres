@@ -25,6 +25,7 @@
 			<TH>Adhérent</TH>
 			<TH>Date</TH>
 			<th>Statut</th>
+			<th>Réservation</th>
 
 		</tr>
 		<c:forEach items="${mesReservations}" var="item">			
@@ -33,6 +34,8 @@
 				<td>${item.adherent.getPrenomAdherent()} ${item.adherent.getNomAdherent()}</td>
 				<td>${item.date}</td>
                 <td>${item.statut}</td>
+               	<td><input type = "button" value = "Confirmer" onclick="location.href='Controleur?action=confirmerReservation&id=${item.oeuvrevente.getId()}'"/></td>
+                
 			</tr>
 		</c:forEach>
 	</TABLE>

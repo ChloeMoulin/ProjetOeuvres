@@ -45,6 +45,7 @@ public class Controleur extends HttpServlet {
 	private static final String ERROR_KEY = "messageErreur";
 	private static final String ERROR_PAGE = "/erreur.jsp";
 	private static final String LISTER_RESERVATIONS = "listerReservations";
+	private static final String CONFIRMER_RESERVATION = "confirmerReservation";
 	
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -79,7 +80,22 @@ public class Controleur extends HttpServlet {
 		String actionName = request.getParameter(ACTION_TYPE);
 		String destinationPage = ERROR_PAGE;
 		// execute l'action
-	
+		if (CONFIRMER_RESERVATION.equals(actionName)) {
+			try {
+				Service unService = new Service();
+				String id = request.getParameter("id");
+				int numero = new Integer(id);
+				Reservation r = unService.consulterReservation(numero);
+				if (r.getStatut() != "confirmee"){
+					r.setStatut("confirmee");
+					unService.updateReservation(r);
+				}
+			} catch (MonException e) {
+				e.printStackTrace();
+			}
+			destinationPage = "/listerReservations.jsp";
+			
+		}
 		if (AJOUTER_OEUVRE.equals(actionName)) {
 			try {
 
