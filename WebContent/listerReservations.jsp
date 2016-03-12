@@ -26,10 +26,7 @@
 			<TH>Date</TH>
 			<th>Statut</th>
 
-		</TR>
-		<script type = "text/javascript">
-			alert("${mesReservations}");
-		</script>
+		</tr>
 		<c:forEach items="${mesReservations}" var="item">			
 			<tr>
 				<td>${item.oeuvrevente.getTitre()}</td>
