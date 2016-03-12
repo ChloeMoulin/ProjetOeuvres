@@ -7,7 +7,12 @@
 <title>Modifier un adhérent</title>
 </head>
 <body>
-	<H1> Modification d'un adhérent </H1> 
-	<p>${adherent.nomAdherent}</p>
+	<h1> Modification d'un adhérent </h1>
+	 <form name='identification' method="post" action="Controleur?action=validerModifAdherent&id=${adherent.idAdherent}" onsubmit="return teste()">
+		Nom de l'adhérent : <input type="text" name="txtnom" value=${adherent.nomAdherent}  id ="nom"><br/>
+		Prénom de l'adhérent : <input type="text" name="txtprenom" value=${adherent.prenomAdherent}  id ="prenom"><br/>
+		Ville de l'adhérent : <input type="text" name="txtville" value=${adherent.villeAdherent}  id ="ville"><br/>
+		<input type="submit" name="bt"  value="Valider" />
+	</form>
 </body>
 </html>

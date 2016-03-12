@@ -26,7 +26,20 @@ public class Service {
 			throw e;
 		}
 	}
-
+	
+	public void updateAdherent(Adherent unAdherent) throws MonException {
+		String mysql;
+		
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "update adherent set nom_adherent='" + unAdherent.getNomAdherent() + "', prenom_adherent='" +
+					unAdherent.getPrenomAdherent() + "', ville_adherent='" + unAdherent.getVilleAdherent()
+					+ "' where id_adherent='" + unAdherent.getIdAdherent() + "'";
+			unDialogueBd.execute(mysql);
+		} catch (MonException e) {
+			throw e;
+		}
+	}
 	// gestion des adherents
 	// Consultation d'un adhérent par son numéro
 	// Fabrique et renvoie un objet adhérent contenant le résultat de la requête

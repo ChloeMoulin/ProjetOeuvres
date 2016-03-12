@@ -25,6 +25,7 @@ public class Controleur extends HttpServlet {
 	private static final String AJOUTER_ADHERENT = "ajouterAdherent";
 	private static final String INSERER_ADHERENT = "insererAdherent";
 	private static final String MODIFIER_ADHERENT = "modifierAdherent";
+	private static final String VALIDER_MODIF_ADHERENT = "validerModifAdherent";
 	private static final String AJOUTER_OEUVRE = "ajouterOeuvre";
 	private static final String ERROR_KEY = "messageErreur";
 	private static final String ERROR_PAGE = "/erreur.jsp";
@@ -77,6 +78,21 @@ public class Controleur extends HttpServlet {
 			}
 			
 			destinationPage = "/modifierAdherent.jsp";
+		} else if (VALIDER_MODIF_ADHERENT.equals(actionName)) {
+			try {
+				String id = request.getParameter("id");
+				int numero = new Integer(id);
+				Adherent unAdherent = new Adherent();
+				unAdherent.setIdAdherent(numero);
+				unAdherent.setNomAdherent(request.getParameter("txtnom"));
+				unAdherent.setPrenomAdherent(request.getParameter("txtprenom"));
+				unAdherent.setVilleAdherent(request.getParameter("txtville"));
+				Service unService = new Service();
+				unService.updateAdherent(unAdherent);
+			} catch (MonException e) {
+				e.printStackTrace();
+			}
+			destinationPage = "/index.jsp";
 		}
 		
 		if (LISTER_ADHERENT.equals(actionName)) {
