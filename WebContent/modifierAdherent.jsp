@@ -9,8 +9,8 @@
 <title>Modifier un adhérent</title>
 </head>
 <body>
-<<<<<<< HEAD
 <jsp:include page="index.jsp"/>
+<div class = "container_body">
 	<h1> Modification d'un adhérent </h1>
 	<div class="form-group">
 		<form name='identification' method="post" action="ControleurAdherent?action=validerModifAdherent&id=${adherent.idAdherent}" onsubmit="return testAdherent()">
@@ -28,6 +28,7 @@
 			</div>
 			<input class="btn btn-success" type="submit" name="bt"  value="Valider" />
 		</form>
+	</div>
 	</div>
 </body>
 </html>

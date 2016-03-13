@@ -9,7 +9,9 @@
 <title>Affichage de tous les proprietaires</title>
 </head>
 <body>
+
 <jsp:include page="index.jsp"/>
+<div class = "container_body">
 	<P>
 		<A href="index.jsp"><FONT face="Arial" color="#004080">Retour
 				Accueil</FONT></A>
@@ -38,6 +40,7 @@
 				</tr>
 			</c:forEach>
 		</TABLE>
+	</div>
 	</div>
 </body>
 </html>

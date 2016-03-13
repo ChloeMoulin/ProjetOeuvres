@@ -12,6 +12,7 @@
 </head>
 <body>
 <jsp:include page="index.jsp"/>
+<div class = "container_body">
 	<div class="form-group">
 		<form id="form_pret" name='form_pret' method="post" action="ControleurOeuvrePret?action=validerModifOeuvrePret&id=${oeuvre.id}" onsubmit="return testOeuvrePret()">
 		     <p align="left">
@@ -33,6 +34,7 @@
 		        <input class="btn btn-success" type="submit" name="bt"  value="Valider" />
 			</p>
 		</form>
+	</div>
 	</div>
 </body>
 </html>

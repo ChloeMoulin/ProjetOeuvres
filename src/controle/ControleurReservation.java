@@ -32,11 +32,11 @@ public class ControleurReservation extends Controleur {
 	protected void processusTraiteRequete(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		String actionName = request.getParameter("action");
 		String destinationPage = "/erreur.jsp";
+		Service s = Service.getInstance();
 		
 		switch(actionName) {
 			case "confirmerReservation" : {
 				try {
-					Service s = new Service();
 					String id = request.getParameter("id");
 					int numero = new Integer(id);
 					Reservation r = s.consulterReservation(numero);
@@ -54,7 +54,6 @@ public class ControleurReservation extends Controleur {
 				try {
 					String id = request.getParameter("id");
 					Reservation r = new Reservation();
-					Service s = new Service();
 					r.setOeuvrevente(s.consulterOeuvreVente(Integer.parseInt(id)));
 					s.deleteReservation(r);
 				} catch (MonException e) {
@@ -65,7 +64,6 @@ public class ControleurReservation extends Controleur {
 			}
 			case "listerReservations" : {
 				try {
-					Service s = new Service();
 					request.setAttribute("mesReservations", s.consulterListeReservations());
 				} catch (MonException e) {
 					e.printStackTrace();
@@ -75,7 +73,6 @@ public class ControleurReservation extends Controleur {
 			}
 			case "reserverOeuvreVente" : {
 				try {
-					Service s = new Service();
 					String id = request.getParameter("id");
 					int numero = new Integer(id);
 					request.setAttribute("adherents", s.consulterListeAdherents());
@@ -88,7 +85,6 @@ public class ControleurReservation extends Controleur {
 			} 
 			case "validerReserverOeuvreVente" : {
 				try {
-					Service s = new Service();
 					String id = request.getParameter("id");
 					int numero = new Integer(id);
 					Adherent a = s.consulterAdherent(Integer.parseInt(request.getParameter("adherent")));

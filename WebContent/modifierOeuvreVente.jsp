@@ -13,39 +13,41 @@
 	</head>
 	<body>
 	<jsp:include page="index.jsp"/>
-		<div class="form-group">
-			<form id="form_vente" name='form_vente' method="post" action="ControleurOeuvreVente?action=validerModifOeuvreVente&id=${oeuvre.id}" onsubmit="return testOeuvreVente()">
-			     <p align="left">
-			     	<div class="form-inline">   
-						<br/>Titre de l'oeuvre : 
-					    <input class="form-control" type="text" name="txtTitre" value="${oeuvre.titre}"  id ="titre" onchange="titreChanged()">
-					    <p id = "alert_titre" style = "display:none;">Veuillez entrer un titre</p>
-			    	</div>
-					<div class="form-inline">
-						<br/>Prix de l'oeuvre :
-						<input class="form-control" type="number" name="numberPrix" value = "${oeuvre.prixOeuvrevente.toString()}" id="prix" onchange="prixChanged()">
-						<p id = "alert_prix" style = "display:none;">Veuillez entrer un prix</p>
-					</div>
-					<div class="form-inline">
-						<br/>&nbsp;  &nbsp;  &nbsp; Etat de l'oeuvre : 
-						<select name = "etatOeuvre">
-							<option value="L" selected>L</option>
-							<option value ="R">R</option>
-						</select>
-					</div>
-					<div class="form-inline">
-						<br/>Proprietaire :
-						<select class="form-control" name = "proprietaire" onchange="proprietaireChanged()">
-							<c:forEach items="${mesProprietaires}" var="item">
-								<option value = "${item.idProprietaire }">${item.prenomProprietaire } ${item.nomProprietaire }</option>
-							</c:forEach>
-						</select>
-						<p id = "alert_proprietaire" style = "display:none;">Veuillez sélectionner un proprietaire</p>
-					</div>		
-			        <input class="btn btn-success" type="submit" name="bt"  value="Valider" >
-				      
-				</p>
-			</form>
+	<div class = "container_body">
+			<div class="form-group">
+				<form id="form_vente" name='form_vente' method="post" action="ControleurOeuvreVente?action=validerModifOeuvreVente&id=${oeuvre.id}" onsubmit="return testOeuvreVente()">
+				     <p align="left">
+				     	<div class="form-inline">   
+							<br/>Titre de l'oeuvre : 
+						    <input class="form-control" type="text" name="txtTitre" value="${oeuvre.titre}"  id ="titre" onchange="titreChanged()">
+						    <p id = "alert_titre" style = "display:none;">Veuillez entrer un titre</p>
+				    	</div>
+						<div class="form-inline">
+							<br/>Prix de l'oeuvre :
+							<input class="form-control" type="number" name="numberPrix" value = "${oeuvre.prixOeuvrevente.toString()}" id="prix" onchange="prixChanged()">
+							<p id = "alert_prix" style = "display:none;">Veuillez entrer un prix</p>
+						</div>
+						<div class="form-inline">
+							<br/>&nbsp;  &nbsp;  &nbsp; Etat de l'oeuvre : 
+							<select name = "etatOeuvre">
+								<option value="L" selected>L</option>
+								<option value ="R">R</option>
+							</select>
+						</div>
+						<div class="form-inline">
+							<br/>Proprietaire :
+							<select class="form-control" name = "proprietaire" onchange="proprietaireChanged()">
+								<c:forEach items="${mesProprietaires}" var="item">
+									<option value = "${item.idProprietaire }">${item.prenomProprietaire } ${item.nomProprietaire }</option>
+								</c:forEach>
+							</select>
+							<p id = "alert_proprietaire" style = "display:none;">Veuillez sélectionner un proprietaire</p>
+						</div>		
+				        <input class="btn btn-success" type="submit" name="bt"  value="Valider" >
+					      
+					</p>
+				</form>
+			</div>
 		</div>
 	</body>
 </html>

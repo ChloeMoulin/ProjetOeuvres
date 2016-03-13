@@ -13,26 +13,28 @@
 </head>
 <body>
 	<jsp:include page="index.jsp"/>
-	<h1> Ajout d'une oeuvre pour le prêt</h1>
-		<div class="form-group">
-			<form  id="form_pret" name='form_pret' method="post" action="ControleurOeuvrePret?action=insererOeuvrePret" onsubmit="return testOeuvrePret()">
-			     <div class="form-inline">   
-					<br/>&nbsp;  &nbsp;  &nbsp; Titre de l'oeuvre : 
-				    <input class="form-control" type="text" name="txtTitre" value="" id ="titre" onchange="titrePretChanged()">
-   				    <p id = "alert_titre_pret" style = "display:none;">Veuillez entrer un titre</p>
-				 </div>
-				 <div class="form-inline">
-				     <br/>&nbsp;  &nbsp;  &nbsp; Proprietaire :
-					<select class="form-control" name = "proprietaire">
-						<c:forEach items="${mesProprietaires}" var="item">
-							<option value = "${item.idProprietaire }">${item.prenomProprietaire } ${item.nomProprietaire }</option>
-						</c:forEach>
-					</select>
-					<p id = "alert_proprietaire" style = "display:none;">Veuillez sélectionner un proprietaire</p>
+	<div class = "container_body">
+		<h1> Ajout d'une oeuvre pour le prêt</h1>
+			<div class="form-group">
+				<form  id="form_pret" name='form_pret' method="post" action="ControleurOeuvrePret?action=insererOeuvrePret" onsubmit="return testOeuvrePret()">
+				     <div class="form-inline">   
+						<br/>&nbsp;  &nbsp;  &nbsp; Titre de l'oeuvre : 
+					    <input class="form-control" type="text" name="txtTitre" value="" id ="titre" onchange="titrePretChanged()">
+	   				    <p id = "alert_titre_pret" style = "display:none;">Veuillez entrer un titre</p>
+					 </div>
+					 <div class="form-inline">
+					    <br/>&nbsp;  &nbsp;  &nbsp; Proprietaire :
+						<select class="form-control" name = "proprietaire">
+							<c:forEach items="${mesProprietaires}" var="item">
+								<option value = "${item.idProprietaire }">${item.prenomProprietaire } ${item.nomProprietaire }</option>
+							</c:forEach>
+						</select>
+						<p id = "alert_proprietaire" style = "display:none;">Veuillez sélectionner un proprietaire</p>
 					</div>	
 					<br/>
-			        <input class="btn btn-success" type="submit" name="bt"  value="Ajouter" >
-			</form>
+				    <input class="btn btn-success" type="submit" name="bt"  value="Ajouter" >
+				</form>
+			</div>
 		</div>
 </body>
 </html>
