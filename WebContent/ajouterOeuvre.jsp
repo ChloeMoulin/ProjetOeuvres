@@ -18,7 +18,6 @@
 	<jsp:include page="index.jsp"/>
 		<h1> Ajout d'une oeuvre </h1> 
 		
-<<<<<<< HEAD
 		<div class="form-group">
 			<form role="form">
 				<div class="form-inline">
