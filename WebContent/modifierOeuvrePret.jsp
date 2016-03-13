@@ -7,20 +7,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Modifier Oeuvre Pret</title>
+		<script type="text/javascript" src="js/fonctControle.js"></script>
+		<script type="text/javascript" src="js/jquery-2.0.0.js"></script>
 </head>
 <body>
 <jsp:include page="index.jsp"/>
 	<div class="form-group">
-		<form id="form_pret" name='form_pret' method="post" action="Controleur?action=validerModifOeuvrePret&id=${oeuvre.id}" onsubmit="return teste()">
+		<form id="form_pret" name='form_pret' method="post" action="Controleur?action=validerModifOeuvrePret&id=${oeuvre.id}" onsubmit="return testOeuvrePret()">
 		     <p align="left">
 		     	<div class="form-inline">
 					<br/>Titre de l'oeuvre : 
-			    	<input class="form-control" type="text" name="txtTitre" value="${oeuvre.titre}"  id ="titre"/>
+			    	<input class="form-control" type="text" name="txtTitre" value="${oeuvre.titre}"  id ="titre_pret" onchange="titrePretChanged()"/>
+			    	<p id = "alert_titre_pret" style = "display:none;">Veuillez entrer un titre</p>
 			    </div>    
 			    
 			    <div class="form-inline"> 					
 					<br/>Proprietaire :
-					<select class="form-control" name = "proprietaire">
+					<select class="form-control" name = "proprietaire" onchange="proprietaireChanged()">
 						<c:forEach items="${mesProprietaires}" var="item">
 							<option value = "${item.idProprietaire }">${item.prenomProprietaire } ${item.nomProprietaire }</option>
 						</c:forEach>

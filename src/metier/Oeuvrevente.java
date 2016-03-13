@@ -43,4 +43,10 @@ public class Oeuvrevente extends Oeuvre {
 	public void setPrixOeuvrevente(float prixOeuvrevente) {
 		this.prixOeuvrevente = prixOeuvrevente;
 	}
+	
+	public boolean oeuvreNotEmpty() {
+		if(prixOeuvrevente == 0.0) 
+			return false;
+		return true && super.oeuvreNotEmpty();
+	}
 }

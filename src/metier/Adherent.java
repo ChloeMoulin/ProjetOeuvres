@@ -58,5 +58,15 @@ public class Adherent implements Serializable {
 	public void setVilleAdherent(String villeAdherent) {
 		this.villeAdherent = villeAdherent;
 	}
+	
+	public boolean adherentNotEmpty() {
+		if(nomAdherent == null || nomAdherent.equals("")) 
+			return false;
+		if(prenomAdherent == null || prenomAdherent.equals(""))
+			return false;
+		if(villeAdherent == null || villeAdherent.equals(""))
+			return false;
+		return true;
+	}
 
 }
