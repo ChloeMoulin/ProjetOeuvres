@@ -29,11 +29,10 @@ public class ControleurOeuvreVente extends Controleur {
 	protected void processusTraiteRequete(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		String actionName = request.getParameter("action");
 		String destinationPage = "/erreur.jsp";
-		
+		Service s = Service.getInstance();
 		switch(actionName) {
 		case "ajouterOeuvre" : {
 			try {
-				Service s = new Service();
 				request.setAttribute("mesProprietaires", s.consulterListeProprietaires());
 			} catch (MonException e) {
 				e.printStackTrace();
@@ -43,7 +42,6 @@ public class ControleurOeuvreVente extends Controleur {
 		}
 		case "insererOeuvreVente" : {
 			try {
-				Service s = new Service();
 				Proprietaire p = s.consulterProprietaire(Integer.parseInt(request.getParameter("proprietaire")));
 				Float prix = (float) ((request.getParameter("numberPrix") == "") ?  0.0 : Float.parseFloat(request.getParameter("numberPrix")));
 				Oeuvrevente o = new Oeuvrevente(request.getParameter("etatOeuvre"),prix, request.getParameter("txtTitre"),p);
@@ -59,7 +57,6 @@ public class ControleurOeuvreVente extends Controleur {
 				String id = request.getParameter("id");
 				Oeuvrevente o = new Oeuvrevente();
 				o.setId(Integer.parseInt(id));
-				Service s = new Service();
 				s.deleteOeuvreVente(o);
 			} catch (MonException e) {
 				e.printStackTrace();
@@ -69,7 +66,6 @@ public class ControleurOeuvreVente extends Controleur {
 		}
 		case "validerModifOeuvreVente" : {
 			try {
-				Service s = new Service();
 				String id = request.getParameter("id");
 				int numero = new Integer(id);
 				Proprietaire proprietaire = s.consulterProprietaire(Integer.parseInt(request.getParameter("proprietaire")));
@@ -87,7 +83,6 @@ public class ControleurOeuvreVente extends Controleur {
 			String id = request.getParameter("id");
 			int numero = new Integer(id);
 			try {
-				Service s = new Service();
 				request.setAttribute("mesProprietaires", s.consulterListeProprietaires());
 				request.setAttribute("oeuvre", s.consulterOeuvreVente(numero));
 			} catch (MonException e) {
@@ -99,7 +94,6 @@ public class ControleurOeuvreVente extends Controleur {
 		} 
 		case "listerOeuvresVente" : {
 			try {
-				Service s = new Service();
 				request.setAttribute("mesOeuvres", s.consulterListeOeuvresVente());
 
 			} catch (MonException e) {

@@ -28,6 +28,7 @@ public class ControleurProprietaire extends Controleur {
 	protected void processusTraiteRequete(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		String actionName = request.getParameter("action");
 		String destinationPage = "/erreur.jsp";
+		Service s = Service.getInstance();
 		
 		switch(actionName) {
 			case "ajouterProprietaire" : {
@@ -37,7 +38,6 @@ public class ControleurProprietaire extends Controleur {
 			case "insererProprietaire" : {
 				try {
 					
-					Service s = new Service();
 					Proprietaire p = new Proprietaire(request.getParameter("txtnom"),request.getParameter("txtprenom"));							
 					s.insertProprietaire(p);
 
@@ -52,7 +52,6 @@ public class ControleurProprietaire extends Controleur {
 				String id = request.getParameter("id");
 				int numero = new Integer(id);
 				try {
-					Service s = new Service();
 					request.setAttribute("proprietaire", s.consulterProprietaire(numero));
 				} catch (MonException e) {
 					e.printStackTrace();
@@ -67,7 +66,6 @@ public class ControleurProprietaire extends Controleur {
 					int numero = new Integer(id);
 					Proprietaire p = new Proprietaire(request.getParameter("txtnom"),request.getParameter("txtprenom"));
 					p.setIdProprietaire(numero);
-					Service s = new Service();
 					s.updateProprietaire(p);
 				} catch (MonException e) {
 					e.printStackTrace();
@@ -80,7 +78,6 @@ public class ControleurProprietaire extends Controleur {
 					String id = request.getParameter("id");
 					Proprietaire p = new Proprietaire();
 					p.setIdProprietaire(Integer.parseInt(id));
-					Service s = new Service();
 					s.deleteProprietaire(p);
 				} catch (MonException e) {
 					e.printStackTrace();
@@ -90,7 +87,6 @@ public class ControleurProprietaire extends Controleur {
 			}
 			case "listerProprietaires" : {
 				try {
-					Service s = new Service();
 					request.setAttribute("mesProprietaires", s.consulterListeProprietaires());
 
 				} catch (MonException e) {

@@ -28,13 +28,12 @@ public class ControleurAdherent extends Controleur {
 	protected void processusTraiteRequete(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		String actionName = request.getParameter("action");
 		String destinationPage = "/erreur.jsp";
-		
+		Service s = Service.getInstance();
 		switch(actionName) {
 			case "modifierAdherent" : {
 				String id = request.getParameter("id");
 				int numero = new Integer(id);
 				try {
-					Service s = new Service();
 					request.setAttribute("adherent", s.consulterAdherent(numero));
 				} catch (MonException e) {
 					e.printStackTrace();
@@ -51,7 +50,6 @@ public class ControleurAdherent extends Controleur {
 					a.setNomAdherent(request.getParameter("txtnom"));
 					a.setPrenomAdherent(request.getParameter("txtprenom"));
 					a.setVilleAdherent(request.getParameter("txtville"));
-					Service s = new Service();
 					s.updateAdherent(a);
 				} catch (MonException e) {
 					e.printStackTrace();
@@ -64,7 +62,6 @@ public class ControleurAdherent extends Controleur {
 					String id = request.getParameter("id");
 					Adherent a = new Adherent();
 					a.setIdAdherent(Integer.parseInt(id));
-					Service s = new Service();
 					s.deleteAdherent(a);
 				} catch (MonException e) {
 					e.printStackTrace();
@@ -74,8 +71,8 @@ public class ControleurAdherent extends Controleur {
 			}
 			case "listerAdherent" : {
 				try {
-					Service unService = new Service();
-					request.setAttribute("mesAdherents", unService.consulterListeAdherents());
+					
+					request.setAttribute("mesAdherents", s.consulterListeAdherents());
 				} catch (MonException e) {
 					e.printStackTrace();
 				}
@@ -92,7 +89,6 @@ public class ControleurAdherent extends Controleur {
 					a.setNomAdherent(request.getParameter("txtnom"));
 					a.setPrenomAdherent(request.getParameter("txtprenom"));
 					a.setVilleAdherent(request.getParameter("txtville"));
-					Service s = new Service();
 					s.insertAdherent(a);
 				} catch (MonException e) {
 					e.printStackTrace();
