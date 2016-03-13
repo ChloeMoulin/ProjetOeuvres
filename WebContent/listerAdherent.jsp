@@ -26,6 +26,7 @@
 			<TH>Prénom</TH>
 			<TH>Ville</TH>
 			<th>Modifier</th>
+			<th>Supprimer</th>
 
 		</TR>
 		<c:forEach items="${mesAdherents}" var="item">			
@@ -35,6 +36,8 @@
 				<td>${item.prenomAdherent}</td>
                 <td>${item.villeAdherent}</td>
                 <td><input type = "button" value = "Modifier" onclick="location.href='Controleur?action=modifierAdherent&id=${item.idAdherent}'"/></td>
+				<td><input type = "button" value = "Supprimer" onclick="location.href='Controleur?action=supprimerAdherent&id=${item.idAdherent}'"/></td>
+				
 			</tr>
 		</c:forEach>
 	</TABLE>

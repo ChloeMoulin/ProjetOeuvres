@@ -57,7 +57,97 @@ public class Service {
 			throw e;
 		}
 	}
+	public void insertProprietaire(Proprietaire p) throws MonException {
+		String mysql;
+
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "insert into proprietaire  (nom_proprietaire,prenom_proprietaire)  values ('"
+					+ p.getNomProprietaire()+ "','" + p.getPrenomProprietaire()+ "')";
+
+			unDialogueBd.insertionBD(mysql);
+		} catch (MonException e) {
+			throw e;
+		}
+	}	
+	public void deleteOeuvreVente(Oeuvrevente uneOeuvre) throws MonException {
+		String mysql;
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "select * from reservation WHERE id_oeuvrevente = '"+uneOeuvre.getId()+"';";
+			List<Reservation> reservationsOeuvre = consulterListeReservations(mysql);
+			for (Reservation r : reservationsOeuvre) {
+				this.deleteReservation(r);
+			}
+			mysql = "DELETE FROM Oeuvrevente WHERE id_oeuvrevente = '"+uneOeuvre.getId()+"';";
+			unDialogueBd.execute(mysql);
+		}catch (MonException e) {
+			throw e;
+		}
+		
+	}
+	public void deleteOeuvrePret(Oeuvrepret uneOeuvre) throws MonException {
+		String mysql;
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "DELETE FROM Oeuvrepret WHERE id_oeuvrepret = '"+uneOeuvre.getId()+"';";
+			unDialogueBd.execute(mysql);
+		}catch (MonException e) {
+			throw e;
+		}
+	}
+	public void deleteAdherent(Adherent unAdherent) throws MonException {
+		String mysql;
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "select * from reservation WHERE id_adherent = '"+unAdherent.getIdAdherent()+"';";
+			List<Reservation> reservationsAdherent = consulterListeReservations(mysql);
+			for (Reservation r : reservationsAdherent) {
+				this.deleteReservation(r);
+			}
+			mysql = "DELETE FROM Adherent WHERE id_adherent = '"+unAdherent.getIdAdherent()+"';";
+			unDialogueBd.execute(mysql);
+		}catch (MonException e) {
+			throw e;
+		}
+		
+	}
 	
+	public void deleteReservation(Reservation r) throws MonException {
+		String mysql;
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			Oeuvrevente o = r.getOeuvrevente();
+			o.setEtatOeuvrevente("L");
+			this.updateOeuvreVente(o,o.getProprietaire());
+			mysql = "DELETE FROM Reservation WHERE id_oeuvrevente= '"+r.getOeuvrevente().getId()+"';";
+			unDialogueBd.execute(mysql);
+		}catch (MonException e) {
+			throw e;
+		}
+		
+	}
+	public void deleteProprietaire(Proprietaire p) throws MonException {
+		String mysql;
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "select * from oeuvrevente WHERE id_proprietaire = '"+p.getIdProprietaire()+"';";
+			List<Oeuvrevente> oeuvres_vente = consulterListeOeuvresVente(mysql);
+			for (Oeuvrevente o : oeuvres_vente) {
+				this.deleteOeuvreVente(o);
+			}
+			mysql = "select * from oeuvrepret WHERE id_proprietaire = '"+p.getIdProprietaire()+"';";
+			List<Oeuvrepret> oeuvres_pret = consulterListeOeuvresPret(mysql);
+			for (Oeuvrepret o : oeuvres_pret) {
+				this.deleteOeuvrePret(o);
+			}
+			mysql = "DELETE FROM Proprietaire WHERE id_proprietaire= '"+p.getIdProprietaire()+"';";
+			unDialogueBd.execute(mysql);
+		}catch (MonException e) {
+			throw e;
+		}
+		
+	}
 	public void updateAdherent(Adherent unAdherent) throws MonException {
 		String mysql;
 		
@@ -110,7 +200,18 @@ public class Service {
 			throw e;
 		}
 	}
-	
+	public void updateProprietaire(Proprietaire p) throws MonException {
+		String mysql;
+		
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "update proprietaire set nom_proprietaire='" + p.getNomProprietaire() + "',prenom_proprietaire = '"+p.getPrenomProprietaire()+"' where id_proprietaire='" + p.getIdProprietaire() + "'";
+			unDialogueBd.execute(mysql);
+		} catch (MonException e) {
+			throw e;
+		}
+	}
+		
 	public void reserverOeuvreVente(Reservation reservation) throws MonException {
 		String mysql;
 		
@@ -120,6 +221,9 @@ public class Service {
 					reservation.getOeuvrevente().getId() + "','" + reservation.getAdherent().getIdAdherent() + "','"
 					+ reservation.getDate() + "','reservee')";
 			unDialogueBd.insertionBD(mysql);
+			Oeuvrevente o = reservation.getOeuvrevente();
+			o.setEtatOeuvrevente("R");
+			this.updateOeuvreVente(o, o.getProprietaire());
 		} catch (MonException e) {
 			throw e;
 		}

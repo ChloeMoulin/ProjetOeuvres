@@ -46,6 +46,16 @@ public class Controleur extends HttpServlet {
 	private static final String ERROR_PAGE = "/erreur.jsp";
 	private static final String LISTER_RESERVATIONS = "listerReservations";
 	private static final String CONFIRMER_RESERVATION = "confirmerReservation";
+	private static final String SUPPRIMER_ADHERENT = "supprimerAdherent";
+	private static final String SUPPRIMER_OEUVRE_VENTE = "supprimerOeuvreVente";
+	private static final String SUPPRIMER_OEUVRE_PRET = "supprimerOeuvrePret";
+	private static final String AJOUTER_PROPRIETAIRE = "ajouterProprietaire";
+	private static final String INSERER_PROPRIETAIRE = "insererProprietaire";
+	private static final String LISTER_PROPRIETAIRES = "listerProprietaires";
+	private static final String MODIFIER_PROPRIETAIRE = "modifierProprietaire";
+	private static final String VALIDER_MODIF_PROPRIETAIRE = "validerModifProprietaire";
+	private static final String SUPPRIMER_PROPRIETAIRE = "supprimerProprietaire";
+	private static final String SUPPRIMER_RESERVATION = "supprimerReservation";
 	
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -108,7 +118,11 @@ public class Controleur extends HttpServlet {
 			}
 			destinationPage = "/ajouterOeuvre.jsp";
 		}
-		
+		if (AJOUTER_PROPRIETAIRE.equals(actionName)) {
+
+			destinationPage = "/ajouterProprietaire.jsp";
+		}
+				
 		if (INSERER_OEUVRE_VENTE.equals(actionName)) {
 			try {
 				
@@ -143,7 +157,32 @@ public class Controleur extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			destinationPage = "/index.jsp";
+			destinationPage = "/listerOeuvrePret.jsp";
+		}
+		if (INSERER_PROPRIETAIRE.equals(actionName)) {
+			try {
+				
+				Service unService = new Service();
+				Proprietaire p = new Proprietaire(request.getParameter("txtnom"),request.getParameter("txtprenom"));							
+				unService.insertProprietaire(p);
+
+			} catch (MonException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			destinationPage = "/listerProprietaires.jsp";
+		}
+		if (MODIFIER_PROPRIETAIRE.equals(actionName)) {
+			String id = request.getParameter("id");
+			int numero = new Integer(id);
+			try {
+				Service service = new Service();
+				request.setAttribute("proprietaire", service.consulterProprietaire(numero));
+			} catch (MonException e) {
+				e.printStackTrace();
+			}
+			
+			destinationPage = "/modifierProprietaire.jsp";
 		}
 		if (MODIFIER_ADHERENT.equals(actionName)) {
 			String id = request.getParameter("id");
@@ -170,9 +209,81 @@ public class Controleur extends HttpServlet {
 			} catch (MonException e) {
 				e.printStackTrace();
 			}
-			destinationPage = "/index.jsp";
+			destinationPage = "/listerAdherent.jsp";
 		}
-		
+		if (VALIDER_MODIF_PROPRIETAIRE.equals(actionName)) {
+			try {
+				String id = request.getParameter("id");
+				int numero = new Integer(id);
+				Proprietaire p = new Proprietaire(request.getParameter("txtnom"),request.getParameter("txtprenom"));
+				p.setIdProprietaire(numero);
+				Service unService = new Service();
+				unService.updateProprietaire(p);
+			} catch (MonException e) {
+				e.printStackTrace();
+			}
+			destinationPage = "/listerProprietaires.jsp";
+		}
+		if (SUPPRIMER_ADHERENT.equals(actionName)) {
+			try {
+				String id = request.getParameter("id");
+				Adherent unAdherent = new Adherent();
+				unAdherent.setIdAdherent(Integer.parseInt(id));
+				Service unService = new Service();
+				unService.deleteAdherent(unAdherent);
+			} catch (MonException e) {
+				e.printStackTrace();
+			}
+			destinationPage = "/listerAdherent.jsp";
+		}
+		if (SUPPRIMER_PROPRIETAIRE.equals(actionName)) {
+			try {
+				String id = request.getParameter("id");
+				Proprietaire p = new Proprietaire();
+				p.setIdProprietaire(Integer.parseInt(id));
+				Service unService = new Service();
+				unService.deleteProprietaire(p);
+			} catch (MonException e) {
+				e.printStackTrace();
+			}
+			destinationPage = "/listerProprietaires.jsp";
+		}
+		if (SUPPRIMER_OEUVRE_VENTE.equals(actionName)) {
+			try {
+				String id = request.getParameter("id");
+				Oeuvrevente uneOeuvre = new Oeuvrevente();
+				uneOeuvre.setId(Integer.parseInt(id));
+				Service unService = new Service();
+				unService.deleteOeuvreVente(uneOeuvre);
+			} catch (MonException e) {
+				e.printStackTrace();
+			}
+			destinationPage = "/listerOeuvresVentes.jsp";
+		}
+		if (SUPPRIMER_OEUVRE_PRET.equals(actionName)) {
+			try {
+				String id = request.getParameter("id");
+				Oeuvrepret uneOeuvre = new Oeuvrepret();
+				uneOeuvre.setId(Integer.parseInt(id));
+				Service unService = new Service();
+				unService.deleteOeuvrePret(uneOeuvre);
+			} catch (MonException e) {
+				e.printStackTrace();
+			}
+			destinationPage = "/listerOeuvresPret.jsp";
+		}
+		if (SUPPRIMER_RESERVATION.equals(actionName)) {
+			try {
+				String id = request.getParameter("id");
+				Reservation r = new Reservation();
+				Service unService = new Service();
+				r.setOeuvrevente(unService.consulterOeuvreVente(Integer.parseInt(id)));
+				unService.deleteReservation(r);
+			} catch (MonException e) {
+				e.printStackTrace();
+			}
+			destinationPage = "/listerOeuvresPret.jsp";
+		}
 		if (MODIFIER_OEUVRE_VENTE.equals(actionName)) {
 			String id = request.getParameter("id");
 			int numero = new Integer(id);
@@ -249,6 +360,19 @@ public class Controleur extends HttpServlet {
 			}
 
 			destinationPage = "/listerAdherent.jsp";
+		}
+		if (LISTER_PROPRIETAIRES.equals(actionName)) {
+			try {
+
+				Service unService = new Service();
+				request.setAttribute("mesProprietaires", unService.consulterListeProprietaires());
+
+			} catch (MonException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			destinationPage = "/listerProprietaires.jsp";
 		}
 		if (LISTER_OEUVRES_VENTE.equals(actionName)) {
 			try {

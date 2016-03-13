@@ -40,6 +40,8 @@
 		<li><a href = "Controleur?action=listerOeuvresVente">Listing des Oeuvres à vendre</a></li>
 		<li><a href = "Controleur?action=listerOeuvresPret">Listing des Oeuvres à prêter</a></li>
 		<li><a href = "Controleur?action=listerReservations">Listing des Réservations</a></li>
+		<li><a href = "Controleur?action=listerProprietaires">Listing des Proprietaires</a></li>
+		<li><a href = "Controleur?action=ajouterProprietaire">Ajouter Proprietaire</a></li>
 	</ul>
 </body>
 </html>

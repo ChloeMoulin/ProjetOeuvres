@@ -35,6 +35,7 @@
 				<td>${item.date}</td>
                 <td>${item.statut}</td>
                	<td><input type = "button" value = "Confirmer" onclick="location.href='Controleur?action=confirmerReservation&id=${item.oeuvrevente.getId()}'"/></td>
+               	<td><input type = "button" value = "Supprimer" onclick="location.href='Controleur?action=supprimerReservation&id=${item.oeuvrevente.getId()}'"/></td>
                 
 			</tr>
 		</c:forEach>

@@ -31,6 +31,8 @@
 				<td>${item.titre}</td>
                 <td>${item.proprietaire.getPrenomProprietaire()} ${item.proprietaire.getNomProprietaire()}</td>
                 <td><input type = "button" value = "Modifier" onclick="location.href='Controleur?action=modifierOeuvrePret&id=${item.id}'"/></td>
+				<td><input type = "button" value = "Supprimer" onclick="location.href='Controleur?action=supprimerOeuvrePret&id=${item.id}'"/></td>
+				
 			</tr>
 		</c:forEach>
 	</TABLE>
