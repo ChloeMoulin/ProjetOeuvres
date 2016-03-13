@@ -40,7 +40,7 @@ public class ControleurOeuvrePret extends Controleur {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				destinationPage = "/ajouterOeuvre.jsp";
+				destinationPage = "/ajouterOeuvrePret.jsp";
 				break;
 			}			
 			case "insererOeuvrePret" : {
