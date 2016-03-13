@@ -10,17 +10,11 @@
 </head>
 <body>
 	<jsp:include page="index.jsp" />
-	<P>
-		<A href="index.jsp"><FONT face="Arial" color="#004080">Retour
-				Accueil</FONT></A>
-	</P>
-	<P align="center">
-		<FONT face="Arial" size="5" color="#004080"><U> <STRONG>Listing&nbsp;des
-					Oeuvres à vendre </STRONG></U></FONT>
-	</P>
 	<div class="col-md-6">
+		<P align="center">
+			<h1>Listing des Oeuvres à vendre </h1>
+		</P>
 		<TABLE class="table table-hover">
-			<CAPTION>Tableau des Oeuvres</CAPTION>
 			<TR>
 				<TH>Titre</TH>
 				<TH>Etat</TH>
@@ -47,7 +41,6 @@
                 		</c:otherwise>
 	                </c:choose>
 				   	<td><a class="btn btn-danger" href="ControleurOeuvreVente?action=supprimerOeuvreVente&id=${item.id}"><i class="fa fa-trash"></i></a></td>
-				
 				</tr>
 			</c:forEach>
 		</TABLE>

@@ -10,17 +10,12 @@
 </head>
 <body>
 <jsp:include page="index.jsp"/>
-	<P>
-		<A href="index.jsp"><FONT face="Arial" color="#004080">Retour
-				Accueil</FONT></A>
-	</P>
-	<P align="center">
-		<FONT face="Arial" size="5" color="#004080"><U> <STRONG>Listing&nbsp;des
-					Oeuvres à prêter </STRONG></U></FONT>
-	</P>
+	
 	<div class="col-md-6">
+		<p align="center">
+			<h1>Listing des Oeuvres à prêter</h1>
+		</p>
 		<TABLE class="table table-hover">
-			<CAPTION>Tableau des Oeuvres</CAPTION>
 			<TR>
 				<TH>Titre</TH>
 				<th>Propriétaire</th>
@@ -36,6 +31,9 @@
 				</tr>
 			</c:forEach>
 		</TABLE>
+	</div>
+	<div id="footer">
+		<a href="index.jsp">Accueil</a>
 	</div>
 </body>
 </html>

@@ -14,13 +14,11 @@
 		<A href="index.jsp"><FONT face="Arial" color="#004080">Retour
 				Accueil</FONT></A>
 	</P>
-	<P align="center">
-		<FONT face="Arial" size="5" color="#004080"><U> <STRONG>Listing&nbsp;des
-					Adhérents </STRONG></U></FONT>
-	</P>
 	<div class="col-md-6">
+		<P align="center">
+			<h1>Listing des Adhérents</h1>
+		</P>
 		<TABLE class="table table-hover">
-			<CAPTION>Tableau des Adhérents</CAPTION>
 			<TR>
 				<TH>Numero</TH>
 				<TH>Nom</TH>

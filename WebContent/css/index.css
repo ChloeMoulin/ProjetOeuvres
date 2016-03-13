@@ -1,6 +1,5 @@
 @CHARSET "ISO-8859-1";
 
-/* make sidebar nav vertical */ 
 @media (min-width: 768px) {
   div#sidebar {
     height: 100vh;
@@ -23,7 +22,9 @@
     padding-bottom: 12px;
   }
 }
-
+html, body {
+  height: 100vh;
+}
 td {
 	text-align: center;
 	vertical-align:center;
@@ -37,4 +38,19 @@ th {
 }
 table{
 	class:table table-hover;
+}
+h1 {
+	font-family:"Verdana";
+	font-size:1.875em;
+}
+#wrap {min-height: 100vh}
+#main {
+    overflow:auto;
+    padding-bottom: 30px
+}
+#retour {
+    position: relative;
+    clear:both;
+    margin-top: -30px;
+    height: 30px
 }

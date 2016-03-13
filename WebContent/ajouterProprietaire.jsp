@@ -11,29 +11,27 @@
 
 
 <body>
-	<H1> Ajout d'un proprietaires </H1>
 	<jsp:include page="index.jsp"/> 
-
-	<DIV>
+	<h1> Ajout d'un proprietaire</h1>
+	<DIV class="form-group">
 		<FORM  name='identification' method="post" action="ControleurProprietaire?action=insererProprietaire" onsubmit="return teste()">
 		     <P align="left">
 			     <div class="form-inline">
 		     		<FONT face="Arial" color="#004080"></FONT>  
 					<FONT face="Arial" color="#004080"><BR/>Nom du proprietaire : </FONT>
-				    <INPUT class="form-control" type="text" name="txtnom" value=""  id ="nom"/> <BR/>
+				    <INPUT class="form-control" type="text" name="txtnom" value=""  id ="nom" onchange="nomChanged()"/> <BR/>
 			   	</div>
 			   	<div class="form-inline">
 			        <FONT face="Arial" color="#004080">
-					<BR>Prenom du proprietaire : </FONT>
-			        <INPUT class="form-control" type="text" name="txtprenom"  id ="prenom"  /> <BR>
+					<BR>Prénom du proprietaire : </FONT>
+			        <INPUT class="form-control" type="text" name="txtprenom"  id ="prenom" onchange="prenomChanged()"/> <BR>
 		        </div>
 		        <br/>
 		          <!-- Boutons Ajouter -->
 		          
 		        <INPUT class="btn btn-success" type="submit" name="bt"  value="Ajouter" />
 		        <FONT face="Arial" color="#004080"></FONT>
-		        &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		      
+		        &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
 			</P>
 		</FORM>
 	</DIV>
