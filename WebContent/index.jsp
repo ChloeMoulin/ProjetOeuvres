@@ -40,7 +40,11 @@
 					<ul class="nav nav-pills">
 						<li><a href="ControleurAdherent?action=ajouterAdherent"><font
 								face="Arial">Ajout Adhérent</font></a></li>
-						<li><a href="ControleurOeuvreVente?action=ajouterOeuvre">Ajouter Oeuvre</a></li>
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-target="#" role="button" aria-haspopup="true" aria-expanded="false">Ajouter une Oeuvre <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href = "ControleurOeuvrePret?action=ajouterOeuvre">Ajouter une Oeuvre à prêter</a>
+								<li><a href = "ControleurOeuvreVente?action=ajouterOeuvre">Ajouter une Oeuvre à vendre</a>
+							</ul>
 						<li><a href="ControleurAdherent?action=listerAdherent"><font
 								face="Arial">Listing des adhérents</font></a><font face="Arial"> </font></li>
 						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-target="#" role="button" aria-haspopup="true" aria-expanded="false">Listing des Oeuvres <span class="caret"></span></a>

@@ -37,7 +37,7 @@ public class ControleurOeuvreVente extends Controleur {
 			} catch (MonException e) {
 				e.printStackTrace();
 			}
-			destinationPage = "/ajouterOeuvre.jsp";
+			destinationPage = "/ajouterOeuvreVente.jsp";
 			break;
 		}
 		case "insererOeuvreVente" : {

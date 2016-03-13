@@ -1,29 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <script type="text/javascript" src="js/fonctControle.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title>Modifier un adhérent</title>
+<title>Modifier un adhÃ©rent</title>
 </head>
 <body>
 <<<<<<< HEAD
 <jsp:include page="index.jsp"/>
-	<h1> Modification d'un adhérent </h1>
+	<h1> Modification d'un adhÃ©rent </h1>
 	<div class="form-group">
 		<form name='identification' method="post" action="ControleurAdherent?action=validerModifAdherent&id=${adherent.idAdherent}" onsubmit="return testAdherent()">
 		 	<div class="form-inline">
-				<br/>Nom de l'adhérent : <input class="form-control" type="text" name="txtnom" value=${adherent.nomAdherent} id ="nom" onchange="nomChanged()"><br/>
+				<br/>Nom de l'adhÃ©rent : <input class="form-control" type="text" name="txtnom" value=${adherent.nomAdherent} id ="nom" onchange="nomChanged()"><br/>
 				<p id = "alert_nom" style = "display:none;">Veuillez entrer un nom</p>
 			</div>
 			<div class="form-inline">
-				<br/>Prénom de l'adhérent : <input class="form-control" type="text" name="txtprenom" value=${adherent.prenomAdherent} id ="prenom" onchange="prenomChanged()"><br/>
-				<p id = "alert_prenom" style = "display:none;">Veuillez entrer un prénom</p>
+				<br/>PrÃ©nom de l'adhÃ©rent : <input class="form-control" type="text" name="txtprenom" value=${adherent.prenomAdherent} id ="prenom" onchange="prenomChanged()"><br/>
+				<p id = "alert_prenom" style = "display:none;">Veuillez entrer un prÃ©nom</p>
 			</div>
 			<div class="form-inline">
-				<br/>Ville de l'adhérent : <input class="form-control" type="text" name="txtville" value=${adherent.villeAdherent} id ="ville" onchange="villeChanged()"><br/>
+				<br/>Ville de l'adhÃ©rent : <input class="form-control" type="text" name="txtville" value=${adherent.villeAdherent} id ="ville" onchange="villeChanged()"><br/>
 				<p id = "alert_ville" style = "display:none;">Veuillez entrer une ville</p>
 			</div>
 			<input class="btn btn-success" type="submit" name="bt"  value="Valider" />
