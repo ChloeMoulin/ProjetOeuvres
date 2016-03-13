@@ -11,42 +11,42 @@
 </head>
 <body>
 <jsp:include page="index.jsp"/>
-	<P>
-		<A href="index.jsp"><FONT face="Arial" color="#004080">Retour
-				Accueil</FONT></A>
-	</P>
-	<P align="center">
-		<FONT face="Arial" size="5" color="#004080"><U> <STRONG>Listing&nbsp;des
-					réservations </STRONG></U></FONT>
-	</P>
-
-	<div class="col-md-6">
-		<TABLE class="table table-hover">
-			<CAPTION>Tableau des réservations</CAPTION>
-			<TR>
-				<TH>Oeuvre</TH>
-				<TH>Adhérent</TH>
-				<TH>Date</TH>
-				<th>Réservation</th>
-				<th>Supprimer</th>
-			</tr>
-			<c:forEach items="${mesReservations}" var="item">			
-				<tr>
-					<td>${item.oeuvrevente.getTitre()}</td>
-					<td>${item.adherent.getPrenomAdherent()} ${item.adherent.getNomAdherent()}</td>
-					<td><fmt:formatDate value="${item.date}" pattern="dd/MM/yyyy" /></td>
-	                <c:choose>
-	                	<c:when test="${item.statut == 'reservee'}">
-	                		<td><a class="btn btn-success" href="ControleurReservation?action=confirmerReservation&id=${item.oeuvrevente.getId()}">Confirmer</a></td>
-	                	</c:when>
-	                	<c:otherwise>
-	                		<td><i class="fa fa-check"></i></td>
-	                	</c:otherwise>
-	                </c:choose>
-	               	<td><a class="btn btn-danger" href="ControleurReservation?action=supprimerReservation&id=${item.oeuvrevente.getId()}"><i class="fa fa-trash"></i></a></td>
-				</tr>
-			</c:forEach>
-		</TABLE>
+	<div id="wrap">
+		<div id="main" class="clearfix">
+			<div class="col-md-6">
+				<P align="center">
+					<h1>Listing des réservations</h1>
+				</P>
+				<TABLE class="table table-hover">
+					<TR>
+						<TH>Oeuvre</TH>
+						<TH>Adhérent</TH>
+						<TH>Date</TH>
+						<th>Réservation</th>
+						<th>Supprimer</th>
+					</tr>
+					<c:forEach items="${mesReservations}" var="item">			
+						<tr>
+							<td>${item.oeuvrevente.getTitre()}</td>
+							<td>${item.adherent.getPrenomAdherent()} ${item.adherent.getNomAdherent()}</td>
+							<td><fmt:formatDate value="${item.date}" pattern="dd/MM/yyyy" /></td>
+			                <c:choose>
+			                	<c:when test="${item.statut == 'reservee'}">
+			                		<td><a class="btn btn-success" href="ControleurReservation?action=confirmerReservation&id=${item.oeuvrevente.getId()}">Confirmer</a></td>
+			                	</c:when>
+			                	<c:otherwise>
+			                		<td><i class="fa fa-check"></i></td>
+			                	</c:otherwise>
+			                </c:choose>
+			               	<td><a class="btn btn-danger" href="ControleurReservation?action=supprimerReservation&id=${item.oeuvrevente.getId()}"><i class="fa fa-trash"></i></a></td>
+						</tr>
+					</c:forEach>
+				</TABLE>
+			</div>
+		</div>
+	</div>
+	<div id="retour">
+		<a href="index.jsp">Accueil</a>
 	</div>
 </body>
 </html>
