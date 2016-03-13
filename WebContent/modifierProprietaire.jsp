@@ -8,6 +8,7 @@
 </head>
 <body>
 <jsp:include page="index.jsp"/>
+<div class = "container_body">
 	<h1> Modification d'un propriétaire </h1>
 	<div class="form-group">
 		<form name='identification' method="post" action="ControleurProprietaire?action=validerModifProprietaire&id=${proprietaire.idProprietaire}" onsubmit="return teste()">
@@ -20,5 +21,6 @@
 			<input class="btn btn-success" type="submit" name="bt"  value="Valider" />
 		</form>
 	</div>
+</div>
 </body>
 </html>

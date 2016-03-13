@@ -10,6 +10,7 @@
 </head>
 <body>
 	<jsp:include page="index.jsp"/>
+	<div class = "container_body">
 	<div class="form-group">
 		<form id="form_reservation" name="form_reservation" method="post" action="ControleurReservation?action=validerReserverOeuvreVente&id=${oeuvre.id}" onsubmit="return teste()">
 			<br/>Titre de l'oeuvre : ${oeuvre.titre}
@@ -30,5 +31,6 @@
    			<input class="btn btn-success" type = "submit" name = "bt"  value = "Valider" />
 	   	</form>
    	</div> 
+   	</div>
 </body>
 </html>

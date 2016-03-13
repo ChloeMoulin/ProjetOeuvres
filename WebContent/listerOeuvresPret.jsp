@@ -10,30 +10,31 @@
 </head>
 <body>
 <jsp:include page="index.jsp"/>
-	
-	<div class="col-md-6">
-		<p align="center">
-			<h1>Listing des Oeuvres à prêter</h1>
-		</p>
-		<TABLE class="table table-hover">
-			<TR>
-				<TH>Titre</TH>
-				<th>Propriétaire</th>
-				<th>Modifier</th>
-				<th>Supprimer</th>
-			</TR>
-			<c:forEach items="${mesOeuvres}" var="item">			
-				<tr>
-					<td>${item.titre}</td>
-	                <td>${item.proprietaire.getPrenomProprietaire()} ${item.proprietaire.getNomProprietaire()}</td>
-	                <td><a class="btn btn-primary" href="ControleurOeuvrePret?action=modifierOeuvrePret&id=${item.id}"><i class="fa fa-pencil-square-o"></i></a></td>
-				   	<td><a class="btn btn-danger" href="ControleurOeuvrePret?action=supprimerOeuvrePret&id=${item.id}"><i class="fa fa-trash"></i></a></td>
-				</tr>
-			</c:forEach>
-		</TABLE>
-	</div>
-	<div id="footer">
-		<a href="index.jsp">Accueil</a>
+	<div class = "container_body">
+		<div class="col-md-6">
+			<p align="center">
+				<h1>Listing des Oeuvres à prêter</h1>
+			</p>
+			<TABLE class="table table-hover">
+				<TR>
+					<TH>Titre</TH>
+					<th>Propriétaire</th>
+					<th>Modifier</th>
+					<th>Supprimer</th>
+				</TR>
+				<c:forEach items="${mesOeuvres}" var="item">			
+					<tr>
+						<td>${item.titre}</td>
+		                <td>${item.proprietaire.getPrenomProprietaire()} ${item.proprietaire.getNomProprietaire()}</td>
+		                <td><a class="btn btn-primary" href="ControleurOeuvrePret?action=modifierOeuvrePret&id=${item.id}"><i class="fa fa-pencil-square-o"></i></a></td>
+					   	<td><a class="btn btn-danger" href="ControleurOeuvrePret?action=supprimerOeuvrePret&id=${item.id}"><i class="fa fa-trash"></i></a></td>
+					</tr>
+				</c:forEach>
+			</TABLE>
+		</div>
+		<div id="footer">
+			<a href="index.jsp">Accueil</a>
+		</div>
 	</div>
 </body>
 </html>

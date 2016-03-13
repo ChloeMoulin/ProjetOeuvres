@@ -11,6 +11,7 @@
 </head>
 <body>
 <jsp:include page="index.jsp"/>
+<div class = "container_body">
 	<div id="wrap">
 		<div id="main" class="clearfix">
 			<div class="col-md-6">
@@ -48,5 +49,6 @@
 	<div id="retour">
 		<a href="index.jsp">Accueil</a>
 	</div>
+</div>
 </body>
 </html>
