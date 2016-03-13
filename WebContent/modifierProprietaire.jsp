@@ -10,7 +10,7 @@
 <jsp:include page="index.jsp"/>
 	<h1> Modification d'un propriétaire </h1>
 	<div class="form-group">
-		<form name='identification' method="post" action="Controleur?action=validerModifProprietaire&id=${proprietaire.idProprietaire}" onsubmit="return teste()">
+		<form name='identification' method="post" action="ControleurProprietaire?action=validerModifProprietaire&id=${proprietaire.idProprietaire}" onsubmit="return teste()">
 			<div class="form-inline">
 				<br/>Nom du Propriétaire : <input class="form-control" type="text" name="txtnom" value=${proprietaire.nomProprietaire}  id ="nom"><br/>
 			</div>

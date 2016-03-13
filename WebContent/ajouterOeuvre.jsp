@@ -18,7 +18,6 @@
 	<jsp:include page="index.jsp"/>
 		<h1> Ajout d'une oeuvre </h1> 
 		
-<<<<<<< HEAD
 		<div class="form-group">
 			<form role="form">
 				<div class="form-inline">
@@ -30,7 +29,7 @@
 					</p>
 				</div>
 			</form>
-			<form style = "display:none;" id="form_vente" name='form_vente' method="post" action="Controleur?action=insererOeuvreVente" onsubmit="return testOeuvreVente()">
+			<form style = "display:none;" id="form_vente" name='form_vente' method="post" action="ControleurOeuvreVente?action=insererOeuvreVente" onsubmit="return testOeuvreVente()">
 			    <div class="form-inline">    
 				<br/>&nbsp;  &nbsp;  &nbsp; Titre de l'oeuvre : 
 				   	<input class="form-control" type="text" name="txtTitre" value=""  id ="titre" onchange="titreChanged()"/>
@@ -53,7 +52,7 @@
 				<br/>			          
 		        <input class="btn btn-success" type="submit" name="bt"  value="Ajouter" >	      
 			</form>
-			<form  style = "display:none;" id="form_pret" name='form_pret' method="post" action="Controleur?action=insererOeuvrePret" onsubmit="return testOeuvrePret()">
+			<form  style = "display:none;" id="form_pret" name='form_pret' method="post" action="ControleurPret?action=insererOeuvrePret" onsubmit="return testOeuvrePret()">
 			     <div class="form-inline">   
 					<br/>&nbsp;  &nbsp;  &nbsp; Titre de l'oeuvre : 
 				    <input class="form-control" type="text" name="txtTitre" value="" id ="titre" onchange="titrePretChanged()">

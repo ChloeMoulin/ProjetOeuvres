@@ -13,7 +13,7 @@
 <body>
 <jsp:include page="index.jsp"/>
 	<div class="form-group">
-		<form id="form_pret" name='form_pret' method="post" action="Controleur?action=validerModifOeuvrePret&id=${oeuvre.id}" onsubmit="return testOeuvrePret()">
+		<form id="form_pret" name='form_pret' method="post" action="ControleurOeuvrePret?action=validerModifOeuvrePret&id=${oeuvre.id}" onsubmit="return testOeuvrePret()">
 		     <p align="left">
 		     	<div class="form-inline">
 					<br/>Titre de l'oeuvre : 

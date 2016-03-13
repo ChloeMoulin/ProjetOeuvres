@@ -37,13 +37,13 @@
 					<td><fmt:formatDate value="${item.date}" pattern="dd/MM/yyyy" /></td>
 	                <c:choose>
 	                	<c:when test="${item.statut == 'reservee'}">
-	                		<td><a class="btn btn-success" href="Controleur?action=confirmerReservation&id=${item.oeuvrevente.getId()}">Confirmer</a></td>
+	                		<td><a class="btn btn-success" href="ControleurReservation?action=confirmerReservation&id=${item.oeuvrevente.getId()}">Confirmer</a></td>
 	                	</c:when>
 	                	<c:otherwise>
 	                		<td><i class="fa fa-check"></i></td>
 	                	</c:otherwise>
 	                </c:choose>
-	               	<td><a class="btn btn-danger" href="Controleur?action=supprimerReservation&id=${item.oeuvrevente.getId()}"><i class="fa fa-trash"></i></a></td>
+	               	<td><a class="btn btn-danger" href="ControleurReservation?action=supprimerReservation&id=${item.oeuvrevente.getId()}"><i class="fa fa-trash"></i></a></td>
 				</tr>
 			</c:forEach>
 		</TABLE>

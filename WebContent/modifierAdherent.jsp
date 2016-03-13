@@ -13,7 +13,7 @@
 <jsp:include page="index.jsp"/>
 	<h1> Modification d'un adhérent </h1>
 	<div class="form-group">
-		<form name='identification' method="post" action="Controleur?action=validerModifAdherent&id=${adherent.idAdherent}" onsubmit="return testAdherent()">
+		<form name='identification' method="post" action="ControleurAdherent?action=validerModifAdherent&id=${adherent.idAdherent}" onsubmit="return testAdherent()">
 		 	<div class="form-inline">
 				<br/>Nom de l'adhérent : <input class="form-control" type="text" name="txtnom" value=${adherent.nomAdherent} id ="nom" onchange="nomChanged()"><br/>
 				<p id = "alert_nom" style = "display:none;">Veuillez entrer un nom</p>

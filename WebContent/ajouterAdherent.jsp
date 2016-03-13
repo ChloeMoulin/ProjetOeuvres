@@ -14,7 +14,7 @@
 <jsp:include page="index.jsp"/>
 	<H1> Ajout d'un adhérent </H1> 
 
-<FORM name='identification' method="post" action="Controleur?action=insererAdherent" onsubmit="return testAdherent()">
+<FORM name='identification' method="post" action="ControleurAdherent?action=insererAdherent" onsubmit="return testAdherent()">
 <p align="left">
 	<div class="form-inline">
 		<FONT face="Arial" color="#004080"><BR>&nbsp;  &nbsp;  &nbsp;Nom de l'adherent : </FONT>
