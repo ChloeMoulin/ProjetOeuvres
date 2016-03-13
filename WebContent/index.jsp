@@ -23,14 +23,16 @@
 </script>
 
 <body>
-	<p align="center"></p>
-	<p align="center">
-		<font face="Arial" size="4"><u>Médiathèque de POLYTECH </u></font>
-	</p>
-	<p align="center">
-		<font color="#004080" face="Arial" size="4">Gestion de
-			l'exposition 2016</font>
-	</p>
+	<div id="entete">
+		<p align="center"></p>
+		<p align="center">
+			<font face="Arial" size="4"><u>Médiathèque de POLYTECH </u></font>
+		</p>
+		<p align="center">
+			<font color="#004080" face="Arial" size="4">Gestion de
+				l'exposition 2016</font>
+		</p>
+	</div>
 	<p align="left">
 	</p>
 	<div class="col-md-2" id="sidebar">
@@ -39,23 +41,24 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" align="center">
 					<ul class="nav nav-pills">
 						<li><a href="ControleurAdherent?action=ajouterAdherent"><font
-								face="Arial">Ajout Adhérent</font></a></li>
-						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-target="#" role="button" aria-haspopup="true" aria-expanded="false">Ajouter une Oeuvre <span class="caret"></span></a>
+								face="Arial">Ajouter un adhérent</font></a></li>
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-target="#" role="button" aria-haspopup="true" aria-expanded="false">Ajouter une oeuvre <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href = "ControleurOeuvrePret?action=ajouterOeuvre">Ajouter une Oeuvre à prêter</a>
-								<li><a href = "ControleurOeuvreVente?action=ajouterOeuvre">Ajouter une Oeuvre à vendre</a>
-							</ul>
-						<li><a href="ControleurAdherent?action=listerAdherent"><font
-								face="Arial">Listing des adhérents</font></a><font face="Arial"> </font></li>
-						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-target="#" role="button" aria-haspopup="true" aria-expanded="false">Listing des Oeuvres <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href = "ControleurOeuvreVente?action=listerOeuvresVente">Listing des Oeuvres à vendre</a></li>
-								<li><a href = "ControleurOeuvrePret?action=listerOeuvresPret">Listing des Oeuvres à prêter</a></li>
+								<li><a href = "ControleurOeuvrePret?action=ajouterOeuvre">Ajouter une oeuvre à prêter</a>
+								<li><a href = "ControleurOeuvreVente?action=ajouterOeuvre">Ajouter une oeuvre à vendre</a>
 							</ul>
 						</li>
-						<li><a href = "ControleurReservation?action=listerReservations">Listing des Réservations</a></li>
-						<li><a href = "ControleurProprietaire?action=listerProprietaires">Listing des Proprietaires</a></li>
-						<li><a href = "ControleurProprietaire?action=ajouterProprietaire">Ajouter Proprietaire</a></li>
+						<li><a href = "ControleurProprietaire?action=ajouterProprietaire">Ajouter un proprietaire</a></li>
+						<li><a href="ControleurAdherent?action=listerAdherent"><font
+								face="Arial">Listing des adhérents</font></a><font face="Arial"> </font></li>
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-target="#" role="button" aria-haspopup="true" aria-expanded="false">Listing des oeuvres <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href = "ControleurOeuvreVente?action=listerOeuvresVente">Listing des oeuvres à vendre</a></li>
+								<li><a href = "ControleurOeuvrePret?action=listerOeuvresPret">Listing des oeuvres à prêter</a></li>
+							</ul>
+						</li>
+						<li><a href = "ControleurProprietaire?action=listerProprietaires">Listing des proprietaires</a></li>
+						<li><a href = "ControleurReservation?action=listerReservations">Listing des réservations</a></li>
 					</ul>
 				</div>
 			</nav>

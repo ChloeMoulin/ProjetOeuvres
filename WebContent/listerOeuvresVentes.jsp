@@ -12,7 +12,7 @@
 	<jsp:include page="index.jsp" />
 	<div class="col-md-6">
 		<P align="center">
-			<h1>Listing des Oeuvres à vendre </h1>
+			<h1>Listing des oeuvres à vendre </h1>
 		</P>
 		<TABLE class="table table-hover">
 			<TR>

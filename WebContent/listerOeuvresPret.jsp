@@ -13,7 +13,7 @@
 	
 	<div class="col-md-6">
 		<p align="center">
-			<h1>Listing des Oeuvres à prêter</h1>
+			<h1>Listing des oeuvres à prêter</h1>
 		</p>
 		<TABLE class="table table-hover">
 			<TR>

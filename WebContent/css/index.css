@@ -1,4 +1,4 @@
-@CHARSET "ISO-8859-1";
+@CHARSET "UTF-8";
 
 @media (min-width: 768px) {
   div#sidebar {
@@ -23,7 +23,10 @@
   }
 }
 html, body {
-  height: 100vh;
+  height: 90vh;
+}
+#entete {
+	height : 5vh;
 }
 td {
 	text-align: center;
@@ -42,15 +45,4 @@ table{
 h1 {
 	font-family:"Verdana";
 	font-size:1.875em;
-}
-#wrap {min-height: 100vh}
-#main {
-    overflow:auto;
-    padding-bottom: 30px
-}
-#retour {
-    position: relative;
-    clear:both;
-    margin-top: -30px;
-    height: 30px
 }
