@@ -15,7 +15,7 @@
 	<jsp:include page="index.jsp"/> 
 
 	<DIV>
-		<FORM  name='identification' method="post" action="Controleur?action=insererProprietaire" onsubmit="return teste()">
+		<FORM  name='identification' method="post" action="ControleurProprietaire?action=insererProprietaire" onsubmit="return teste()">
 		     <P align="left">
 			     <div class="form-inline">
 		     		<FONT face="Arial" color="#004080"></FONT>  

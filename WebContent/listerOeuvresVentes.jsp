@@ -37,16 +37,16 @@
 					<td>${item.etatOeuvrevente}</td>
 					<td>${item.prixOeuvrevente}</td>
 	                <td>${item.proprietaire.getPrenomProprietaire()} ${item.proprietaire.getNomProprietaire()}</td>
-	                <td><a class="btn btn-primary" href="Controleur?action=modifierOeuvreVente&id=${item.id}"><i class="fa fa-pencil-square-o"></i></a></td>
+	                <td><a class="btn btn-primary" href="ControleurOeuvreVente?action=modifierOeuvreVente&id=${item.id}"><i class="fa fa-pencil-square-o"></i></a></td>
 	                <c:choose>
 	                	<c:when test="${item.etatOeuvrevente == 'R' || item.etatOeuvrevente == 'r'}">
 	                		<td>Indisponible</td>
                 		</c:when>
                 		<c:otherwise>
-   			                <td><a class="btn btn-success" href="Controleur?action=reserverOeuvreVente&id=${item.id}"><i class="fa fa-check"></i></a></td>
+   			                <td><a class="btn btn-success" href="ControleurReservation?action=reserverOeuvreVente&id=${item.id}"><i class="fa fa-check"></i></a></td>
                 		</c:otherwise>
 	                </c:choose>
-				   	<td><a class="btn btn-danger" href="Controleur?action=supprimerOeuvreVente&id=${item.id}"><i class="fa fa-trash"></i></a></td>
+				   	<td><a class="btn btn-danger" href="ControleurOeuvreVente?action=supprimerOeuvreVente&id=${item.id}"><i class="fa fa-trash"></i></a></td>
 				
 				</tr>
 			</c:forEach>

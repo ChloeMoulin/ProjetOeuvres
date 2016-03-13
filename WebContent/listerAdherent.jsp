@@ -35,8 +35,8 @@
 					<td>${item.nomAdherent}</td>
 					<td>${item.prenomAdherent}</td>
 	                <td>${item.villeAdherent}</td>
-	                <td><a class="btn btn-primary" href="Controleur?action=modifierAdherent&id=${item.idAdherent}"><i class="fa fa-pencil-square-o"></i></a></td>
-	                <td><a class="btn btn-danger" href="Controleur?action=supprimerAdherent&id=${item.idAdherent}"><i class="fa fa-trash"></i></a></td>
+	                <td><a class="btn btn-primary" href="ControleurAdherent?action=modifierAdherent&id=${item.idAdherent}"><i class="fa fa-pencil-square-o"></i></a></td>
+	                <td><a class="btn btn-danger" href="ControleurAdherent?action=supprimerAdherent&id=${item.idAdherent}"><i class="fa fa-trash"></i></a></td>
 				</tr>
 			</c:forEach>
 		</TABLE>

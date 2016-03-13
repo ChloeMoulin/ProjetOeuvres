@@ -11,7 +11,7 @@
 <body>
 	<jsp:include page="index.jsp"/>
 	<div class="form-group">
-		<form id="form_reservation" name="form_reservation" method="post" action="Controleur?action=validerReserverOeuvreVente&id=${oeuvre.id}" onsubmit="return teste()">
+		<form id="form_reservation" name="form_reservation" method="post" action="ControleurReservation?action=validerReserverOeuvreVente&id=${oeuvre.id}" onsubmit="return teste()">
 			<p align="left">    
 				<br/>Titre de l'oeuvre : ${oeuvre.titre}
 	   			<br/>Prix de l'oeuvre : ${oeuvre.prixOeuvrevente}

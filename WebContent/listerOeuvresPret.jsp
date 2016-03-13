@@ -31,8 +31,8 @@
 				<tr>
 					<td>${item.titre}</td>
 	                <td>${item.proprietaire.getPrenomProprietaire()} ${item.proprietaire.getNomProprietaire()}</td>
-	                <td><a class="btn btn-primary" href="Controleur?action=modifierOeuvrePret&id=${item.id}"><i class="fa fa-pencil-square-o"></i></a></td>
-				   	<td><a class="btn btn-danger" href="Controleur?action=supprimerOeuvrePret&id=${item.id}"><i class="fa fa-trash"></i></a></td>
+	                <td><a class="btn btn-primary" href="ControleurOeuvrePret?action=modifierOeuvrePret&id=${item.id}"><i class="fa fa-pencil-square-o"></i></a></td>
+				   	<td><a class="btn btn-danger" href="ControleurOeuvrePret?action=supprimerOeuvrePret&id=${item.id}"><i class="fa fa-trash"></i></a></td>
 				</tr>
 			</c:forEach>
 		</TABLE>

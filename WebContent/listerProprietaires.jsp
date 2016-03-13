@@ -34,8 +34,8 @@
 					<td>${item.idProprietaire}</td>
 					<td>${item.nomProprietaire}</td>
 					<td>${item.prenomProprietaire}</td>
-	                <td><a class="btn btn-primary" href="Controleur?action=modifierProprietaire&id=${item.idProprietaire}"><i class="fa fa-pencil-square-o"></i></a></td>
-					<td><a class="btn btn-danger" href="Controleur?action=supprimerProprietaire&id=${item.idProprietaire}"><i class="fa fa-trash"></i></a></td>
+	                <td><a class="btn btn-primary" href="ControleurProprietaire?action=modifierProprietaire&id=${item.idProprietaire}"><i class="fa fa-pencil-square-o"></i></a></td>
+					<td><a class="btn btn-danger" href="ControleurProprietaire?action=supprimerProprietaire&id=${item.idProprietaire}"><i class="fa fa-trash"></i></a></td>
 					
 				</tr>
 			</c:forEach>

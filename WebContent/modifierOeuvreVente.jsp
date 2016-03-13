@@ -14,7 +14,7 @@
 	<body>
 	<jsp:include page="index.jsp"/>
 		<div class="form-group">
-			<form id="form_vente" name='form_vente' method="post" action="Controleur?action=validerModifOeuvreVente&id=${oeuvre.id}" onsubmit="return testOeuvreVente()">
+			<form id="form_vente" name='form_vente' method="post" action="ControleurOeuvreVente?action=validerModifOeuvreVente&id=${oeuvre.id}" onsubmit="return testOeuvreVente()">
 			     <p align="left">
 			     	<div class="form-inline">   
 						<br/>Titre de l'oeuvre : 
