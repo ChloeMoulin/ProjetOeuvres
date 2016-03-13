@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Affichage de toutes les oeuvres à prêter </title>
+<title>Affichage de tous les proprietaires</title>
 </head>
 <body>
 	<P>
@@ -15,23 +15,26 @@
 	</P>
 	<P align="center">
 		<FONT face="Arial" size="5" color="#004080"><U> <STRONG>Listing&nbsp;des
-					Oeuvres à prêter </STRONG></U></FONT>
+					proprietaires </STRONG></U></FONT>
 	</P>
 
 	<TABLE BORDER="1">
-		<CAPTION>Tableau des Oeuvres</CAPTION>
+		<CAPTION>Tableau des proprietaires</CAPTION>
 		<TR>
-			<TH>Titre</TH>
-			<th>Propriétaire</th>
+			<TH>Numero</TH>
+			<TH>Nom</TH>
+			<TH>Prénom</TH>
 			<th>Modifier</th>
+			<th>Supprimer</th>
 
 		</TR>
-		<c:forEach items="${mesOeuvres}" var="item">			
+		<c:forEach items="${mesProprietaires}" var="item">			
 			<tr>
-				<td>${item.titre}</td>
-                <td>${item.proprietaire.getPrenomProprietaire()} ${item.proprietaire.getNomProprietaire()}</td>
-                <td><input type = "button" value = "Modifier" onclick="location.href='Controleur?action=modifierOeuvrePret&id=${item.id}'"/></td>
-				<td><input type = "button" value = "Supprimer" onclick="location.href='Controleur?action=supprimerOeuvrePret&id=${item.id}'"/></td>
+				<td>${item.idProprietaire}</td>
+				<td>${item.nomProprietaire}</td>
+				<td>${item.prenomProprietaire}</td>
+                <td><input type = "button" value = "Modifier" onclick="location.href='Controleur?action=modifierProprietaire&id=${item.idProprietaire}'"/></td>
+				<td><input type = "button" value = "Supprimer" onclick="location.href='Controleur?action=supprimerProprietaire&id=${item.idProprietaire}'"/></td>
 				
 			</tr>
 		</c:forEach>

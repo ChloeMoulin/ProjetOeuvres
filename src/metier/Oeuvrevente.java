@@ -8,6 +8,10 @@ package metier;
  */
 
 public class Oeuvrevente extends Oeuvre {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String etatOeuvrevente;
 	private float prixOeuvrevente;
 
@@ -19,7 +23,10 @@ public class Oeuvrevente extends Oeuvre {
 		this.etatOeuvrevente = etatOeuvrevente;
 		this.prixOeuvrevente = prixOeuvrevente;
 	}
-
+	
+	public Oeuvrevente() {
+		
+	}
 
 	public String getEtatOeuvrevente() {
 		return this.etatOeuvrevente;

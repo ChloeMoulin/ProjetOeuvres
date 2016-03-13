@@ -46,6 +46,8 @@
 					</ul>
 				</li>
 				<li><a href = "Controleur?action=listerReservations">Listing des Réservations</a></li>
+				<li><a href = "Controleur?action=listerProprietaires">Listing des Proprietaires</a></li>
+				<li><a href = "Controleur?action=ajouterProprietaire">Ajouter Proprietaire</a></li>
 			</ul>
 		</div>
 	</nav>

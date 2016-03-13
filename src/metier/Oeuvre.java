@@ -15,6 +15,10 @@ public class Oeuvre implements Serializable {
 		this.proprietaire = proprietaire;
 	}
 	
+	public Oeuvre() {
+		
+	}
+	
 	public int getId() {
 		return id;
 	}

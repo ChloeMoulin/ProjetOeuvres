@@ -28,7 +28,9 @@ public class Reservation implements Serializable {
 		this.statut = statut;
 	}
 
-
+	public Reservation() {
+		
+	}
 
 	public Date getDate() {
 		return this.date;

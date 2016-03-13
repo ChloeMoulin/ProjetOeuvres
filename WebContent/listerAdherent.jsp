@@ -36,6 +36,7 @@
 					<td style="text-align:center" style="vertical-align:center">${item.prenomAdherent}</td>
 	                <td style="text-align:center" style="vertical-align:center">${item.villeAdherent}</td>
 	                <td><input class="btn btn-primary center-block"  style="align:center" style="vertical-align:center" type = "button" value = "Modifier" onclick="location.href='Controleur?action=modifierAdherent&id=${item.idAdherent}'"/></td>
+	                <td><input type = "button" value = "Supprimer" onclick="location.href='Controleur?action=supprimerAdherent&id=${item.idAdherent}'"/></td>
 				</tr>
 			</c:forEach>
 		</TABLE>
