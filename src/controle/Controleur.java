@@ -90,7 +90,10 @@ public class Controleur extends HttpServlet {
 		String actionName = request.getParameter(ACTION_TYPE);
 		String destinationPage = ERROR_PAGE;
 		// execute l'action
-		if (CONFIRMER_RESERVATION.equals(actionName)) {
+		
+		switch (actionName) {
+		case CONFIRMER_RESERVATION :
+			{
 			try {
 				Service unService = new Service();
 				String id = request.getParameter("id");
@@ -104,9 +107,9 @@ public class Controleur extends HttpServlet {
 				e.printStackTrace();
 			}
 			destinationPage = "/listerReservations.jsp";
-			
+			break;
 		}
-		if (AJOUTER_OEUVRE.equals(actionName)) {
+		case AJOUTER_OEUVRE : {
 			try {
 
 				Service unService = new Service();
@@ -117,19 +120,21 @@ public class Controleur extends HttpServlet {
 				e.printStackTrace();
 			}
 			destinationPage = "/ajouterOeuvre.jsp";
+			break;
 		}
-		if (AJOUTER_PROPRIETAIRE.equals(actionName)) {
+		case AJOUTER_PROPRIETAIRE : {
 
 			destinationPage = "/ajouterProprietaire.jsp";
+			break;
 		}
 				
-		if (INSERER_OEUVRE_VENTE.equals(actionName)) {
+		case INSERER_OEUVRE_VENTE : {
 			try {
 				
 				Service unService = new Service();
 				Proprietaire p = unService.consulterProprietaire(Integer.parseInt(request.getParameter("proprietaire")));
-				
-				Oeuvrevente uneOeuvre = new Oeuvrevente(request.getParameter("etatOeuvre"),Float.parseFloat(request.getParameter("numberPrix")), request.getParameter("txtTitre"),p);
+				Float prix = (float) ((request.getParameter("numberPrix") == "") ?  0.0 : Float.parseFloat(request.getParameter("numberPrix")));
+				Oeuvrevente uneOeuvre = new Oeuvrevente(request.getParameter("etatOeuvre"),prix, request.getParameter("txtTitre"),p);
 
 				
 				unService.insertOeuvreVente(uneOeuvre);
@@ -139,9 +144,10 @@ public class Controleur extends HttpServlet {
 				e.printStackTrace();
 			}
 			destinationPage = "/index.jsp";
+			break;
 		}
 		
-		if (INSERER_OEUVRE_PRET.equals(actionName)) {
+		case INSERER_OEUVRE_PRET : {
 			try {
 				
 				Service unService = new Service();
@@ -158,8 +164,9 @@ public class Controleur extends HttpServlet {
 				e.printStackTrace();
 			}
 			destinationPage = "/listerOeuvrePret.jsp";
+			break;
 		}
-		if (INSERER_PROPRIETAIRE.equals(actionName)) {
+		case INSERER_PROPRIETAIRE : {
 			try {
 				
 				Service unService = new Service();
@@ -171,8 +178,9 @@ public class Controleur extends HttpServlet {
 				e.printStackTrace();
 			}
 			destinationPage = "/listerProprietaires.jsp";
+			break;
 		}
-		if (MODIFIER_PROPRIETAIRE.equals(actionName)) {
+		case MODIFIER_PROPRIETAIRE : {
 			String id = request.getParameter("id");
 			int numero = new Integer(id);
 			try {
@@ -183,8 +191,9 @@ public class Controleur extends HttpServlet {
 			}
 			
 			destinationPage = "/modifierProprietaire.jsp";
+			break;
 		}
-		if (MODIFIER_ADHERENT.equals(actionName)) {
+		case MODIFIER_ADHERENT : {
 			String id = request.getParameter("id");
 			int numero = new Integer(id);
 			try {
@@ -195,7 +204,9 @@ public class Controleur extends HttpServlet {
 			}
 			
 			destinationPage = "/modifierAdherent.jsp";
-		} else if (VALIDER_MODIF_ADHERENT.equals(actionName)) {
+			break;
+		} 
+		case VALIDER_MODIF_ADHERENT : {
 			try {
 				String id = request.getParameter("id");
 				int numero = new Integer(id);
@@ -210,8 +221,9 @@ public class Controleur extends HttpServlet {
 				e.printStackTrace();
 			}
 			destinationPage = "/listerAdherent.jsp";
+			break;
 		}
-		if (VALIDER_MODIF_PROPRIETAIRE.equals(actionName)) {
+		case VALIDER_MODIF_PROPRIETAIRE : {
 			try {
 				String id = request.getParameter("id");
 				int numero = new Integer(id);
@@ -223,8 +235,9 @@ public class Controleur extends HttpServlet {
 				e.printStackTrace();
 			}
 			destinationPage = "/listerProprietaires.jsp";
+			break;
 		}
-		if (SUPPRIMER_ADHERENT.equals(actionName)) {
+		case SUPPRIMER_ADHERENT :{
 			try {
 				String id = request.getParameter("id");
 				Adherent unAdherent = new Adherent();
@@ -235,8 +248,9 @@ public class Controleur extends HttpServlet {
 				e.printStackTrace();
 			}
 			destinationPage = "/listerAdherent.jsp";
+			break;
 		}
-		if (SUPPRIMER_PROPRIETAIRE.equals(actionName)) {
+		case SUPPRIMER_PROPRIETAIRE : {
 			try {
 				String id = request.getParameter("id");
 				Proprietaire p = new Proprietaire();
@@ -247,8 +261,9 @@ public class Controleur extends HttpServlet {
 				e.printStackTrace();
 			}
 			destinationPage = "/listerProprietaires.jsp";
+			break;
 		}
-		if (SUPPRIMER_OEUVRE_VENTE.equals(actionName)) {
+		case SUPPRIMER_OEUVRE_VENTE : {
 			try {
 				String id = request.getParameter("id");
 				Oeuvrevente uneOeuvre = new Oeuvrevente();
@@ -259,8 +274,9 @@ public class Controleur extends HttpServlet {
 				e.printStackTrace();
 			}
 			destinationPage = "/listerOeuvresVentes.jsp";
+			break;
 		}
-		if (SUPPRIMER_OEUVRE_PRET.equals(actionName)) {
+		case SUPPRIMER_OEUVRE_PRET : {
 			try {
 				String id = request.getParameter("id");
 				Oeuvrepret uneOeuvre = new Oeuvrepret();
@@ -271,8 +287,9 @@ public class Controleur extends HttpServlet {
 				e.printStackTrace();
 			}
 			destinationPage = "/listerOeuvresPret.jsp";
+			break;
 		}
-		if (SUPPRIMER_RESERVATION.equals(actionName)) {
+		case SUPPRIMER_RESERVATION : {
 			try {
 				String id = request.getParameter("id");
 				Reservation r = new Reservation();
@@ -283,8 +300,9 @@ public class Controleur extends HttpServlet {
 				e.printStackTrace();
 			}
 			destinationPage = "/listerOeuvresPret.jsp";
+			break;
 		}
-		if (MODIFIER_OEUVRE_VENTE.equals(actionName)) {
+		case MODIFIER_OEUVRE_VENTE : {
 			String id = request.getParameter("id");
 			int numero = new Integer(id);
 			try {
@@ -295,8 +313,10 @@ public class Controleur extends HttpServlet {
 				e.printStackTrace();
 			}
 			destinationPage = "/modifierOeuvreVente.jsp";
+			break;
 
-		} else if (VALIDER_MODIF_OEUVRE_VENTE.equals(actionName)) {
+		} 
+		case VALIDER_MODIF_OEUVRE_VENTE : {
 			try {
 				Service unService = new Service();
 				String id = request.getParameter("id");
@@ -310,9 +330,10 @@ public class Controleur extends HttpServlet {
 				e.printStackTrace();
 			}
 			destinationPage = "/index.jsp";
+			break;
 		}
 		
-		if (MODIFIER_OEUVRE_PRET.equals(actionName)) {
+		case MODIFIER_OEUVRE_PRET : {
 			String id = request.getParameter("id");
 			int numero = new Integer(id);
 			try {
@@ -323,8 +344,10 @@ public class Controleur extends HttpServlet {
 				e.printStackTrace();
 			}
 			destinationPage = "/modifierOeuvrePret.jsp";
+			break;
 
-		} else if (VALIDER_MODIF_OEUVRE_PRET.equals(actionName)) {
+		}
+		case VALIDER_MODIF_OEUVRE_PRET : {
 			try {
 				Service unService = new Service();
 				String id = request.getParameter("id");
@@ -337,8 +360,9 @@ public class Controleur extends HttpServlet {
 				e.printStackTrace();
 			}
 			destinationPage = "/index.jsp";
+			break;
 		}
-		if (LISTER_RESERVATIONS.equals(actionName)) {
+		case LISTER_RESERVATIONS : {
 			try {
 				Service unService = new Service();
 				request.setAttribute("mesReservations", unService.consulterListeReservations());
@@ -347,8 +371,9 @@ public class Controleur extends HttpServlet {
 			}
 			
 			destinationPage = "/listerReservations.jsp";
+			break;
 		}
-		if (LISTER_ADHERENT.equals(actionName)) {
+		case LISTER_ADHERENT : {
 			try {
 
 				Service unService = new Service();
@@ -360,8 +385,9 @@ public class Controleur extends HttpServlet {
 			}
 
 			destinationPage = "/listerAdherent.jsp";
+			break;
 		}
-		if (LISTER_PROPRIETAIRES.equals(actionName)) {
+		case LISTER_PROPRIETAIRES : {
 			try {
 
 				Service unService = new Service();
@@ -373,8 +399,9 @@ public class Controleur extends HttpServlet {
 			}
 
 			destinationPage = "/listerProprietaires.jsp";
+			break;
 		}
-		if (LISTER_OEUVRES_VENTE.equals(actionName)) {
+		case LISTER_OEUVRES_VENTE : {
 			try {
 
 				Service unService = new Service();
@@ -386,8 +413,9 @@ public class Controleur extends HttpServlet {
 			}
 
 			destinationPage = "/listerOeuvresVentes.jsp";
+			break;
 		}
-		if (LISTER_OEUVRES_PRET.equals(actionName)) {
+		case LISTER_OEUVRES_PRET : {
 			try {
 				Service unService = new Service();
 				request.setAttribute("mesOeuvres", unService.consulterListeOeuvresPret());
@@ -398,9 +426,10 @@ public class Controleur extends HttpServlet {
 			}
 
 			destinationPage = "/listerOeuvresPret.jsp";
+			break;
 		}
 		
-		if (RESERVER_OEUVRE_VENTE.equals(actionName)) {
+		case RESERVER_OEUVRE_VENTE : {
 			try {
 				Service unService = new Service();
 				String id = request.getParameter("id");
@@ -413,7 +442,9 @@ public class Controleur extends HttpServlet {
 			}
 			
 			destinationPage = "/reserverOeuvreVente.jsp";
-		} else if (VALIDER_RESERVER_OEUVRE_VENTE.equals(actionName)) {
+			break;
+		} 
+		case VALIDER_RESERVER_OEUVRE_VENTE : {
 			try {
 				Service unService = new Service();
 				String id = request.getParameter("id");
@@ -429,12 +460,15 @@ public class Controleur extends HttpServlet {
 				e.printStackTrace();
 			}
 			destinationPage = "/index.jsp";
+			break;
 		}
 		
-		if (AJOUTER_ADHERENT.equals(actionName)) {
+		case AJOUTER_ADHERENT : {
 
 			destinationPage = "/ajouterAdherent.jsp";
-		} else if (INSERER_ADHERENT.equals(actionName)) {
+			break;
+		} 
+		case INSERER_ADHERENT : {
 			try {
 				Adherent unAdherent = new Adherent();
 				unAdherent.setNomAdherent(request.getParameter("txtnom"));
@@ -448,15 +482,19 @@ public class Controleur extends HttpServlet {
 				e.printStackTrace();
 			}
 			destinationPage = "/index.jsp";
+			break;
 		}
 
-		else {
+		default :
+		{
 			String messageErreur = "[" + actionName + "] n'est pas une action valide.";
 			request.setAttribute(ERROR_KEY, messageErreur);
+		}
 		}
 		// Redirection vers la page jsp appropriee
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(destinationPage);
 		dispatcher.forward(request, response);
+		
 
 	}
 

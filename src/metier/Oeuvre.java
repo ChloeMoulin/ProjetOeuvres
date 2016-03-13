@@ -42,5 +42,13 @@ public class Oeuvre implements Serializable {
 	public void setProprietaire(Proprietaire proprietaire) {
 		this.proprietaire = proprietaire;
 	}
+	
+	public boolean oeuvreNotEmpty() {
+		if(titre == null || titre.equals("")) 
+			return false;
+		if(proprietaire == null)
+			return false;
+		return true;
+	}
 
 }

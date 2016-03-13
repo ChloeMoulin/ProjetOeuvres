@@ -18,6 +18,8 @@ public class Service {
 		String mysql;
 
 		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		 if (!unAdherent.adherentNotEmpty())
+			 return;
 		try {
 			mysql = "insert into adherent  (nom_adherent,prenom_adherent,ville_adherent)  " + "values ('"
 					+ unAdherent.getNomAdherent();
@@ -33,9 +35,12 @@ public class Service {
 		String mysql;
 
 		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		if(!uneOeuvre.oeuvreNotEmpty()) {
+			return;
+		}
 		try {
 			mysql = "insert into oeuvrevente  (titre_oeuvrevente, etat_oeuvrevente, prix_oeuvrevente, id_proprietaire)  values ('"
-					+ uneOeuvre.getTitre()+ "','" + uneOeuvre.getEtatOeuvrevente();
+					+ uneOeuvre.getTitre()+ "','L";
 			mysql += "','" + uneOeuvre.getPrixOeuvrevente() + "','" + uneOeuvre.getProprietaire().getIdProprietaire() + "')";
 
 			unDialogueBd.insertionBD(mysql);

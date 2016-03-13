@@ -7,11 +7,12 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Ajouter une Oeuvre</title>
-		<script type="text/javascript" src="js/foncControle.js"></script>
-		<script type="text/javascript" src="js/jquery-2.0.0.js"></script>
+
 		
 	</head>
-
+		<SCRIPT language="Javascript" type="text/javascript"></script>
+		<script type="text/javascript" src="js/fonctControle.js"></script>
+		<script type="text/javascript" src="js/jquery-2.0.0.js"></script>
 
 	<body>
 		<h1> Ajout d'une oeuvre </h1> 
@@ -23,39 +24,42 @@
 					<option value ="pret">Oeuvre Prêt</option>
 				</select>
 			</p>
-			<form style = "display:none;" id="form_vente" name='form_vente' method="post" action="Controleur?action=insererOeuvreVente" onsubmit="return teste()">
+			<form style = "display:none;" id="form_vente" name='form_vente' method="post" action="Controleur?action=insererOeuvreVente" onsubmit="return testOeuvreVente()">
 			     <p align="left">    
 					<br/>&nbsp;  &nbsp;  &nbsp; Titre de l'oeuvre : 
-				    <input type="text" name="txtTitre" value=""  id ="titre">
-					<br/>&nbsp;  &nbsp;  &nbsp; Etat de l'oeuvre : 
-					<select name = "etatOeuvre">
-						<option value="L" selected>L</option>
-						<option value ="R">R</option>
-					</select>
+				    <input type="text" name="txtTitre" value=""  id ="titre" onchange="titreChanged()">
+					<p id = "alert_titre" style = "display:none;">Veuillez entrer un titre</p>
+					
 					<br/>&nbsp;  &nbsp;  &nbsp; Prix de l'oeuvre :
-					<input type="number" name="numberPrix" value = "" id="prix">
+					<input type="number" name="numberPrix" value = "" id="prix" onchange="prixChanged()">
+					<p id = "alert_prix" style = "display:none;">Veuillez entrer un prix</p>
 					
 					<br/>&nbsp;  &nbsp;  &nbsp; Proprietaire :
-					<select name = "proprietaire">
+					<select name ="proprietaire" id ="proprietaire" onchange="proprietaireChanged()">
 						<c:forEach items="${mesProprietaires}" var="item">
 							<option value = "${item.idProprietaire }">${item.prenomProprietaire } ${item.nomProprietaire }</option>
 						</c:forEach>
 					</select>		
+					<p id = "alert_proprietaire" style = "display:none;">Veuillez sélectionner un proprietaire</p>
+					
 			          
 			        <input type="submit" name="bt"  value="Ajouter" >
 		      
 				</p>
 			</form>
-			<form  style = "display:none;" id="form_pret" name='form_pret' method="post" action="Controleur?action=insererOeuvrePret" onsubmit="return teste()">
+			<form  style = "display:none;" id="form_pret" name='form_pret' method="post" action="Controleur?action=insererOeuvrePret" onsubmit="return testOeuvrePret()">
 			     <p align="left">    
 					<br/>&nbsp;  &nbsp;  &nbsp; Titre de l'oeuvre : 
-				    <input type="text" name="txtTitre" value=""  id ="titre">
+				    <input type="text" name="txtTitre" value=""  id ="titre_pret" onchange="titrePretChanged()">
+				    <p id = "alert_titre_pret" style = "display:none;">Veuillez entrer un titre</p>
+				    
 				     					<br/>&nbsp;  &nbsp;  &nbsp; Proprietaire :
 					<select name = "proprietaire">
 						<c:forEach items="${mesProprietaires}" var="item">
 							<option value = "${item.idProprietaire }">${item.prenomProprietaire } ${item.nomProprietaire }</option>
 						</c:forEach>
 					</select>	
+					<p id = "alert_proprietaire" style = "display:none;">Veuillez sélectionner un proprietaire</p>
 					
 			        <input type="submit" name="bt"  value="Ajouter" >
 		      
