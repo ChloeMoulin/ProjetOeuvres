@@ -9,20 +9,27 @@
 <title>Modifier Oeuvre Pret</title>
 </head>
 <body>
-	<form  id="form_pret" name='form_pret' method="post" action="Controleur?action=validerModifOeuvrePret&id=${oeuvre.id}" onsubmit="return teste()">
-			     <p align="left">    
-					<br/>&nbsp;  &nbsp;  &nbsp; Titre de l'oeuvre : 
-				    <input type="text" name="txtTitre" value="${oeuvre.titre}"  id ="titre"/>
-				     					<br/>&nbsp;  &nbsp;  &nbsp; Proprietaire :
-					<select name = "proprietaire">
+<jsp:include page="index.jsp"/>
+	<div class="form-group">
+		<form id="form_pret" name='form_pret' method="post" action="Controleur?action=validerModifOeuvrePret&id=${oeuvre.id}" onsubmit="return teste()">
+		     <p align="left">
+		     	<div class="form-inline">
+					<br/>Titre de l'oeuvre : 
+			    	<input class="form-control" type="text" name="txtTitre" value="${oeuvre.titre}"  id ="titre"/>
+			    </div>    
+			    
+			    <div class="form-inline"> 					
+					<br/>Proprietaire :
+					<select class="form-control" name = "proprietaire">
 						<c:forEach items="${mesProprietaires}" var="item">
 							<option value = "${item.idProprietaire }">${item.prenomProprietaire } ${item.nomProprietaire }</option>
 						</c:forEach>
-					</select>	
-					
-			        <input type="submit" name="bt"  value="Valider" >
-		      
-				</p>
-	</form>
+					</select>
+				</div>	
+				
+		        <input class="btn btn-success" type="submit" name="bt"  value="Valider" />
+			</p>
+		</form>
+	</div>
 </body>
 </html>

@@ -9,6 +9,7 @@
 <title>Affichage de toutes les oeuvres à prêter </title>
 </head>
 <body>
+<jsp:include page="index.jsp"/>
 	<P>
 		<A href="index.jsp"><FONT face="Arial" color="#004080">Retour
 				Accueil</FONT></A>
@@ -17,24 +18,24 @@
 		<FONT face="Arial" size="5" color="#004080"><U> <STRONG>Listing&nbsp;des
 					Oeuvres à prêter </STRONG></U></FONT>
 	</P>
-
-	<TABLE BORDER="1">
-		<CAPTION>Tableau des Oeuvres</CAPTION>
-		<TR>
-			<TH>Titre</TH>
-			<th>Propriétaire</th>
-			<th>Modifier</th>
-
-		</TR>
-		<c:forEach items="${mesOeuvres}" var="item">			
-			<tr>
-				<td>${item.titre}</td>
-                <td>${item.proprietaire.getPrenomProprietaire()} ${item.proprietaire.getNomProprietaire()}</td>
-                <td><input type = "button" value = "Modifier" onclick="location.href='Controleur?action=modifierOeuvrePret&id=${item.id}'"/></td>
-				<td><input type = "button" value = "Supprimer" onclick="location.href='Controleur?action=supprimerOeuvrePret&id=${item.id}'"/></td>
-				
-			</tr>
-		</c:forEach>
-	</TABLE>
+	<div class="col-md-6">
+		<TABLE class="table table-hover">
+			<CAPTION>Tableau des Oeuvres</CAPTION>
+			<TR>
+				<TH>Titre</TH>
+				<th>Propriétaire</th>
+				<th>Modifier</th>
+				<th>Supprimer</th>
+			</TR>
+			<c:forEach items="${mesOeuvres}" var="item">			
+				<tr>
+					<td>${item.titre}</td>
+	                <td>${item.proprietaire.getPrenomProprietaire()} ${item.proprietaire.getNomProprietaire()}</td>
+	                <td><a class="btn btn-primary" href="Controleur?action=modifierOeuvrePret&id=${item.id}"><i class="fa fa-pencil-square-o"></i></a></td>
+				   	<td><a class="btn btn-danger" href="Controleur?action=supprimerOeuvrePret&id=${item.id}"><i class="fa fa-trash"></i></a></td>
+				</tr>
+			</c:forEach>
+		</TABLE>
+	</div>
 </body>
 </html>

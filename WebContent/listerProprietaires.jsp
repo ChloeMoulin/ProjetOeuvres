@@ -9,6 +9,7 @@
 <title>Affichage de tous les proprietaires</title>
 </head>
 <body>
+<jsp:include page="index.jsp"/>
 	<P>
 		<A href="index.jsp"><FONT face="Arial" color="#004080">Retour
 				Accueil</FONT></A>
@@ -17,27 +18,28 @@
 		<FONT face="Arial" size="5" color="#004080"><U> <STRONG>Listing&nbsp;des
 					proprietaires </STRONG></U></FONT>
 	</P>
-
-	<TABLE BORDER="1">
-		<CAPTION>Tableau des proprietaires</CAPTION>
-		<TR>
-			<TH>Numero</TH>
-			<TH>Nom</TH>
-			<TH>Prénom</TH>
-			<th>Modifier</th>
-			<th>Supprimer</th>
-
-		</TR>
-		<c:forEach items="${mesProprietaires}" var="item">			
-			<tr>
-				<td>${item.idProprietaire}</td>
-				<td>${item.nomProprietaire}</td>
-				<td>${item.prenomProprietaire}</td>
-                <td><input type = "button" value = "Modifier" onclick="location.href='Controleur?action=modifierProprietaire&id=${item.idProprietaire}'"/></td>
-				<td><input type = "button" value = "Supprimer" onclick="location.href='Controleur?action=supprimerProprietaire&id=${item.idProprietaire}'"/></td>
-				
-			</tr>
-		</c:forEach>
-	</TABLE>
+	<div class="col-md-6">
+		<TABLE class="table table-hover">
+			<CAPTION>Tableau des proprietaires</CAPTION>
+			<TR>
+				<TH>Numero</TH>
+				<TH>Nom</TH>
+				<TH>Prénom</TH>
+				<th>Modifier</th>
+				<th>Supprimer</th>
+	
+			</TR>
+			<c:forEach items="${mesProprietaires}" var="item">			
+				<tr>
+					<td>${item.idProprietaire}</td>
+					<td>${item.nomProprietaire}</td>
+					<td>${item.prenomProprietaire}</td>
+	                <td><a class="btn btn-primary" href="Controleur?action=modifierProprietaire&id=${item.idProprietaire}"><i class="fa fa-pencil-square-o"></i></a></td>
+					<td><a class="btn btn-danger" href="Controleur?action=supprimerProprietaire&id=${item.idProprietaire}"><i class="fa fa-trash"></i></a></td>
+					
+				</tr>
+			</c:forEach>
+		</TABLE>
+	</div>
 </body>
 </html>

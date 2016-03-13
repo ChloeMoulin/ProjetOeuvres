@@ -157,7 +157,7 @@ public class Controleur extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			destinationPage = "/listerOeuvrePret.jsp";
+			destinationPage = "/listerOeuvresPret.jsp";
 		}
 		if (INSERER_PROPRIETAIRE.equals(actionName)) {
 			try {

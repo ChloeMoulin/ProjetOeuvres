@@ -7,11 +7,18 @@
 <title>Modifier un Propriétaire</title>
 </head>
 <body>
+<jsp:include page="index.jsp"/>
 	<h1> Modification d'un propriétaire </h1>
-	 <form name='identification' method="post" action="Controleur?action=validerModifProprietaire&id=${proprietaire.idProprietaire}" onsubmit="return teste()">
-		Nom du Propriétaire : <input type="text" name="txtnom" value=${proprietaire.nomProprietaire}  id ="nom"><br/>
-		Prénom du Propriétaire : <input type="text" name="txtprenom" value=${proprietaire.prenomProprietaire}  id ="prenom"><br/>
-		<input type="submit" name="bt"  value="Valider" />
-	</form>
+	<div class="form-group">
+		<form name='identification' method="post" action="Controleur?action=validerModifProprietaire&id=${proprietaire.idProprietaire}" onsubmit="return teste()">
+			<div class="form-inline">
+				<br/>Nom du Propriétaire : <input class="form-control" type="text" name="txtnom" value=${proprietaire.nomProprietaire}  id ="nom"><br/>
+			</div>
+			<div class="form-inline">
+				<br/>Prénom du Propriétaire : <input class="form-control" type="text" name="txtprenom" value=${proprietaire.prenomProprietaire}  id ="prenom"><br/>
+			</div>
+			<input class="btn btn-success" type="submit" name="bt"  value="Valider" />
+		</form>
+	</div>
 </body>
 </html>

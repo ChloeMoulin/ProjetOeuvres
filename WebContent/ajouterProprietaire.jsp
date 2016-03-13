@@ -11,24 +11,31 @@
 
 
 <body>
-	<H1> Ajout d'un proprietaires </H1> 
+	<H1> Ajout d'un proprietaires </H1>
+	<jsp:include page="index.jsp"/> 
 
-<DIV align="center">
-<FORM  name='identification' method="post" action="Controleur?action=insererProprietaire" onsubmit="return teste()">
-     <P align="left"><FONT face="Arial" color="#004080"></FONT>     
-		<FONT face="Arial" color="#004080"><BR>&nbsp;  &nbsp;  &nbsp; Nom du proprietaire : </FONT>
-	    <INPUT type="text" name="txtnom" value=""  id ="nom"> <BR>
-        <FONT face="Arial" color="#004080">
-		<BR>Prenom du proprietaire : </FONT>
-        <INPUT type="text" name="txtprenom"  id ="prenom"  > <BR>
-          <!-- Boutons Ajouter -->
-          
-        <INPUT type="submit" name="bt"  value="Ajouter" >
-        <FONT face="Arial" color="#004080"></FONT>
-        &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
-</P></FORM>
-</DIV>
-<BR>
+	<DIV>
+		<FORM  name='identification' method="post" action="Controleur?action=insererProprietaire" onsubmit="return teste()">
+		     <P align="left">
+			     <div class="form-inline">
+		     		<FONT face="Arial" color="#004080"></FONT>  
+					<FONT face="Arial" color="#004080"><BR/>Nom du proprietaire : </FONT>
+				    <INPUT class="form-control" type="text" name="txtnom" value=""  id ="nom"/> <BR/>
+			   	</div>
+			   	<div class="form-inline">
+			        <FONT face="Arial" color="#004080">
+					<BR>Prenom du proprietaire : </FONT>
+			        <INPUT class="form-control" type="text" name="txtprenom"  id ="prenom"  /> <BR>
+		        </div>
+		        <br/>
+		          <!-- Boutons Ajouter -->
+		          
+		        <INPUT class="btn btn-success" type="submit" name="bt"  value="Ajouter" />
+		        <FONT face="Arial" color="#004080"></FONT>
+		        &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		      
+			</P>
+		</FORM>
+	</DIV>
 </body>
 </html>

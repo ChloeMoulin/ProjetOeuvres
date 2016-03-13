@@ -9,27 +9,35 @@
 		<title>Modifier une oeuvre</title>
 	</head>
 	<body>
-		<div align="center">
+	<jsp:include page="index.jsp"/>
+		<div class="form-group">
 			<form id="form_vente" name='form_vente' method="post" action="Controleur?action=validerModifOeuvreVente&id=${oeuvre.id}" onsubmit="return teste()">
-			     <p align="left">    
-					<br/>&nbsp;  &nbsp;  &nbsp; Titre de l'oeuvre : 
-				    <input type="text" name="txtTitre" value="${oeuvre.titre}"  id ="titre"/>
-					<br/>&nbsp;  &nbsp;  &nbsp; Etat de l'oeuvre : 
-					<select name = "etatOeuvre">
-						<option value="L" selected>L</option>
-						<option value ="R">R</option>
-					</select>
-					<br/>&nbsp;  &nbsp;  &nbsp; Prix de l'oeuvre :
-					<input type="number" name="numberPrix" value = "${oeuvre.prixOeuvrevente.toString()}" id="prix">
-					
-					<br/>&nbsp;  &nbsp;  &nbsp; Proprietaire :
-					<select name = "proprietaire">
-						<c:forEach items="${mesProprietaires}" var="item">
-							<option value = "${item.idProprietaire }">${item.prenomProprietaire } ${item.nomProprietaire }</option>
-						</c:forEach>
-					</select>		
+			     <p align="left">
+			     	<div class="form-inline">   
+						<br/>Titre de l'oeuvre : 
+					    <input class="form-control" type="text" name="txtTitre" value="${oeuvre.titre}"  id ="titre"/>
+			    	</div>
+			    	<div class="form-inline">
+						<br/>Etat de l'oeuvre : 
+						<select class="form-control" name = "etatOeuvre">
+							<option value="L" selected>L</option>
+							<option value ="R">R</option>
+						</select>
+					</div>
+					<div class="form-inline">
+						<br/>Prix de l'oeuvre :
+						<input class="form-control" type="number" name="numberPrix" value = "${oeuvre.prixOeuvrevente.toString()}" id="prix">
+					</div>
+					<div class="form-inline">
+						<br/>Proprietaire :
+						<select class="form-control" name = "proprietaire">
+							<c:forEach items="${mesProprietaires}" var="item">
+								<option value = "${item.idProprietaire }">${item.prenomProprietaire } ${item.nomProprietaire }</option>
+							</c:forEach>
+						</select>
+					</div>		
 			          
-			        <input type="submit" name="bt"  value="Valider" >
+			        <input class="btn btn-success" type="submit" name="bt"  value="Valider" >
 				      
 				</p>
 			</form>

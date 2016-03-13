@@ -7,12 +7,21 @@
 <title>Modifier un adhérent</title>
 </head>
 <body>
+<jsp:include page="index.jsp"/>
 	<h1> Modification d'un adhérent </h1>
-	 <form name='identification' method="post" action="Controleur?action=validerModifAdherent&id=${adherent.idAdherent}" onsubmit="return teste()">
-		Nom de l'adhérent : <input type="text" name="txtnom" value=${adherent.nomAdherent}  id ="nom"><br/>
-		Prénom de l'adhérent : <input type="text" name="txtprenom" value=${adherent.prenomAdherent}  id ="prenom"><br/>
-		Ville de l'adhérent : <input type="text" name="txtville" value=${adherent.villeAdherent}  id ="ville"><br/>
-		<input type="submit" name="bt"  value="Valider" />
-	</form>
+	<div class="form-group">
+		<form name='identification' method="post" action="Controleur?action=validerModifAdherent&id=${adherent.idAdherent}" onsubmit="return teste()">
+		 	<div class="form-inline">
+				<br/>Nom de l'adhérent : <input class="form-control" type="text" name="txtnom" value=${adherent.nomAdherent} id ="nom"><br/>
+			</div>
+			<div class="form-inline">
+				<br/>Prénom de l'adhérent : <input class="form-control" type="text" name="txtprenom" value=${adherent.prenomAdherent} id ="prenom"><br/>
+			</div>
+			<div class="form-inline">
+				<br/>Ville de l'adhérent : <input class="form-control" type="text" name="txtville" value=${adherent.villeAdherent} id ="ville"><br/>
+			</div>
+			<input class="btn btn-success" type="submit" name="bt"  value="Valider" />
+		</form>
+	</div>
 </body>
 </html>

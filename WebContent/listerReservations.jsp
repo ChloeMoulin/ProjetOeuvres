@@ -2,6 +2,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,6 +10,7 @@
 <title>Affichage de toutes les réservations</title>
 </head>
 <body>
+<jsp:include page="index.jsp"/>
 	<P>
 		<A href="index.jsp"><FONT face="Arial" color="#004080">Retour
 				Accueil</FONT></A>
@@ -18,27 +20,33 @@
 					réservations </STRONG></U></FONT>
 	</P>
 
-	<TABLE BORDER="1">
-		<CAPTION>Tableau des réservations</CAPTION>
-		<TR>
-			<TH>Oeuvre</TH>
-			<TH>Adhérent</TH>
-			<TH>Date</TH>
-			<th>Statut</th>
-			<th>Réservation</th>
-
-		</tr>
-		<c:forEach items="${mesReservations}" var="item">			
-			<tr>
-				<td>${item.oeuvrevente.getTitre()}</td>
-				<td>${item.adherent.getPrenomAdherent()} ${item.adherent.getNomAdherent()}</td>
-				<td>${item.date}</td>
-                <td>${item.statut}</td>
-               	<td><input type = "button" value = "Confirmer" onclick="location.href='Controleur?action=confirmerReservation&id=${item.oeuvrevente.getId()}'"/></td>
-               	<td><input type = "button" value = "Supprimer" onclick="location.href='Controleur?action=supprimerReservation&id=${item.oeuvrevente.getId()}'"/></td>
-                
+	<div class="col-md-6">
+		<TABLE class="table table-hover">
+			<CAPTION>Tableau des réservations</CAPTION>
+			<TR>
+				<TH>Oeuvre</TH>
+				<TH>Adhérent</TH>
+				<TH>Date</TH>
+				<th>Réservation</th>
+				<th>Supprimer</th>
 			</tr>
-		</c:forEach>
-	</TABLE>
+			<c:forEach items="${mesReservations}" var="item">			
+				<tr>
+					<td>${item.oeuvrevente.getTitre()}</td>
+					<td>${item.adherent.getPrenomAdherent()} ${item.adherent.getNomAdherent()}</td>
+					<td><fmt:formatDate value="${item.date}" pattern="dd/MM/yyyy" /></td>
+	                <c:choose>
+	                	<c:when test="${item.statut == 'reservee'}">
+	                		<td><a class="btn btn-success" href="Controleur?action=confirmerReservation&id=${item.oeuvrevente.getId()}">Confirmer</a></td>
+	                	</c:when>
+	                	<c:otherwise>
+	                		<td><i class="fa fa-check"></i></td>
+	                	</c:otherwise>
+	                </c:choose>
+	               	<td><a class="btn btn-danger" href="Controleur?action=supprimerReservation&id=${item.oeuvrevente.getId()}"><i class="fa fa-trash"></i></a></td>
+				</tr>
+			</c:forEach>
+		</TABLE>
+	</div>
 </body>
 </html>

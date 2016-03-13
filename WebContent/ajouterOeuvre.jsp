@@ -14,52 +14,58 @@
 
 
 	<body>
+	<jsp:include page="index.jsp"/>
 		<h1> Ajout d'une oeuvre </h1> 
 		
-		<div align="center">
-			<p class="oeuvreType">
-				<select id="selectType" name="oeuvreType">
-					<option value="vente" selected> Oeuvre Vente</option>
-					<option value ="pret">Oeuvre Prêt</option>
-				</select>
-			</p>
+		<div class="form-group">
+			<form role="form">
+				<div class="form-inline">
+					<p class="oeuvreType">
+						<select class="form-control" id="selectType" name="oeuvreType">
+							<option value="vente" selected> Oeuvre Vente</option>
+							<option value ="pret">Oeuvre Prêt</option>
+						</select>
+					</p>
+				</div>
+			</form>
 			<form style = "display:none;" id="form_vente" name='form_vente' method="post" action="Controleur?action=insererOeuvreVente" onsubmit="return teste()">
-			     <p align="left">    
-					<br/>&nbsp;  &nbsp;  &nbsp; Titre de l'oeuvre : 
-				    <input type="text" name="txtTitre" value=""  id ="titre">
-					<br/>&nbsp;  &nbsp;  &nbsp; Etat de l'oeuvre : 
-					<select name = "etatOeuvre">
-						<option value="L" selected>L</option>
-						<option value ="R">R</option>
-					</select>
-					<br/>&nbsp;  &nbsp;  &nbsp; Prix de l'oeuvre :
-					<input type="number" name="numberPrix" value = "" id="prix">
-					
+			    <div class="form-inline">    
+				<br/>&nbsp;  &nbsp;  &nbsp; Titre de l'oeuvre : 
+				   <input class="form-control" type="text" name="txtTitre" value=""  id ="titre"/>
+				</div>
+				<div class="form-inline">
+					<br/>&nbsp;  &nbsp;  &nbsp; Prix de l'oeuvre : 
+					<input class="form-control" type="number" name="numberPrix" value = "" id="prix"/>
+				</div>
+				<div class="form-inline">
 					<br/>&nbsp;  &nbsp;  &nbsp; Proprietaire :
-					<select name = "proprietaire">
+					<select class="form-control" name = "proprietaire">
 						<c:forEach items="${mesProprietaires}" var="item">
 							<option value = "${item.idProprietaire }">${item.prenomProprietaire } ${item.nomProprietaire }</option>
 						</c:forEach>
-					</select>		
+					</select>
+				</div>		
+				<br/>
 			          
-			        <input type="submit" name="bt"  value="Ajouter" >
+		        <input class="btn btn-success" type="submit" name="bt"  value="Ajouter" >
 		      
-				</p>
 			</form>
 			<form  style = "display:none;" id="form_pret" name='form_pret' method="post" action="Controleur?action=insererOeuvrePret" onsubmit="return teste()">
-			     <p align="left">    
+			     <div class="form-inline">   
 					<br/>&nbsp;  &nbsp;  &nbsp; Titre de l'oeuvre : 
-				    <input type="text" name="txtTitre" value=""  id ="titre">
-				     					<br/>&nbsp;  &nbsp;  &nbsp; Proprietaire :
-					<select name = "proprietaire">
+				    <input class="form-control" type="text" name="txtTitre" value=""  id ="titre">
+				 </div>
+				 <div class="form-inline">
+				     <br/>&nbsp;  &nbsp;  &nbsp; Proprietaire :
+					<select class="form-control" name = "proprietaire">
 						<c:forEach items="${mesProprietaires}" var="item">
 							<option value = "${item.idProprietaire }">${item.prenomProprietaire } ${item.nomProprietaire }</option>
 						</c:forEach>
-					</select>	
-					
-			        <input type="submit" name="bt"  value="Ajouter" >
+					</select>
+					</div>	
+					<br/>
+			        <input class="btn btn-success" type="submit" name="bt"  value="Ajouter" >
 		      
-				</p>
 			</form>
 		</div>
 		<script type="text/javascript">
