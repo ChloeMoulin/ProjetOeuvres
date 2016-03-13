@@ -6,6 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="refresh" content="0;URL=javascript:fermer();">
+<!-- Latest compiled and minified CSS -->
+<script type="text/javascript" src="js/jquery-2.0.0.js"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<script type="text/javascript" src="js/bootstrap.js"></script>
 <title>Expo : Médiathèque De POLYTECH</title>
 </head>
 
@@ -26,20 +30,24 @@
 			l'exposition 2016</font>
 	</p>
 	<p align="left">
-		<font color="#004080" face="Arial"><u>Sélectionnez la
-				fonctionnalité voulue:</u></font>
 	</p>
-	<ul>
-		<li><a href="Controleur?action=ajouterAdherent"><font
-				face="Arial">Ajout Adhérent</font></a></li>
-		<li><a href="Controleur?action=listerAdherent"><font
-				face="Arial">Lister les adhérents</font></a><font face="Arial"> </font></li>
-		<li><a href="javascript:fermer()"><font face="Arial">Quitter</font></a><font
-			face="Arial"> </font></li>
-		<li><a href = "Controleur?action=ajouterOeuvre">Ajouter Oeuvre</a></li>
-		<li><a href = "Controleur?action=listerOeuvresVente">Listing des Oeuvres à vendre</a></li>
-		<li><a href = "Controleur?action=listerOeuvresPret">Listing des Oeuvres à prêter</a></li>
-		<li><a href = "Controleur?action=listerReservations">Listing des Réservations</a></li>
-	</ul>
+	<nav class="navbar navbar-default">
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" align="center">
+			<ul class="nav nav-pills">
+				<li><a href="Controleur?action=ajouterAdherent"><font
+						face="Arial">Ajout Adhérent</font></a></li>
+				<li><a href="Controleur?action=ajouterOeuvre">Ajouter Oeuvre</a></li>
+				<li><a href="Controleur?action=listerAdherent"><font
+						face="Arial">Listing des adhérents</font></a><font face="Arial"> </font></li>
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-target="#" role="button" aria-haspopup="true" aria-expanded="false">Listing des Oeuvres <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href = "Controleur?action=listerOeuvresVente">Listing des Oeuvres à vendre</a></li>
+						<li><a href = "Controleur?action=listerOeuvresPret">Listing des Oeuvres à prêter</a></li>
+					</ul>
+				</li>
+				<li><a href = "Controleur?action=listerReservations">Listing des Réservations</a></li>
+			</ul>
+		</div>
+	</nav>
 </body>
 </html>
