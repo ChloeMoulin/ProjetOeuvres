@@ -8,35 +8,34 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Affichage de toutes les oeuvres à prêter </title>
 	</head>
+	
 	<body>
 		<jsp:include page="index.jsp"/>
 		<div class = "container_body">
-			<div class="row">
-				<div class="col-md-6">
-					<p align="center">
-						<h1>Listing des oeuvres à prêter</h1>
-					</p>
-					<TABLE class="table table-hover">
-						<TR>
-							<TH>Titre</TH>
-							<th>Propriétaire</th>
-							<th>Modifier</th>
-							<th>Supprimer</th>
-						</TR>
-						<c:forEach items="${mesOeuvres}" var="item">			
-							<tr>
-								<td>${item.titre}</td>
-				                <td>${item.proprietaire.getPrenomProprietaire()} ${item.proprietaire.getNomProprietaire()}</td>
-				                <td><a class="btn btn-primary" href="ControleurOeuvrePret?action=modifierOeuvrePret&id=${item.id}"><i class="fa fa-pencil-square-o"></i></a></td>
-							   	<td><a class="btn btn-danger" href="ControleurOeuvrePret?action=supprimerOeuvrePret&id=${item.id}"><i class="fa fa-trash"></i></a></td>
-							</tr>
-						</c:forEach>
-					</TABLE>
-				</div>
-			</div>
-			<div class = "add">
-				<a class="btn btn-success" href="ControleurOeuvrePret?action=ajouterOeuvre">Ajouter une oeuvre à prêter</a>
-			</div>
+			<p align="center">
+				<br/>
+				<br/>
+				<h2>Listing des oeuvres à prêter</h2>
+				<p class = "add">
+					<a class="btn btn-success" href="ControleurOeuvrePret?action=ajouterOeuvrePret">Ajouter une oeuvre</a>
+				</p>
+			</p>
+			<table class="table table-hover">
+				<tr>
+					<th>Titre</th>
+					<th>Propriétaire</th>
+					<th>Modifier</th>
+					<th>Supprimer</th>
+				</tr>
+				<c:forEach items="${mesOeuvres}" var="item">			
+					<tr>
+						<td>${item.titre}</td>
+		                <td>${item.proprietaire.getPrenomProprietaire()} ${item.proprietaire.getNomProprietaire()}</td>
+		                <td><a class="btn btn-primary" href="ControleurOeuvrePret?action=modifierOeuvrePret&id=${item.id}"><i class="fa fa-pencil-square-o"></i></a></td>
+					   	<td><a class="btn btn-danger" href="ControleurOeuvrePret?action=supprimerOeuvrePret&id=${item.id}"><i class="fa fa-trash"></i></a></td>
+					</tr>
+				</c:forEach>
+			</table>
 		</div>
 	</body>
 </html>
