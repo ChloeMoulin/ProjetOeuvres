@@ -23,7 +23,7 @@
 					<fieldset class="form-group" >
 							<label for= "nom">Nom :</label>
 						    <input class="form-control" type="text" name="txtnom" value=""  id ="nom" onchange="nomChanged()"/> <br/>
-						    <p id = "alert_nom" style = "display:none;">Veuillez entrer un nom</p>
+						    <p class="alert" id = "alert_nom" style = "display:none;">Veuillez entrer un nom</p>
 					    
 					    	<label for= "prenom">Prénom :</label>
 					        <input class="form-control" type="text" name="txtprenom"  id ="prenom" onchange="prenomChanged()"/> <br/>

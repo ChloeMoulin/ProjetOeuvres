@@ -17,7 +17,7 @@
 				<br/>
 				<h2>Listing des oeuvres à vendre </h2>
 				<p class = "add">
-					<a class="btn btn-success" href="ControleurOeuvreVente?action=ajouterOeuvreVente">Ajouter une oeuvre</a>
+					<a class="btn btn-success" href="ControleurOeuvreVente?action=ajouterOeuvre">Ajouter une oeuvre</a>
 				</p>				
 			</p>
 			<table class="table table-hover">
