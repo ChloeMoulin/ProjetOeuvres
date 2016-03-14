@@ -19,15 +19,16 @@
 		<title>Expo : Médiathèque De POLYTECH</title>
 	</head>
 	<body>
-		<div class = "title" style="border:1px solid black;">
-			<h1 align="center">
+	
+		<div class = "title" style="height:15%;border-bottom:1px solid #5983AA;margin-top:-3%;">
+
+			<h1 align="center" style="padding-top:3%">
 				Médiathèque de POLYTECH
 			</h1>
-			<p align="center">
-				<font color="#004080" face="Arial" size="4">Gestion de
-					l'exposition 2016</font>
-			</p>
-			<p align="left">
+						<p align="left" style="margin: -4% 3px 10px">
+				<font color="#d0d0d0" face="Arial" size="4">Gestion de</font>
+				<br/>
+				<font color="#d0d0d0" face="Arial" size="4">l'exposition 2016</font>
 			</p>
 		</div>
 		<div id="sidebar-wrapper">
@@ -47,7 +48,7 @@
 						face="Arial">Listing des adhérents</font></a><font face="Arial"> </font></li>
 						
 				<li class="dropdown_index" onclick="displayMenuListeOeuvre()">	
-					<a>Listing des oeuvres</a>				
+					<a>Listing des oeuvres</a>			
 					<ul class ="dropdown_menu" id="dropdown_liste_oeuvre_menu" style="display:none;">
 						<li class="no_puce"><a href = "ControleurOeuvreVente?action=listerOeuvresVente">Listing des Oeuvres à vendre</a></li>
 						<li class="no_puce"><a href = "ControleurOeuvrePret?action=listerOeuvresPret">Listing des Oeuvres à prêter</a></li>

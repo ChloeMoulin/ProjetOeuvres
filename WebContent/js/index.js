@@ -13,3 +13,11 @@ function displayMenuListeOeuvre() {
 		$("#dropdown_liste_oeuvre_menu").fadeOut();
 	}
 }
+
+$(document).ready(function() {
+	var param = location.search.split("?action=")[1];
+	var bool = (param == "listerOeuvresPret");
+	if (bool) {
+		$("#dropdown_liste_oeuvre_menu").fadeIn();
+	}
+});

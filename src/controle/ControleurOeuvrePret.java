@@ -36,7 +36,6 @@ public class ControleurOeuvrePret extends Controleur {
 					request.setAttribute("mesProprietaires", s.consulterListeProprietaires());
 	
 				} catch (MonException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				destinationPage = "/ajouterOeuvrePret.jsp";
@@ -50,7 +49,7 @@ public class ControleurOeuvrePret extends Controleur {
 				} catch (MonException e) {
 					e.printStackTrace();
 				}
-				destinationPage = "/listerOeuvresPret.jsp";
+				destinationPage = "/ControleurOeuvrePret?action=listerOeuvresPret";
 				break;
 			}	
 			case "supprimerOeuvrePret" : {
@@ -62,7 +61,7 @@ public class ControleurOeuvrePret extends Controleur {
 				} catch (MonException e) {
 					e.printStackTrace();
 				}
-				destinationPage = "/listerOeuvresPret.jsp";
+				destinationPage = "/ControleurOeuvrePret?action=listerOeuvresPret";
 				break;
 			}			
 			case "modifierOeuvrePret" : {
@@ -88,7 +87,7 @@ public class ControleurOeuvrePret extends Controleur {
 				} catch (MonException e) {
 					e.printStackTrace();
 				}
-				destinationPage = "/index.jsp";
+				destinationPage = "/ControleurOeuvrePret?action=listerOeuvresPret";
 				break;
 			}		
 			case "listerOeuvresPret" : {
