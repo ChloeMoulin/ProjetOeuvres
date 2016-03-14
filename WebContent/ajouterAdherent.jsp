@@ -13,34 +13,34 @@
 <body>
 <jsp:include page="index.jsp"/>
 	<div class = "container_body">
-		<H1> Ajout d'un adhérent </H1> 
-	
-		<FORM name='identification' method="post" action="ControleurAdherent?action=insererAdherent" onsubmit="return testAdherent()">
-			<p align="left">
-				<div class="form-inline">
-					<FONT face="Arial" color="#004080"><BR>&nbsp;  &nbsp;  &nbsp;Nom de l'adherent : </FONT>
-				    <INPUT class="form-control" type="text" name="txtnom" value=""  id ="nom" onchange="nomChanged()"/> <BR>
+	<br/>
+	<br/>
+		<h1 style="color:black;font-size:22px;"> Ajout d'un adhérent </h1> 
+		<div class="container drop-shadow" style="width:70%;margin-left:0%">
+    		<div class="container" style="width:100%">
+    		<br/>
+		<form name='identification' method="post" action="ControleurAdherent?action=insererAdherent" onsubmit="return testAdherent()">
+			<fieldset class="form-group" >
+					<label for= "nom">Nom :</label>
+				    <input class="form-control" type="text" name="txtnom" value=""  id ="nom" onchange="nomChanged()"/> <br/>
 				    <p id = "alert_nom" style = "display:none;">Veuillez entrer un nom</p>
-			    </div>
-			    <div class="form-inline">
-			        <FONT face="Arial" color="#004080"><BR>Prénom de l'adherent : </FONT>
-			        <INPUT class="form-control" type="text" name="txtprenom"  id ="prenom" onchange="prenomChanged()"/> <BR>
-			        <p id = "alert_prenom" style = "display:none;">Veuillez entrer un prénom</p>
-			    </div>
-			    <div class="form-inline">
-			        <FONT face="Arial" color="#004080"><BR>&nbsp;  &nbsp;  &nbsp;Ville de l'adherent :</FONT>
-			        <INPUT class="form-control" type="text" name="txtville" id ="ville" onchange=""/>
+			    
+			    	<label for= "prenom">Prénom :</label>
+			        <input class="form-control" type="text" name="txtprenom"  id ="prenom" onchange="prenomChanged()"/> <br/>
+			    	<p id = "alert_prenom" style = "display:none;">Veuillez entrer un prénom</p>
+
+					<label for= "ville">Ville :</label>
+			        <input class="form-control" type="text" name="txtville" id ="ville" onchange=""/>
 			        <p id = "alert_ville" style = "display:none;">Veuillez entrer une ville</p>
-			    </div>
-			        <FONT face="Arial" color="#004080">	<BR></FONT><BR>
-			                  
-			        <INPUT class="btn btn-success" type="submit" name="bt"  value="Ajouter" />
-			        <FONT face="Arial" color="#004080"></FONT>
-			        &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+			        <br/>         
+			        <input class="btn btn-success" type="submit" name="bt"  value="Ajouter" />
 			      
-			</p>
-		</FORM>
-	<BR>
+			</fieldset>
+		</form>
+		</div>
+		</div>
+	<br/>
 </div>
 </body>
 </html>
