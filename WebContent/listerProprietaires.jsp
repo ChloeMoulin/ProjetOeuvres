@@ -11,13 +11,13 @@
 	
 	<body>
 	<jsp:include page="index.jsp"/>
-		<div class = "container_body">
+		<div class = "container_body_list">
 			<p align="center">
 				<br/>
 				<br/>
 				<h2>Listing des proprietaires</h2>
 				<p class = "add">
-					<a class="btn btn-success"href="ControleurProprietaire?action=ajouterProprietaire">Ajouter un adhérent</a>
+					<a class="btn btn-success"href="ControleurProprietaire?action=ajouterProprietaire">Ajouter un propriétaire</a>
 				</p>
 			</p>
 			<table class="table table-hover">

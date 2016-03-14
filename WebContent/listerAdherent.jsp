@@ -12,7 +12,7 @@
 	
 	<body>
 		<jsp:include page="index.jsp" />
-		<div class = "container_body">
+		<div class = "container_body_list">
 			<p align="center">
 				<br/>
 				<br/>

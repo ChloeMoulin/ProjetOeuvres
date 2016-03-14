@@ -4,46 +4,48 @@
    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Ajouter une Oeuvre pour la vente</title>
-<script language="Javascript" type="text/javascript"></script>
-<script type="text/javascript" src="js/fonctControle.js"></script>
-<script type="text/javascript" src="js/jquery-2.0.0.js"></script>
-</head>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Ajouter une Oeuvre pour la vente</title>
+		
+		<script language="Javascript" type="text/javascript"></script>
+		<script type="text/javascript" src="js/fonctControle.js"></script>
+		<script type="text/javascript" src="js/jquery-2.0.0.js"></script>
+	</head>
+	
 	<body>
 		<jsp:include page="index.jsp"/>
 		<div class = "container_body">
-		<br/>
-		<br/>
-			<h1> Ajout d'une oeuvre pour la vente</h1>
+			<p align="center">
+				<br/>
+				<br/>
+				<h2> Ajout d'une oeuvre pour la vente </h2> 
+			</p>
 			<div class="container drop-shadow">
 				<div class="container">
-					<div class="form-group">
-						<form id="form_vente" name='form_vente' method="post" action="ControleurOeuvreVente?action=insererOeuvreVente" onsubmit="return testOeuvreVente()">
-						    <div class="form-inline">    
-							<br/>Titre de l'oeuvre : 
-							   	<input class="form-control" type="text" name="txtTitre" value=""  id ="titre" onchange="titreChanged()"/>
-			   					<p class="alert" id = "alert_titre" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez entrer un titre</p>
-							</div>
-							<div class="form-inline">
-								<br/>Prix de l'oeuvre : 
-								<input class="form-control" type="number" name="numberPrix" value = "" id="prix" onchange="prixChanged()"/>
-								<p class = "alert" id = "alert_prix" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez entrer un prix</p>
-							</div>
-							<div class="form-inline">
-								<br/>Proprietaire :
-								<select class="form-control" name = "proprietaire" onchange="proprietaireChanged()">
-									<c:forEach items="${mesProprietaires}" var="item">
-										<option value = "${item.idProprietaire }">${item.prenomProprietaire } ${item.nomProprietaire }</option>
-									</c:forEach>
-								</select>
-								<p class="alert" id = "alert_proprietaire" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez sélectionner un proprietaire</p>
-							</div>		
+					<br/>
+					<form id="form_vente" name='form_vente' method="post" action="ControleurOeuvreVente?action=insererOeuvreVente" onsubmit="return testOeuvreVente()">
+					    <fieldset class="form-group" >	
+						    <label for= "titre">Titre :</label>
+							<input class="form-control" type="text" name="txtTitre" value=""  id ="titre" onchange="titreChanged()"/>
+			   				<p class="alert" id = "alert_titre" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez entrer un titre</p><br/>
+	
+							<label for= "prix">Prix :</label>
+							<input class="form-control" type="number" name="numberPrix" value = "" id="prix" onchange="prixChanged()"/>
+							<p class = "alert" id = "alert_prix" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez entrer un prix</p><br/>
+	
+							<label for= "proprietaire">Proprietaire :</label>
+							<select class="form-control" name = "proprietaire" onchange="proprietaireChanged()">
+								<c:forEach items="${mesProprietaires}" var="item">
+									<option value = "${item.idProprietaire }">${item.prenomProprietaire } ${item.nomProprietaire }</option>
+								</c:forEach>
+							</select>
+							<p class="alert" id = "alert_proprietaire" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez sélectionner un proprietaire</p><br/>
+								
 							<br/>			          
-					        <input class="btn btn-success" type="submit" name="bt"  value="Ajouter" >	      
-						</form>
-					</div>
+					        <input class="btn btn-success" type="submit" name="bt"  value="Ajouter" >
+						</fieldset>	      
+					</form>
 				</div>
 			</div>
 		</div>

@@ -11,28 +11,35 @@
 	<body>
 		<jsp:include page="index.jsp"/>
 		<div class = "container_body">
+			<p align="center">
+				<br/>
+				<br/>
+				<h2> Réserver une oeuvre </h2> 
+			</p>		
 			<div class="container drop-shadow">
 				<div class="container">
-					<div class="form-group">
-						<form id="form_reservation" name="form_reservation" method="post" action="ControleurReservation?action=validerReserverOeuvreVente&id=${oeuvre.id}" onsubmit="return teste()">
-							<br/>Titre de l'oeuvre : ${oeuvre.titre}
-				   			<br/>Prix de l'oeuvre : ${oeuvre.prixOeuvrevente}
-				   			<br/>Date Réservation :
-				   			<span class="form-inline"> 
-				   				<input class="form-control" type = "text" id = "dateReservation" name = "dateReservation"/>
-				   			</span>
+					<br/>
+					<form id="form_reservation" name="form_reservation" method="post" action="ControleurReservation?action=validerReserverOeuvreVente&id=${oeuvre.id}" onsubmit="return teste()">
+						<fieldset class="form-group" >
+							<label>Titre de l'oeuvre : ${oeuvre.titre}</label><br/>
+				   			<label>Prix de l'oeuvre : ${oeuvre.prixOeuvrevente}</label><br/>
+				   			
 				   			<br/>
-				   			<div class="form-inline">
-				   			Acheteur:
-					   			<select class="form-control" name="adherent">
-						   			<c:forEach items = "${adherents}" var="item">
-										<option value = "${item.idAdherent }">${item.prenomAdherent } ${item.nomAdherent }</option>
-									</c:forEach>
-					   			</select><br/>
-				   			</div>
+				   			<label for="dateReservation">Date Réservation :</label>
+				   			<input class="form-control" type = "text" id = "dateReservation" name = "dateReservation"/><br/>
+	
+				
+				   			<label for = "adherent">Acheteur :</label>
+				   			<select class="form-control" name="adherent">
+					   			<c:forEach items = "${adherents}" var="item">
+									<option value = "${item.idAdherent }">${item.prenomAdherent } ${item.nomAdherent }</option>
+								</c:forEach>
+				   			</select>
+				   			
+				   			<br/>	
 				   			<input class="btn btn-success" type = "submit" name = "bt"  value = "Valider" />
-					   	</form>
-				   	</div>
+				   		</fieldset>
+				   	</form>
 			   	</div>
 		   	</div> 
 	   	</div>
