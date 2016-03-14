@@ -45,7 +45,7 @@ public class ControleurProprietaire extends Controleur {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				destinationPage = "/listerProprietaires.jsp";
+				destinationPage = "/ControleurProprietaire?action=listerProprietaire";
 				break;
 			}
 			case "modifierProprietaire" : {
@@ -70,7 +70,7 @@ public class ControleurProprietaire extends Controleur {
 				} catch (MonException e) {
 					e.printStackTrace();
 				}
-				destinationPage = "/listerProprietaires.jsp";
+				destinationPage = "/ControleurProprietaire?action=listerProprietaire";
 				break;
 			}
 			case "supprimerProprietaire" : {
@@ -82,7 +82,7 @@ public class ControleurProprietaire extends Controleur {
 				} catch (MonException e) {
 					e.printStackTrace();
 				}
-				destinationPage = "/listerProprietaires.jsp";
+				destinationPage = "/ControleurProprietaire?action=listerProprietaire";
 				break;
 			}
 			case "listerProprietaires" : {

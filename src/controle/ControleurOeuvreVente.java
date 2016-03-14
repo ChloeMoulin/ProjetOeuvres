@@ -49,7 +49,7 @@ public class ControleurOeuvreVente extends Controleur {
 			} catch (MonException e) {
 				e.printStackTrace();
 			}
-			destinationPage = "/index.jsp";
+			destinationPage = "/ControleurOeuvreVente?action=listerOeuvresVente";
 			break;
 		}
 		case "supprimerOeuvreVente" : {
@@ -61,7 +61,7 @@ public class ControleurOeuvreVente extends Controleur {
 			} catch (MonException e) {
 				e.printStackTrace();
 			}
-			destinationPage = "/listerOeuvresVentes.jsp";
+			destinationPage =  "/ControleurOeuvreVente?action=listerOeuvresVente";
 			break;
 		}
 		case "validerModifOeuvreVente" : {
@@ -76,7 +76,7 @@ public class ControleurOeuvreVente extends Controleur {
 			} catch (MonException e) {
 				e.printStackTrace();
 			}
-			destinationPage = "/index.jsp";
+			destinationPage =  "/ControleurOeuvreVente?action=listerOeuvresVente";
 			break;
 		}
 		case "modifierOeuvreVente" : {
@@ -99,7 +99,7 @@ public class ControleurOeuvreVente extends Controleur {
 			} catch (MonException e) {
 				e.printStackTrace();
 			}
-			destinationPage = "/listerOeuvresVentes.jsp";
+			destinationPage =  "/listerOeuvresVente.jsp";
 			break;
 		}
 			default : {

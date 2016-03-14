@@ -54,7 +54,7 @@ public class ControleurAdherent extends Controleur {
 				} catch (MonException e) {
 					e.printStackTrace();
 				}
-				destinationPage = "/listerAdherent.jsp";
+				destinationPage = "/ControleurAdherent?action=listerAdherent";
 				break;
 			}	
 			case "supprimerAdherent" :{
@@ -66,7 +66,7 @@ public class ControleurAdherent extends Controleur {
 				} catch (MonException e) {
 					e.printStackTrace();
 				}
-				destinationPage = "/listerAdherent.jsp";
+				destinationPage = "/ControleurAdherent?action=listerAdherent";
 				break;
 			}
 			case "listerAdherent" : {
@@ -93,7 +93,7 @@ public class ControleurAdherent extends Controleur {
 				} catch (MonException e) {
 					e.printStackTrace();
 				}
-				destinationPage = "/index.jsp";
+				destinationPage = "/ControleurAdherent?action=listerAdherent";
 				break;
 			}
 			default : {

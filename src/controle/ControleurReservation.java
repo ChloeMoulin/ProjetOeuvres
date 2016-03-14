@@ -47,7 +47,7 @@ public class ControleurReservation extends Controleur {
 				} catch (MonException e) {
 					e.printStackTrace();
 				}
-				destinationPage = "/listerReservations.jsp";
+				destinationPage = "/ControleurReservation?action=listerReservations";
 				break;
 			}
 			case "supprimerReservation" : {
@@ -59,7 +59,7 @@ public class ControleurReservation extends Controleur {
 				} catch (MonException e) {
 					e.printStackTrace();
 				}
-				destinationPage = "/listerOeuvresPret.jsp";
+				destinationPage = "/ControleurReservation?action=listerReservations";
 				break;
 			}
 			case "listerReservations" : {
@@ -97,7 +97,7 @@ public class ControleurReservation extends Controleur {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				destinationPage = "/index.jsp";
+				destinationPage = "/ControleurReservation?action=listerReservations";;
 				break;
 			}
 			default : {
