@@ -24,12 +24,12 @@
 						    <div class="form-inline">    
 							<br/>Titre de l'oeuvre : 
 							   	<input class="form-control" type="text" name="txtTitre" value=""  id ="titre" onchange="titreChanged()"/>
-			   					<p id = "alert_titre" style = "display:none;">Veuillez entrer un titre</p>
+			   					<p class="alert" id = "alert_titre" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez entrer un titre</p>
 							</div>
 							<div class="form-inline">
 								<br/>Prix de l'oeuvre : 
 								<input class="form-control" type="number" name="numberPrix" value = "" id="prix" onchange="prixChanged()"/>
-								<p id = "alert_prix" style = "display:none;">Veuillez entrer un prix</p>
+								<p class = "alert" id = "alert_prix" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez entrer un prix</p>
 							</div>
 							<div class="form-inline">
 								<br/>Proprietaire :
@@ -38,7 +38,7 @@
 										<option value = "${item.idProprietaire }">${item.prenomProprietaire } ${item.nomProprietaire }</option>
 									</c:forEach>
 								</select>
-								<p id = "alert_proprietaire" style = "display:none;">Veuillez sélectionner un proprietaire</p>
+								<p class="alert" id = "alert_proprietaire" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez sélectionner un proprietaire</p>
 							</div>		
 							<br/>			          
 					        <input class="btn btn-success" type="submit" name="bt"  value="Ajouter" >	      
