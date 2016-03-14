@@ -6,13 +6,16 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta http-equiv="refresh" content="0;URL=javascript:fermer();">
-		<!-- Latest compiled and minified CSS -->
-		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-		<script type="text/javascript" src="js/jquery-2.0.0.js"></script>
+
+		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" />		
 		<link href="css/bootstrap.min.css" rel="stylesheet" />
 		<link href="css/index.css" rel="stylesheet"/>
 		<link href="css/simple-sidebar.css" rel = "stylesheet"/>
+		
+		<script type="text/javascript" src="js/jquery-2.0.0.js"></script>
 		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		
 		<title>Expo : Médiathèque De POLYTECH</title>
 	</head>
 	<body>
@@ -34,17 +37,20 @@
 				</li>
 				<li><a href="ControleurAdherent?action=ajouterAdherent"><font
 						face="Arial">Ajout Adhérent</font></a></li>
-				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-target="#" role="button" aria-haspopup="true" aria-expanded="false">Ajouter une Oeuvre <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href = "ControleurOeuvrePret?action=ajouterOeuvre">Ajouter une Oeuvre à prêter</a>
-						<li><a href = "ControleurOeuvreVente?action=ajouterOeuvre">Ajouter une Oeuvre à vendre</a>
+				<li class="dropdown_index" onclick="displayMenuOeuvre()">
+					<a>Ajouter une Oeuvre</a>
+					<ul class ="dropdown_menu" id="dropdown_oeuvre_menu" style="display:none;">
+						<li class="no_puce"><a href = "ControleurOeuvrePret?action=ajouterOeuvre">Ajouter une Oeuvre à prêter</a>
+						<li class="no_puce"><a href = "ControleurOeuvreVente?action=ajouterOeuvre">Ajouter une Oeuvre à vendre</a>
 					</ul>
 				<li><a href="ControleurAdherent?action=listerAdherent"><font
 						face="Arial">Listing des adhérents</font></a><font face="Arial"> </font></li>
-				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-target="#" role="button" aria-haspopup="true" aria-expanded="false">Listing des Oeuvres <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href = "ControleurOeuvreVente?action=listerOeuvresVente">Listing des Oeuvres à vendre</a></li>
-						<li><a href = "ControleurOeuvrePret?action=listerOeuvresPret">Listing des Oeuvres à prêter</a></li>
+						
+				<li class="dropdown_index" onclick="displayMenuListeOeuvre()">	
+					<a>Listing des oeuvres</a>				
+					<ul class ="dropdown_menu" id="dropdown_liste_oeuvre_menu" style="display:none;">
+						<li class="no_puce"><a href = "ControleurOeuvreVente?action=listerOeuvresVente">Listing des Oeuvres à vendre</a></li>
+						<li class="no_puce"><a href = "ControleurOeuvrePret?action=listerOeuvresPret">Listing des Oeuvres à prêter</a></li>
 					</ul>
 				</li>
 				<li><a href = "ControleurReservation?action=listerReservations">Listing des Réservations</a></li>
