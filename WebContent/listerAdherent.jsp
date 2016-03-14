@@ -16,6 +16,9 @@
 	<br/>
 				<h1 style="color:black;font-size:22px;"> Listing des Adhérents </h1> 
 				<h1></h1>
+									<p class = "add">
+			<a class="btn btn-success" href="ControleurAdherent?action=ajouterAdherent">Ajouter un adhérent</a>
+		</p>
 			</P>
 			<TABLE class="table table-hover">
 				<TR>
@@ -37,6 +40,8 @@
 					</tr>
 				</c:forEach>
 			</TABLE>
+
 			</div>
+
 </body>
 </html>

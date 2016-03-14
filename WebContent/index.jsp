@@ -36,29 +36,19 @@
 				<li class="sidebar-brand">
 					<a href="index.jsp">Retour Accueil</a>
 				</li>
-				<li><a href="ControleurAdherent?action=ajouterAdherent"><font
-						face="Arial">Ajout Adhérent</font></a></li>
-				<li class="dropdown_index" onclick="displayMenuOeuvre()">
-					<a>Ajouter une Oeuvre</a>
-					<ul class ="dropdown_menu" id="dropdown_oeuvre_menu" style="display:none;">
-						<li class="no_puce"><a href = "ControleurOeuvrePret?action=ajouterOeuvre">Ajouter une Oeuvre à prêter</a>
-						<li class="no_puce"><a href = "ControleurOeuvreVente?action=ajouterOeuvre">Ajouter une Oeuvre à vendre</a>
-					</ul>
 				<li><a href="ControleurAdherent?action=listerAdherent"><font
 						face="Arial">Listing des adhérents</font></a><font face="Arial"> </font></li>
 						
 				<li class="dropdown_index" onclick="displayMenuListeOeuvre()">	
 					<a>Listing des oeuvres</a>			
 					<ul class ="dropdown_menu" id="dropdown_liste_oeuvre_menu" style="display:none;">
-						<li class="no_puce"><a href = "ControleurOeuvreVente?action=listerOeuvresVente">Listing des Oeuvres à vendre</a></li>
-						<li class="no_puce"><a href = "ControleurOeuvrePret?action=listerOeuvresPret">Listing des Oeuvres à prêter</a></li>
+						<li class="no_puce"><a href = "ControleurOeuvreVente?action=listerOeuvresVente">Listing des oeuvres à vendre</a></li>
+						<li class="no_puce"><a href = "ControleurOeuvrePret?action=listerOeuvresPret">Listing des oeuvres à prêter</a></li>
 					</ul>
 				</li>
-				<li><a href = "ControleurReservation?action=listerReservations">Listing des Réservations</a></li>
-				<li><a href = "ControleurProprietaire?action=listerProprietaires">Listing des Proprietaires</a></li>
-				<li><a href = "ControleurProprietaire?action=ajouterProprietaire">Ajouter Proprietaire</a></li>
+				<li><a href = "ControleurReservation?action=listerReservations">Listing des réservations</a></li>
+				<li><a href = "ControleurProprietaire?action=listerProprietaires">Listing des proprietaires</a></li>
 			</ul>
 		</div>
-		
 	</body>
 </html>

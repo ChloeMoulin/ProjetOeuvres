@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Ajouter un proprietaire</title>
 </head>
-<SCRIPT language="Javascript" type="text/javascript"></script>
+<script language="Javascript" type="text/javascript"></script>
 <script type="text/javascript" src="js/foncControle.js"></script>
 
 
