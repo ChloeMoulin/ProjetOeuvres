@@ -16,29 +16,29 @@
 	<br/>
 	<br/>
 		<h1 style="color:black;font-size:22px;"> Ajout d'un adhérent </h1> 
-		<div class="container drop-shadow" style="width:70%;margin-left:0%">
-    		<div class="container" style="width:100%">
+		<div class="container drop-shadow">
+    		<div class="container">
     		<br/>
-		<form name='identification' method="post" action="ControleurAdherent?action=insererAdherent" onsubmit="return testAdherent()">
-			<fieldset class="form-group" >
-					<label for= "nom">Nom :</label>
-				    <input class="form-control" type="text" name="txtnom" value=""  id ="nom" onchange="nomChanged()"/> <br/>
-				    <p id = "alert_nom" style = "display:none;">Veuillez entrer un nom</p>
-			    
-			    	<label for= "prenom">Prénom :</label>
-			        <input class="form-control" type="text" name="txtprenom"  id ="prenom" onchange="prenomChanged()"/> <br/>
-			    	<p id = "alert_prenom" style = "display:none;">Veuillez entrer un prénom</p>
-
-					<label for= "ville">Ville :</label>
-			        <input class="form-control" type="text" name="txtville" id ="ville" onchange=""/>
-			        <p id = "alert_ville" style = "display:none;">Veuillez entrer une ville</p>
-
-			        <br/>         
-			        <input class="btn btn-success" type="submit" name="bt"  value="Ajouter" />
-			      
-			</fieldset>
-		</form>
-		</div>
+				<form name='identification' method="post" action="ControleurAdherent?action=insererAdherent" onsubmit="return testAdherent()">
+					<fieldset class="form-group" >
+							<label for= "nom">Nom :</label>
+						    <input class="form-control" type="text" name="txtnom" value=""  id ="nom" onchange="nomChanged()"/> <br/>
+						    <p id = "alert_nom" style = "display:none;">Veuillez entrer un nom</p>
+					    
+					    	<label for= "prenom">Prénom :</label>
+					        <input class="form-control" type="text" name="txtprenom"  id ="prenom" onchange="prenomChanged()"/> <br/>
+					    	<p id = "alert_prenom" style = "display:none;">Veuillez entrer un prénom</p>
+		
+							<label for= "ville">Ville :</label>
+					        <input class="form-control" type="text" name="txtville" id ="ville" onchange=""/>
+					        <p id = "alert_ville" style = "display:none;">Veuillez entrer une ville</p>
+		
+					        <br/>         
+					        <input class="btn btn-success" type="submit" name="bt"  value="Ajouter" />
+					      
+					</fieldset>
+				</form>
+			</div>
 		</div>
 	<br/>
 </div>
