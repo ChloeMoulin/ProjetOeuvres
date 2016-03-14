@@ -61,6 +61,7 @@ h1 {
 
 .container_body {
 	margin-left:30%;
+	padding-top:4%;
 }
 
 .dropdown_index:hover {
@@ -95,4 +96,9 @@ h1 {
 .add {
 	position:relative;
 	bottom:0;
+}
+
+h2 {
+	color:black;
+	font-size:22px;
 }
