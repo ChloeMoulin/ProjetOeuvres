@@ -10,14 +10,12 @@
 </head>
 <body>
 	<jsp:include page="index.jsp" />
-	<div class = "container_body">
-		<P>
-			<A href="index.jsp"><FONT face="Arial" color="#004080">Retour
-					Accueil</FONT></A>
-		</P>
-		<div class="col-md-6">
+	<div class = "container_body" style="padding-top:4%;">
 			<P align="center">
-				<h1>Listing des Adhérents</h1>
+					<br/>
+	<br/>
+				<h1 style="color:black;font-size:22px;"> Listing des Adhérents </h1> 
+				<h1></h1>
 			</P>
 			<TABLE class="table table-hover">
 				<TR>
@@ -40,6 +38,5 @@
 				</c:forEach>
 			</TABLE>
 			</div>
-	</div>
 </body>
 </html>
