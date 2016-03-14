@@ -91,13 +91,16 @@ h1 {
 .container.drop-shadow {
     padding-left:0;
     padding-right:0;
+    width:70%;
+    margin-left:0%
 }
-
 .add {
 	position:relative;
 	bottom:0;
 }
-
+.container {
+	width:100%;
+}
 h2 {
 	color:black;
 	font-size:22px;

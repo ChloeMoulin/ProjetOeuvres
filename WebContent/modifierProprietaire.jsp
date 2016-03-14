@@ -6,21 +6,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Modifier un Propriétaire</title>
 </head>
-<body>
-<jsp:include page="index.jsp"/>
-<div class = "container_body">
-	<h1> Modification d'un propriétaire </h1>
-	<div class="form-group">
-		<form name='identification' method="post" action="ControleurProprietaire?action=validerModifProprietaire&id=${proprietaire.idProprietaire}" onsubmit="return teste()">
-			<div class="form-inline">
-				<br/>Nom du Propriétaire : <input class="form-control" type="text" name="txtnom" value=${proprietaire.nomProprietaire}  id ="nom"><br/>
+	<body>
+		<jsp:include page="index.jsp"/>
+		<div class = "container_body">
+			<br/>
+			<br/>
+			<h1> Modification d'un propriétaire </h1>
+			<div class="container drop-shadow">
+				<div class="container">
+					<div class="form-group">
+						<form name='identification' method="post" action="ControleurProprietaire?action=validerModifProprietaire&id=${proprietaire.idProprietaire}" onsubmit="return teste()">
+							<div class="form-inline">
+								<br/>Nom du Propriétaire : <input class="form-control" type="text" name="txtnom" value=${proprietaire.nomProprietaire}  id ="nom"><br/>
+							</div>
+							<div class="form-inline">
+								<br/>Prénom du Propriétaire : <input class="form-control" type="text" name="txtprenom" value=${proprietaire.prenomProprietaire}  id ="prenom"><br/>
+							</div>
+							<input class="btn btn-success" type="submit" name="bt"  value="Valider" />
+						</form>
+					</div>
+				</div>
 			</div>
-			<div class="form-inline">
-				<br/>Prénom du Propriétaire : <input class="form-control" type="text" name="txtprenom" value=${proprietaire.prenomProprietaire}  id ="prenom"><br/>
-			</div>
-			<input class="btn btn-success" type="submit" name="bt"  value="Valider" />
-		</form>
-	</div>
-</div>
-</body>
+		</div>
+	</body>
 </html>
