@@ -61,3 +61,15 @@ h1 {
 .container_body {
 	margin-left:30%;
 }
+
+.dropdown_index:hover {
+    cursor: pointer;
+}
+
+.no_puce {
+	list-style:none;
+}
+
+.dropdown_menu {
+	padding:0;
+}
