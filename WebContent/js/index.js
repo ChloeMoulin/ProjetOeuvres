@@ -16,8 +16,9 @@ function displayMenuListeOeuvre() {
 
 $(document).ready(function() {
 	var param = location.search.split("?action=")[1];
-	var bool = (param == "listerOeuvresPret");
-	if (bool) {
+	var bool_pret = (param == "listerOeuvresPret");
+	var bool_vente = (param == "listerOeuvresVente");
+	if (bool_pret || bool_vente) {
 		$("#dropdown_liste_oeuvre_menu").fadeIn();
 	}
 });

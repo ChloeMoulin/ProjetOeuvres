@@ -20,7 +20,7 @@
 	</head>
 	<body>
 	
-		<div class = "title" style="height:15%;border-bottom:1px solid #5983AA;margin-top:-3%;">
+		<div class = "title" style="height:19%;border-bottom:1px solid #5983AA;margin-top:-3%;position:fixed;z-index:1000;width:100%;">
 
 			<h1 align="center" style="padding-top:3%">
 				Médiathèque de POLYTECH
@@ -31,8 +31,8 @@
 				<font color="#d0d0d0" face="Arial" size="4">l'exposition 2016</font>
 			</p>
 		</div>
-		<div id="sidebar-wrapper">
-			<ul class="sidebar-nav">
+		<div id="sidebar-wrapper" style="z-index:1;">
+			<ul class="sidebar-nav" style="padding-top:42%;">
 				<li class="sidebar-brand">
 					<a href="index.jsp">Retour Accueil</a>
 				</li>

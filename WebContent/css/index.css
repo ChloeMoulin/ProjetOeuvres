@@ -61,6 +61,7 @@ h1 {
 
 .container_body {
 	margin-left:30%;
+	padding-top:4%;
 }
 
 .dropdown_index:hover {
@@ -99,4 +100,8 @@ h1 {
 }
 .container {
 	width:100%;
+}
+h2 {
+	color:black;
+	font-size:22px;
 }

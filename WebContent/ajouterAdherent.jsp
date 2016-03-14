@@ -12,7 +12,7 @@
 
 <body>
 <jsp:include page="index.jsp"/>
-	<div class = "container_body">
+	<div class = "container_body" style="padding-top:4%;">
 	<br/>
 	<br/>
 		<h1 style="color:black;font-size:22px;"> Ajout d'un adhérent </h1> 
