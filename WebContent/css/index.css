@@ -60,9 +60,15 @@ h1 {
 }
 
 .container_body {
-	margin-left:30%;
+	margin-left:40%;
 	padding-top:4%;
 }
+
+.container_body_list {
+	margin-left:20%;
+	padding-top:4%;
+}
+
 
 .dropdown_index:hover {
     cursor: pointer;

@@ -11,22 +11,21 @@
 	</head>
 	<body>
 		<jsp:include page="index.jsp"/>
-		<div class = "container_body">
-			<div id="wrap">
-				<p align="center">
-					<br/>
-					<br/>
-					<h2>Listing des réservations</h2>
-				</p>
-				<table class="table table-hover">
-					<tr>
-						<th>Oeuvre</th>
-						<th>Adhérent</th>
-						<th>Date</th>
-						<th>Réservation</th>
-						<th>Supprimer</th>
-					</tr>
-					<c:forEach items="${mesReservations}" var="item">			
+		<div class = "container_body_list">
+			<p align="center">
+				<br/>
+				<br/>
+				<h2>Listing des réservations</h2>
+			</p>
+			<table class="table table-hover">
+				<tr>
+					<th>Oeuvre</th>
+					<th>Adhérent</th>
+					<th>Date</th>
+					<th>Réservation</th>
+					<th>Supprimer</th>
+				</tr>
+				<c:forEach items="${mesReservations}" var="item">			
 					<tr>
 						<td>${item.oeuvrevente.getTitre()}</td>
 						<td>${item.adherent.getPrenomAdherent()} ${item.adherent.getNomAdherent()}</td>
