@@ -44,6 +44,23 @@ function testAdherent()
    return ok;
 }
 
+function testProprietaire()
+{  ok = true;
+   if ($("#nom").val() == "") {
+	   ok = false;
+	   $("#alert_nom").fadeIn();
+   } else {
+	   $("#alert_nom").fadeOut();   
+   }
+   if ($("#prenom").val() == "") {
+	   ok = false;
+	   $("#alert_prenom").fadeIn();
+   } else {
+	   $("#alert_prenom").fadeOut();
+   }
+   return ok;
+}
+
 function titreChanged() {
 	if($("#titre").val() != "") {
 		$("#alert_titre").fadeOut();

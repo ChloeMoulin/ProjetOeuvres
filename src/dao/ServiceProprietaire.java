@@ -15,6 +15,8 @@ public class ServiceProprietaire {
 		String mysql;
 
 		DialogueBd bd = DialogueBd.getInstance();
+		if(!p.proprietaireNotEmpty())
+			return;
 		try {
 			mysql = "insert into proprietaire  (nom_proprietaire,prenom_proprietaire)  values ('"
 					+ p.getNomProprietaire()+ "','" + p.getPrenomProprietaire()+ "')";
@@ -49,6 +51,8 @@ public class ServiceProprietaire {
 	public void updateProprietaire(Proprietaire p) throws MonException {
 		String mysql;		
 		DialogueBd bd = DialogueBd.getInstance();
+		if(!p.proprietaireNotEmpty())
+			return;
 		try {
 			mysql = "update proprietaire set nom_proprietaire='" + p.getNomProprietaire() + "',prenom_proprietaire = '"+p.getPrenomProprietaire()+"' where id_proprietaire='" + p.getIdProprietaire() + "'";
 			bd.execute(mysql);

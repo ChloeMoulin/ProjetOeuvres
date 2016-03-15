@@ -70,7 +70,7 @@ public class ControleurProprietaire extends Controleur {
 				} catch (MonException e) {
 					e.printStackTrace();
 				}
-				destinationPage = "/ControleurProprietaire?action=listerProprietaire";
+				destinationPage = "/ControleurProprietaire?action=listerProprietaires";
 				break;
 			}
 			case "supprimerProprietaire" : {
@@ -82,7 +82,7 @@ public class ControleurProprietaire extends Controleur {
 				} catch (MonException e) {
 					e.printStackTrace();
 				}
-				destinationPage = "/ControleurProprietaire?action=listerProprietaire";
+				destinationPage = "/ControleurProprietaire?action=listerProprietaires";
 				break;
 			}
 			case "listerProprietaires" : {

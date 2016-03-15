@@ -6,6 +6,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Ajouter un proprietaire</title>
 		<script language="Javascript" type="text/javascript"></script>
+		<script type="text/javascript" src="js/fonctControle.js"></script>
 	</head>
 	<body>
 		<jsp:include page="index.jsp"/> 
@@ -18,13 +19,15 @@
 			<div class="container drop-shadow">
 				<div class="container">
 					<br/>
-					<form  name='identification' method="post" action="ControleurProprietaire?action=insererProprietaire" onsubmit="return teste()">
+					<form  name='identification' method="post" action="ControleurProprietaire?action=insererProprietaire" onsubmit="return testProprietaire()">
 					     <fieldset class="form-group" >
 						    <label for="nom">Nom : </label>
 							<input class="form-control" type="text" name="txtnom" value=""  id ="nom" onchange="nomChanged()"/><br/>
-	
+							<p class="alert" id = "alert_nom" style = "display:none;"><i class="fa fa-exclamation-triangle"></i> Veuillez entrer un nom</p> <br/>
+							
 							<label for="prenom">Prénom : </label>
 						    <input class="form-control" type="text" name="txtprenom"  id ="prenom" onchange="prenomChanged()"/><br/>
+					    	<p class="alert" id = "alert_prenom" style = "display:none;"><i class="fa fa-exclamation-triangle"></i> Veuillez entrer un prénom</p> <br/>
 								
 							<br/>				          
 					        <input class="btn btn-success" type="submit" name="bt"  value="Ajouter" />

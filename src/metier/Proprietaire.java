@@ -47,5 +47,14 @@ public class Proprietaire implements Serializable {
 	public void setPrenomProprietaire(String prenomProprietaire) {
 		this.prenomProprietaire = prenomProprietaire;
 	}
+	
+	
+	public boolean proprietaireNotEmpty() {
+		if(nomProprietaire == null || nomProprietaire.equals("")) 
+			return false;
+		if(prenomProprietaire == null || prenomProprietaire.equals(""))
+			return false;
+		return true;
+	}
 
 }

@@ -4,6 +4,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script type="text/javascript" src="js/fonctControle.js"></script>
 		<title>Modifier un propriétaire</title>
 	</head>
 	<body>
@@ -17,14 +18,16 @@
 			<div class="container drop-shadow">
 				<div class="container">
 					<br/>
-					<form  name='identification' method="post" action="ControleurProprietaire?action=validerModifProprietaire&id=${proprietaire.idProprietaire}" onsubmit="return teste()">
+					<form  name='identification' method="post" action="ControleurProprietaire?action=validerModifProprietaire&id=${proprietaire.idProprietaire}" onsubmit="return testProprietaire()">
 					     <fieldset class="form-group" >
 						    <label for="nom">Nom : </label>
 							<input class="form-control" type="text" name="txtnom" value=${proprietaire.nomProprietaire}  id ="nom" onchange="nomChanged()"/><br/>
+						    <p class="alert" id = "alert_nom" style = "display:none;"><i class="fa fa-exclamation-triangle"></i> Veuillez entrer un nom</p> <br/>
 	
 							<label for="prenom">Prénom : </label>
 						    <input class="form-control" type="text" name="txtprenom" value=${proprietaire.prenomProprietaire}  id ="prenom" onchange="prenomChanged()"/><br/>
-								
+					    	<p class="alert" id = "alert_prenom" style = "display:none;"><i class="fa fa-exclamation-triangle"></i> Veuillez entrer un prénom</p> <br/>
+
 							<br/>				          
 					        <input class="btn btn-success" type="submit" name="bt"  value="Valider" />
 						</fieldset>
