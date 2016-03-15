@@ -22,7 +22,7 @@
             // Datetime picker
             $(".datepicker").datetimepicker({
                 timepicker: false,
-                format: "d/m/Y",
+                format: "dd/mm/YY",
                 dayOfWeekStart: 1,
                 startDate: new Date(),
                 minDate: 0
