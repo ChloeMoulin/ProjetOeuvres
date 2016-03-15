@@ -13,7 +13,6 @@
 	<body>
 		<script type="text/javascript" src="js/fonctControle.js"></script>
 		<script type="text/javascript" src="js/jquery-2.0.0.js"></script>
-
 		<jsp:include page="index.jsp"/>
 		<div class = "container_body">
 			<p align="center">
@@ -31,14 +30,14 @@
 				   			
 				   			<br/>
 				   			<label for="dateReservation">Date Réservation :</label>
-				   			<input class="form-control" type = "date" id = "dateReservation" class="datepicker" name = "dateReservation" onchange ="dateChanged()" min = "${dateToday}"/><br/>
+				   			<input class="form-control" type = "date" id = "dateReservation" class="datepicker" name = "dateReservation" onchange ="dateChanged()" min = '${dateToday}'/><br/>
 							<p class="alert" id = "alert_date" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez sélectionner une date</p><br/>
 							
 				
 				   			<label for = "adherent">Acheteur :</label>
 				   			<select class="form-control" name="adherent">
 					   			<c:forEach items = "${adherents}" var="item">
-									<option value = "${item.idAdherent }">${item.prenomAdherent } ${item.nomAdherent }</option>
+									<option value = '${item.idAdherent }'>${item.prenomAdherent } ${item.nomAdherent }</option>
 								</c:forEach>
 				   			</select>
 				   			

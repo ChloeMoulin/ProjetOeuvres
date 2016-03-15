@@ -21,11 +21,12 @@
 					<form  name='identification' method="post" action="ControleurProprietaire?action=validerModifProprietaire&id=${proprietaire.idProprietaire}" onsubmit="return testProprietaire()">
 					     <fieldset class="form-group" >
 						    <label for="nom">Nom : </label>
-							<input class="form-control" type="text" name="txtnom" value=${proprietaire.nomProprietaire}  id ="nom" onchange="nomChanged()"/><br/>
+
+							<input class="form-control" type="text" name="txtnom" value='${proprietaire.nomProprietaire}'  id ="nom" onchange="nomChanged()"/><br/>
 						    <p class="alert" id = "alert_nom" style = "display:none;"><i class="fa fa-exclamation-triangle"></i> Veuillez entrer un nom</p> <br/>
 	
 							<label for="prenom">Prénom : </label>
-						    <input class="form-control" type="text" name="txtprenom" value=${proprietaire.prenomProprietaire}  id ="prenom" onchange="prenomChanged()"/><br/>
+						    <input class="form-control" type="text" name="txtprenom" value='${proprietaire.prenomProprietaire}'  id ="prenom" onchange="prenomChanged()"/><br/>
 					    	<p class="alert" id = "alert_prenom" style = "display:none;"><i class="fa fa-exclamation-triangle"></i> Veuillez entrer un prénom</p> <br/>
 
 							<br/>				          

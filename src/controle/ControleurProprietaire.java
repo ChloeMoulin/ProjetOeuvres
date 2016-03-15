@@ -45,7 +45,7 @@ public class ControleurProprietaire extends Controleur {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				destinationPage = "/ControleurProprietaire?action=listerProprietaire";
+				destinationPage = "/ControleurProprietaire?action=listerProprietaires";
 				break;
 			}
 			case "modifierProprietaire" : {

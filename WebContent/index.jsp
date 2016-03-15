@@ -15,6 +15,7 @@
 		<script type="text/javascript" src="js/jquery-2.0.0.js"></script>
 		<script type="text/javascript" src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 		
 		<title>Expo : Médiathèque De POLYTECH</title>
 	</head>
