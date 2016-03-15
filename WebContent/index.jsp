@@ -25,7 +25,7 @@
 			<h1 align="center" style="padding-top:6vh">
 				Médiathèque de POLYTECH
 			</h1>
-			<p align="left" style="margin: -8vh 3px 10px">
+			<p align="left" style="margin: -3% 3px 10px">
 				<font color="#d0d0d0" face="Arial" size="4">Gestion de</font>
 				<br/>
 				<font color="#d0d0d0" face="Arial" size="4">l'exposition 2016</font>
