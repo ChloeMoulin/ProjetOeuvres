@@ -2,6 +2,7 @@ package controle;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
@@ -76,7 +77,12 @@ public class ControleurReservation extends Controleur {
 					String id = request.getParameter("id");
 					int numero = new Integer(id);
 					request.setAttribute("adherents", s.consulterListeAdherents());
-					request.setAttribute("oeuvre", s.consulterOeuvreVente(numero));				
+					request.setAttribute("oeuvre", s.consulterOeuvreVente(numero));
+					
+				    Date date = Calendar.getInstance().getTime();
+				    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+				    
+					request.setAttribute("dateToday",sdf.format(date) );
 				} catch (MonException e) {
 					e.printStackTrace();
 				}

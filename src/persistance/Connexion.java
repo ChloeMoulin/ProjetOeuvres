@@ -10,7 +10,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class Connexion {
-	private Connection conn = null;
 	private static Connexion instance = null;
 
 	// On utilise un singleton

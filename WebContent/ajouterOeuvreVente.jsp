@@ -31,7 +31,7 @@
 			   				<p class="alert" id = "alert_titre" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez entrer un titre</p><br/>
 	
 							<label for= "prix">Prix :</label>
-							<input class="form-control" type="number" name="numberPrix" value = "" id="prix" onchange="prixChanged()"/>
+							<input class="form-control" type="number" name="numberPrix" value = "" id="prix" onchange="prixChanged()" min="1" step="0.01"/>
 							<p class = "alert" id = "alert_prix" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez entrer un prix</p><br/>
 	
 							<label for= "proprietaire">Proprietaire :</label>

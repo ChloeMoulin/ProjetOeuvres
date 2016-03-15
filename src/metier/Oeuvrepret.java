@@ -23,6 +23,10 @@ public class Oeuvrepret extends Oeuvre {
 	public Oeuvrepret() {
 		
 	}
+	
+	public boolean oeuvreNotEmpty() {
+		return super.oeuvreNotEmpty();
+	}
 
 
 }

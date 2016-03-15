@@ -34,7 +34,7 @@
 					<tr>
 						<td>${item.titre}</td>
 						<td>${item.etatOeuvrevente}</td>
-						<td>${item.prixOeuvrevente}</td>
+						<td>${item.prixOeuvrevente} €</td>
 		                <td>${item.proprietaire.getPrenomProprietaire()} ${item.proprietaire.getNomProprietaire()}</td>
 		                <td><a class="btn btn-primary" href="ControleurOeuvreVente?action=modifierOeuvreVente&id=${item.id}"><i class="fa fa-pencil-square-o"></i></a></td>
 		                <c:choose>

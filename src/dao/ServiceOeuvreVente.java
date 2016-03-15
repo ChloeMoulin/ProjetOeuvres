@@ -47,6 +47,9 @@ public class ServiceOeuvreVente {
 	public void updateOeuvreVente(Oeuvrevente o, Proprietaire p) throws MonException {
 		String mysql;
 		DialogueBd bd = DialogueBd.getInstance();
+		if(!o.oeuvreNotEmpty()) {
+			return;
+		}
 		try {
 			mysql = "update oeuvrevente set titre_oeuvrevente='" + o.getTitre() + "', etat_oeuvrevente='" +
 					o.getEtatOeuvrevente() + "', prix_oeuvrevente='" + o.getPrixOeuvrevente()

@@ -30,6 +30,8 @@ public class ServiceReservation {
 	public void updateReservation(Reservation r) throws MonException {
 		String mysql;
 		DialogueBd db = DialogueBd.getInstance();
+		if (!r.reservationNotEmpty())
+			return;
 		try {
 			mysql = "update reservation set statut='" + r.getStatut() + "' where id_oeuvrevente='" + r.getOeuvrevente().getId() + "'";
 			db.execute(mysql);
@@ -41,6 +43,8 @@ public class ServiceReservation {
 	public void reserverOeuvreVente(Reservation r) throws MonException {
 		String mysql;
 		DialogueBd db = DialogueBd.getInstance();
+		if (!r.reservationNotEmpty() || !r.getOeuvrevente().oeuvreLibre())
+			return;
 		try {
 			mysql = "insert into reservation (id_oeuvrevente, id_adherent, date_reservation, statut) values ('" +
 					r.getOeuvrevente().getId() + "','" + r.getAdherent().getIdAdherent() + "','"

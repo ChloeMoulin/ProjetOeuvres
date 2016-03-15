@@ -98,3 +98,19 @@ function testOeuvreVente() {
 	}
 	return ok;
 }
+
+function testReservation() {
+	if($("#dateReservation").val().length == 0) {
+		$("#alert_date").fadeIn();
+		return false;
+	}
+	$("#alert_date").fadeOut();
+	return true;
+}
+
+
+function dateChanged() {
+	if($("#dateReservation").val().length > 0) {
+		$("#alert_date").fadeOut();
+	}
+}
