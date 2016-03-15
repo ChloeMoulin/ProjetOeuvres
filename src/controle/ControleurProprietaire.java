@@ -63,6 +63,11 @@ public class ControleurProprietaire extends Controleur {
 			case "validerModifProprietaire" : {
 				try {
 					String id = request.getParameter("id");
+					if (id.equals("")) {
+						destinationPage = "/ControleurProprietaire?action=listerProprietaires";
+						break;
+					}
+									
 					int numero = new Integer(id);
 					Proprietaire p = new Proprietaire(request.getParameter("txtnom"),request.getParameter("txtprenom"));
 					p.setIdProprietaire(numero);
@@ -76,6 +81,10 @@ public class ControleurProprietaire extends Controleur {
 			case "supprimerProprietaire" : {
 				try {
 					String id = request.getParameter("id");
+					if (id.equals("")) {
+						destinationPage = "/ControleurProprietaire?action=listerProprietaires";
+						break;
+					}
 					Proprietaire p = new Proprietaire();
 					p.setIdProprietaire(Integer.parseInt(id));
 					s.deleteProprietaire(p);

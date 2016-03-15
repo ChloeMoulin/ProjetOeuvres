@@ -44,6 +44,10 @@ public class ControleurAdherent extends Controleur {
 			case "validerModifAdherent" : {
 				try {
 					String id = request.getParameter("id");
+					if (id.equals("")) {
+						destinationPage = "/ControleurAdherent?action=listerAdherent";
+						break;
+					}
 					int numero = new Integer(id);
 					Adherent a = new Adherent();
 					a.setIdAdherent(numero);
@@ -60,6 +64,10 @@ public class ControleurAdherent extends Controleur {
 			case "supprimerAdherent" :{
 				try {
 					String id = request.getParameter("id");
+					if (id.equals("")) {
+						destinationPage = "/ControleurAdherent?action=listerAdherent";
+						break;
+					}
 					Adherent a = new Adherent();
 					a.setIdAdherent(Integer.parseInt(id));
 					s.deleteAdherent(a);

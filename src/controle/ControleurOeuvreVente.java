@@ -55,6 +55,10 @@ public class ControleurOeuvreVente extends Controleur {
 		case "supprimerOeuvreVente" : {
 			try {
 				String id = request.getParameter("id");
+				if (id.equals("")) {
+					destinationPage = "/ControleurOeuvreVente?action=listerOeuvresVente";
+					break;
+				}
 				Oeuvrevente o = new Oeuvrevente();
 				o.setId(Integer.parseInt(id));
 				s.deleteOeuvreVente(o);
@@ -67,6 +71,10 @@ public class ControleurOeuvreVente extends Controleur {
 		case "validerModifOeuvreVente" : {
 			try {
 				String id = request.getParameter("id");
+				if (id.equals("")) {
+					destinationPage = "/ControleurOeuvreVente?action=listerOeuvresVente";
+					break;
+				}
 				int numero = new Integer(id);
 				Proprietaire proprietaire = s.consulterProprietaire(Integer.parseInt(request.getParameter("proprietaire")));
 				Oeuvrevente test = Service.getInstance().consulterOeuvreVente(numero);

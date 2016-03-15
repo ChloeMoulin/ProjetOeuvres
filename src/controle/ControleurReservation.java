@@ -54,6 +54,10 @@ public class ControleurReservation extends Controleur {
 			case "supprimerReservation" : {
 				try {
 					String id = request.getParameter("id");
+					if (id.equals("")) {
+						destinationPage = "/ControleurReservation?action=listerReservations";
+						break;
+					}
 					Reservation r = new Reservation();
 					r.setOeuvrevente(s.consulterOeuvreVente(Integer.parseInt(id)));
 					s.deleteReservation(r);

@@ -55,6 +55,10 @@ public class ControleurOeuvrePret extends Controleur {
 			case "supprimerOeuvrePret" : {
 				try {
 					String id = request.getParameter("id");
+					if (id.equals("")) {
+						destinationPage = "/ControleurOeuvrePret?action=listerOeuvresPret";
+						break;
+					}
 					Oeuvrepret o = new Oeuvrepret();
 					o.setId(Integer.parseInt(id));
 					s.deleteOeuvrePret(o);
@@ -79,6 +83,10 @@ public class ControleurOeuvrePret extends Controleur {
 			case "validerModifOeuvrePret" : {
 				try {
 					String id = request.getParameter("id");
+					if (id.equals("")) {
+						destinationPage = "/ControleurOeuvrePret?action=listerOeuvresPret";
+						break;
+					}
 					int numero = new Integer(id);
 					Proprietaire p = s.consulterProprietaire(Integer.parseInt(request.getParameter("proprietaire")));
 					Oeuvrepret o = new Oeuvrepret(request.getParameter("txtTitre"), p);
