@@ -20,19 +20,19 @@
 	</head>
 	<body>
 	
-		<div class = "title" style="height:15vh;border-bottom:1px solid #5983AA;margin-top:-3%;position:fixed;z-index:1000;width:100%;">
+		<div class = "title" style="height:20vh;border-bottom:1px solid #5983AA;margin-top:-3%;position:fixed;z-index:1000;width:100%;">
 
-			<h1 align="center" style="padding-top:5vh">
+			<h1 align="center" style="padding-top:8vh">
 				Médiathèque de POLYTECH
 			</h1>
-						<p align="left" style="margin: -4vh 3px 10px">
+			<p align="left" style="margin: -8vh 3px 10px">
 				<font color="#d0d0d0" face="Arial" size="4">Gestion de</font>
 				<br/>
 				<font color="#d0d0d0" face="Arial" size="4">l'exposition 2016</font>
 			</p>
 		</div>
 		<div id="sidebar-wrapper" style="z-index:1;">
-			<ul class="sidebar-nav" style="padding-top:10vh;">
+			<ul class="sidebar-nav" style="padding-top:15vh;">
 				<li class="sidebar-brand">
 					<a href="index.jsp">Retour Accueil</a>
 				</li>

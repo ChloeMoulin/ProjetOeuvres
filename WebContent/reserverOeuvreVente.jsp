@@ -7,8 +7,27 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Reserver Oeuvre Vente</title>
+		
+
 	</head>
 	<body>
+			<script type="text/javascript" src="js/fonctControle.js"></script>
+		<script type="text/javascript" src="js/jquery-2.0.0.js"></script>
+   		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.4.5/jquery.datetimepicker.min.js"></script>
+    	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
+    	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/i18n/fr.js"></script>
+	
+		<script type="text/javascript">
+        $(function() {
+            // Datetime picker
+            $(".datepicker").datetimepicker({
+                timepicker: false,
+                format: "d/m/Y",
+                dayOfWeekStart: 1,
+                startDate: new Date(),
+                minDate: 0
+            });
+            </script>
 		<jsp:include page="index.jsp"/>
 		<div class = "container_body">
 			<p align="center">
@@ -26,7 +45,7 @@
 				   			
 				   			<br/>
 				   			<label for="dateReservation">Date Réservation :</label>
-				   			<input class="form-control" type = "text" id = "dateReservation" name = "dateReservation"/><br/>
+				   			<input class="form-control" type = "text" id = "dateReservation" class="datepicker" name = "dateReservation"/><br/>
 	
 				
 				   			<label for = "adherent">Acheteur :</label>

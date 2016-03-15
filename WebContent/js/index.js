@@ -21,4 +21,6 @@ $(document).ready(function() {
 	if (bool_pret || bool_vente) {
 		$("#dropdown_liste_oeuvre_menu").fadeIn();
 	}
+	
+	$(".datepicker").datepicker();
 });
