@@ -20,9 +20,9 @@
 	</head>
 	<body>
 	
-		<div class = "title" style="height:20vh;border-bottom:1px solid #5983AA;margin-top:-3%;position:fixed;z-index:1000;width:100%;">
+		<div class = "title" style="height:18vh;border-bottom:1px solid #5983AA;margin-top:-3%;position:fixed;z-index:1000;width:100%;">
 
-			<h1 align="center" style="padding-top:8vh">
+			<h1 align="center" style="padding-top:6vh">
 				Médiathèque de POLYTECH
 			</h1>
 			<p align="left" style="margin: -8vh 3px 10px">
