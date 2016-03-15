@@ -14,6 +14,8 @@ public class ServiceOeuvrePret {
 		String mysql;
 
 		DialogueBd bd = DialogueBd.getInstance();
+		if (!o.oeuvreNotEmpty())
+			return;
 		try {
 			mysql = "insert into oeuvrepret  (titre_oeuvrepret,id_proprietaire)  values ('"
 					+ o.getTitre()+ "','" + o.getProprietaire().getIdProprietaire()+ "')";
@@ -38,6 +40,8 @@ public class ServiceOeuvrePret {
 	public void updateOeuvrePret(Oeuvrepret o, Proprietaire p) throws MonException {
 		String mysql;
 		DialogueBd bd = DialogueBd.getInstance();
+		if (!o.oeuvreNotEmpty())
+			return;
 		try {
 			mysql = "update oeuvrepret set titre_oeuvrepret='" + o.getTitre() + "', id_proprietaire='" + p.getIdProprietaire()
 			+ "' where id_oeuvrepret='" + o.getId() + "'";

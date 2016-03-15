@@ -47,6 +47,8 @@ public class ServiceAdherent {
 		String mysql;
 		
 		DialogueBd bd = DialogueBd.getInstance();
+		 if (!a.adherentNotEmpty())
+			 return;
 		try {
 			mysql = "update adherent set nom_adherent='" + a.getNomAdherent() + "', prenom_adherent='" +
 					a.getPrenomAdherent() + "', ville_adherent='" + a.getVilleAdherent()

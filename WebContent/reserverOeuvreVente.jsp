@@ -11,23 +11,9 @@
 
 	</head>
 	<body>
-			<script type="text/javascript" src="js/fonctControle.js"></script>
+		<script type="text/javascript" src="js/fonctControle.js"></script>
 		<script type="text/javascript" src="js/jquery-2.0.0.js"></script>
-   		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.4.5/jquery.datetimepicker.min.js"></script>
-    	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
-    	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/i18n/fr.js"></script>
-	
-		<script type="text/javascript">
-        $(function() {
-            // Datetime picker
-            $(".datepicker").datetimepicker({
-                timepicker: false,
-                format: "d/m/Y",
-                dayOfWeekStart: 1,
-                startDate: new Date(),
-                minDate: 0
-            });
-            </script>
+
 		<jsp:include page="index.jsp"/>
 		<div class = "container_body">
 			<p align="center">
@@ -38,15 +24,16 @@
 			<div class="container drop-shadow">
 				<div class="container">
 					<br/>
-					<form id="form_reservation" name="form_reservation" method="post" action="ControleurReservation?action=validerReserverOeuvreVente&id=${oeuvre.id}" onsubmit="return teste()">
+					<form id="form_reservation" name="form_reservation" method="post" action="ControleurReservation?action=validerReserverOeuvreVente&id=${oeuvre.id}" onsubmit="return testReservation()">
 						<fieldset class="form-group" >
 							<label>Titre de l'oeuvre : ${oeuvre.titre}</label><br/>
 				   			<label>Prix de l'oeuvre : ${oeuvre.prixOeuvrevente}</label><br/>
 				   			
 				   			<br/>
 				   			<label for="dateReservation">Date Réservation :</label>
-				   			<input class="form-control" type = "text" id = "dateReservation" class="datepicker" name = "dateReservation"/><br/>
-	
+				   			<input class="form-control" type = "date" id = "dateReservation" class="datepicker" name = "dateReservation" onchange ="dateChanged()" min = "${dateToday}"/><br/>
+							<p class="alert" id = "alert_date" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez sélectionner une date</p><br/>
+							
 				
 				   			<label for = "adherent">Acheteur :</label>
 				   			<select class="form-control" name="adherent">

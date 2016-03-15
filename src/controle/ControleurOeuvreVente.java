@@ -69,9 +69,11 @@ public class ControleurOeuvreVente extends Controleur {
 				String id = request.getParameter("id");
 				int numero = new Integer(id);
 				Proprietaire proprietaire = s.consulterProprietaire(Integer.parseInt(request.getParameter("proprietaire")));
-				Oeuvrevente o = new Oeuvrevente(request.getParameter("etatOeuvre"), Float.parseFloat(request.getParameter("numberPrix")),
+				Oeuvrevente test = Service.getInstance().consulterOeuvreVente(numero);
+				Oeuvrevente o = new Oeuvrevente(test.getEtatOeuvrevente(), Float.parseFloat(request.getParameter("numberPrix")),
 						request.getParameter("txtTitre"), proprietaire);
 				o.setId(numero);
+				
 				s.updateOeuvreVente(o, proprietaire);
 			} catch (MonException e) {
 				e.printStackTrace();

@@ -1,7 +1,6 @@
 package metier;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.util.Date;
 
 
@@ -63,5 +62,13 @@ public class Reservation implements Serializable {
 	public void setStatut(String statut) {
 		this.statut = statut;
 	}
+	
+	public boolean reservationNotEmpty() {
+		if (date == null)
+			return false;
+		else
+			return true;
+	}
+	
 
 }

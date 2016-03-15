@@ -1,27 +1,5 @@
 @CHARSET "UTF-8";
 
-@media (min-width: 768px) {
-  div#sidebar {
-    height: 100vh;
-  }
-  .sidebar-nav .navbar .navbar-collapse {
-    height: 100vh;
-  }
-  .sidebar-nav .navbar ul {
-    float: none;
-  }
-  .sidebar-nav .navbar ul:not {
-    display: block;
-  }
-  .sidebar-nav .navbar li {
-    float: none;
-    display: block;
-  }
-  .sidebar-nav .navbar li a {
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-}
 html, body {
   height: 90vh;
 }

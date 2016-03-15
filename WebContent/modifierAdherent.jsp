@@ -28,8 +28,8 @@
 							<input class="form-control" type="text" name="txtprenom" value=${adherent.prenomAdherent} id ="prenom" onchange="prenomChanged()"/>
 							<p class="alert" id = "alert_prenom" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez entrer un prénom</p><br/>
 							
-							<label for= "nom">Nom :</label>
-							<input class="form-control" type="text" name="txtville" value=${adherent.villeAdherent} id ="nom" onchange="villeChanged()"/>
+							<label for= "nom">Ville :</label>
+							<input class="form-control" type="text" name="txtville" value=${adherent.villeAdherent} id ="ville" onchange="villeChanged()"/>
 							<p class="alert" id = "alert_ville" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez entrer une ville</p><br/>
 							
 							<input class="btn btn-success" type="submit" name="bt"  value="Valider" />

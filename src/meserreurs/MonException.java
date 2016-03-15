@@ -1,7 +1,11 @@
 package meserreurs;
 
 public class MonException  extends Exception  {
-    private String message;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String message;
     private String type;
 
     public MonException() {

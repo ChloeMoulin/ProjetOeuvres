@@ -22,7 +22,7 @@
 			<div class="container drop-shadow">
 				<div class="container">
 					<br/>
-					<form id="form_vente" name='form_vente' method="post" action="ControleurOeuvreVente?action=insererOeuvreVente" onsubmit="return testOeuvreVente()">
+					<form id="form_vente" name='form_vente' method="post" action="ControleurOeuvreVente?action=validerModifOeuvreVente&id=${oeuvre.id }" onsubmit="return testOeuvreVente()">
 					    <fieldset class="form-group" >	
 						    <label for= "titre">Titre :</label>
 							<input class="form-control" type="text" name="txtTitre" value =${oeuvre.titre } id ="titre" onchange="titreChanged()"/>

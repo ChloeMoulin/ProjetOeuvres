@@ -49,4 +49,10 @@ public class Oeuvrevente extends Oeuvre {
 			return false;
 		return true && super.oeuvreNotEmpty();
 	}
+	
+	public boolean oeuvreLibre() {
+		boolean b;
+		b = etatOeuvrevente.equals("L") ? true : false;
+		return b;
+	}
 }
