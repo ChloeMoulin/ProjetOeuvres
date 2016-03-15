@@ -20,10 +20,10 @@
 					<form  name='identification' method="post" action="ControleurProprietaire?action=validerModifProprietaire&id=${proprietaire.idProprietaire}" onsubmit="return teste()">
 					     <fieldset class="form-group" >
 						    <label for="nom">Nom : </label>
-							<input class="form-control" type="text" name="txtnom" value=${proprietaire.nomProprietaire}  id ="nom" onchange="nomChanged()"/><br/>
+							<input class="form-control" type="text" name="txtnom" value='${proprietaire.nomProprietaire}'  id ="nom" onchange="nomChanged()"/><br/>
 	
 							<label for="prenom">Prénom : </label>
-						    <input class="form-control" type="text" name="txtprenom" value=${proprietaire.prenomProprietaire}  id ="prenom" onchange="prenomChanged()"/><br/>
+						    <input class="form-control" type="text" name="txtprenom" value='${proprietaire.prenomProprietaire}'  id ="prenom" onchange="prenomChanged()"/><br/>
 								
 							<br/>				          
 					        <input class="btn btn-success" type="submit" name="bt"  value="Valider" />

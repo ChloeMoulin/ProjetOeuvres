@@ -25,17 +25,17 @@
 					<form id="form_vente" name='form_vente' method="post" action="ControleurOeuvreVente?action=validerModifOeuvreVente&id=${oeuvre.id }" onsubmit="return testOeuvreVente()">
 					    <fieldset class="form-group" >	
 						    <label for= "titre">Titre :</label>
-							<input class="form-control" type="text" name="txtTitre" value =${oeuvre.titre } id ="titre" onchange="titreChanged()"/>
+							<input class="form-control" type="text" name="txtTitre" value ='${oeuvre.titre }' id ="titre" onchange="titreChanged()"/>
 			   				<p class="alert" id = "alert_titre" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez entrer un titre</p><br/>
 	
 							<label for= "prix">Prix :</label>
-							<input class="form-control" type="number" name="numberPrix" value =${oeuvre.prixOeuvrevente} id="prix" onchange="prixChanged()"/>
+							<input class="form-control" type="number" name="numberPrix" value ='${oeuvre.prixOeuvrevente}' id="prix" onchange="prixChanged()"/>
 							<p class = "alert" id = "alert_prix" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez entrer un prix</p><br/>
 	
 							<label for= "proprietaire">Proprietaire :</label>
 							<select class="form-control" name = "proprietaire" onchange="proprietaireChanged()">
 								<c:forEach items="${mesProprietaires}" var="item">
-									<option value = "${item.idProprietaire }">${item.prenomProprietaire } ${item.nomProprietaire }</option>
+									<option value = '${item.idProprietaire }'>${item.prenomProprietaire } ${item.nomProprietaire }</option>
 								</c:forEach>
 							</select>
 							<p class="alert" id = "alert_proprietaire" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez sélectionner un proprietaire</p><br/>

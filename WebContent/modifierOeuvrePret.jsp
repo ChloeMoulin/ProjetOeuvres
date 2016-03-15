@@ -24,13 +24,13 @@
 					<form  id="form_pret" name='form_pret' method="post" action="ControleurOeuvrePret?action=validerModifOeuvrePret&id=${oeuvre.id }" onsubmit="return testOeuvrePret()">
 					     <fieldset class="form-group" >					    	
 						    <label for= "titre_pret">Titre :</label>   
-							<input class="form-control" type="text" name="txtTitre" value=${oeuvre.titre} id ="titre_pret" onchange="titrePretChanged()">
+							<input class="form-control" type="text" name="txtTitre" value='${oeuvre.titre}' id ="titre_pret" onchange="titrePretChanged()">
 			   				<p class = "alert" id = "alert_titre_pret" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez entrer un titre</p><br/>
 							
 							<label for= "proprietaire">Proprietaire :</label> 
 							<select class="form-control" name = "proprietaire">
 								<c:forEach items="${mesProprietaires}" var="item">
-									<option value = "${item.idProprietaire }">${item.prenomProprietaire } ${item.nomProprietaire }</option>
+									<option value = '${item.idProprietaire }'>${item.prenomProprietaire } ${item.nomProprietaire }</option>
 								</c:forEach>
 							</select>
 							<p class="alert" id = "alert_proprietaire" style = "display:none;"><i class="fa fa-exclamation-triangle"></i>Veuillez sélectionner un proprietaire</p><br/>
